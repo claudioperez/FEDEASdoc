@@ -1,7 +1,5 @@
 # FEDEASLab
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
 ## About
 
 The Matlab© toolbox FEDEASLab is a user-friendly, versatile and powerful tool for the
@@ -40,30 +38,3 @@ and structural information for plotting or printing. Several functions that addr
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-
-## Acknowledgements
-
-The evolution of the Matlab© toolbox FEDEASLab from 1998 to 2004 started with the primary
-objective of supporting the instruction of the basic graduate courses of linear and nonlinear
-structural analysis at the University of California, Berkeley, and progressed to a powerful
-framework for research in the nonlinear analysis of structures.
-The most significant contribution to FEDEASLab came from program FEAP developed by
-Professor Robert L. Taylor at the University of California, Berkeley. The original version of
-FEDEASLab set out to emulate a portion of FEAP's capabilities for teaching and research.
-Former doctoral student Remo Magalhaes de Souza was present at the birth of the program,
-and was instrumental in the organization of the solution strategy data structure and the creation
-of the transformation functions for linear and nonlinear geometry. Recently the contributions of
-doctoral student Afsin Saritas have expanded the element and material library of the toolbox.
-Discussions with Professor Gregory L. Fenves have stimulated the object-oriented organization
-of the toolbox without resorting to the use of objects. His criticism of early versions of the
-program has helped in its improvement.
-The contribution of these colleagues over the course of FEDEASLab's growth is gratefully
-acknowledged. Their input can be found in various functions of the toolbox. Any errors and
-omissions are, however, entirely the fault of its creator.
-After its inclusion as simulation component of NEESgrid in late 2003, FEDEASLab received
-financial support for documentation, validation, and example preparation through NEESgrid
-subcontract award 04-344 from the NEESgrid System Integrator at the University of Illinois,
-Champaign-Urbana under NSF grant CMS-0117853. Special thanks go to Professor Bill
-Spencer for his vision and leadership toward the inclusion of simulation capabilities in NEESgrid
-and to Professor Gregory L. Fenves for championing FEDEASLab's inclusion as one of the
-simulation components of NEESgrid.
