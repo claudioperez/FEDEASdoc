@@ -1,0 +1,45 @@
+site_name: FEDEASLab Documentation
+
+
+nav:
+- Home: 'index.md'
+
+- Getting Started:
+  - Quick Start: 'quick.md'
+  - Data Structures: 'DataStructs.md'
+  - Nonlinear Materials: 'matlib.md'
+  - Nonlinear Elements: 'elemlib.md'
+  - Frequently-asked questions: 'faq.md'
+
+- Functions:
+  - Index: 'FEDEASLab.md'
+  - Basic: 'FEDEASLab/Basic/FEDEASLab.md'
+  - Dynamics: 'FEDEASLab/Dynamics/FEDEASLab.md'
+  - Element Library: 'FEDEASLab/Element_Library/FEDEASLab.md'
+  - General: 'FEDEASLab/General/FEDEASLab.md'
+  - Material Library: 'FEDEASLab/Material_Library/FEDEASLab.md'
+  - Section Library: 'FEDEASLab/Section_Library/FEDEASLab.md'
+  - Solution Library: 'FEDEASLab/Solution_Library/FEDEASLab.md'
+  - Utilities: 'FEDEASLab/Utilities/FEDEASLab.md'
+
+- Examples: examples/index.md
+
+
+theme:
+  name: lumen
+  # nav_style: dark
+  highlightjs: true # Code snippet syntax highlighting
+
+theme_dir: custom_theme
+
+extra_css:
+    - css/extra.css
+    # - css/second_extra.css
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
+    - meta
+    # - mdx_snippets

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>FEDEASLab Documentation</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link href="css/extra.css" rel="stylesheet">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">FEDEASLab Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="quick.md" class="dropdown-item">Quick Start</a>
+</li>
+                                    
+<li>
+    <a href="matlib/" class="dropdown-item">Nonlinear Materials</a>
+</li>
+                                    
+<li>
+    <a href="elemlib/" class="dropdown-item">Nonlinear Elements</a>
+</li>
+                                    
+<li>
+    <a href="faq.md" class="dropdown-item">Frequently-asked questions</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Functions <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="FEDEASLab/" class="dropdown-item">Index</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Basic/FEDEASLab.md" class="dropdown-item">Basic</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Dynamics/FEDEASLab/" class="dropdown-item">Dynamics</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Element_Library/FEDEASLab/" class="dropdown-item">Element Library</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/General/FEDEASLab/" class="dropdown-item">General</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Material_Library/FEDEASLab/" class="dropdown-item">Material Library</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Section_Library/FEDEASLab.md" class="dropdown-item">Section Library</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Solution_Library/FEDEASLab/" class="dropdown-item">Solution Library</a>
+</li>
+                                    
+<li>
+    <a href="FEDEASLab/Utilities/FEDEASLab/" class="dropdown-item">Utilities</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="Examples/index.md" class="nav-link">Examples</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="matlib/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#fedeaslab" class="nav-link">FEDEASLab</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#about" class="nav-link">About</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#acknowledgements" class="nav-link">Acknowledgements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="fedeaslab">FEDEASLab</h1>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<h2 id="about">About</h2>
+<p>The Matlab© toolbox FEDEASLab is a user-friendly, versatile and powerful tool for the
+simulation of nonlinear structural response under static and dynamic loads, which has been
+used successfully for the development of new elements and material models, as well as for the
+simulation of the response of small structural models in research and instruction. Its
+development started in 1998 for the support of instruction of the basic graduate courses of linear
+and nonlinear structural analysis at the University of California, Berkeley. To date FEDEASLab
+has evolved into a powerful framework for research in the nonlinear analysis of structures.
+The toolbox consists of several functions that are grouped in categories and are, consequently,
+organized in separate directories. These functions operate on five basic data structures which
+represent the model, the loading, the element properties, the state of the structural response,
+and the parameters of the solution strategy. A sixth data structure is optional and carries postprocessing information that can be used for response interpretation and visualization.
+FEDEASLab supports path-dependent static or transient response under multiple force and
+displacement patterns. Transient response under multiple force patterns, displacement patterns,
+and acceleration patterns with uniform or multi-support excitation is also supported.
+The nonlinear response analysis of structural models under static or transient conditions is
+decomposed into logical steps. Each step is represented by a separate function with one or
+more basic data objects as input and output arguments. In this way the definition of the model,
+the specification of element properties, the definition of applied force and displacement patterns
+and corresponding load histories, and the analysis of the model under the loading becomes a
+sequence of function calls that are organized in script files. With Matlab's scripting language it is
+easy to customize the analysis sequence and conduct parameter studies. The modular
+architecture of the toolbox and the compact organization of data allow for the easy addition of
+new functions for providing new capabilities. It is equally easy to access the data objects and
+enhance the information stored in them. A well defined interface for element, section and
+material models permits the user to add custom components to the available element, section
+and material libraries.
+Post-processing is accommodated with a data object that carries all important material, element
+and structural information for plotting or printing. Several functions that address basic postprocessing tasks are provided. The user can easily enhance and extend the current capabilities.</p>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>The evolution of the Matlab© toolbox FEDEASLab from 1998 to 2004 started with the primary
+objective of supporting the instruction of the basic graduate courses of linear and nonlinear
+structural analysis at the University of California, Berkeley, and progressed to a powerful
+framework for research in the nonlinear analysis of structures.
+The most significant contribution to FEDEASLab came from program FEAP developed by
+Professor Robert L. Taylor at the University of California, Berkeley. The original version of
+FEDEASLab set out to emulate a portion of FEAP's capabilities for teaching and research.
+Former doctoral student Remo Magalhaes de Souza was present at the birth of the program,
+and was instrumental in the organization of the solution strategy data structure and the creation
+of the transformation functions for linear and nonlinear geometry. Recently the contributions of
+doctoral student Afsin Saritas have expanded the element and material library of the toolbox.
+Discussions with Professor Gregory L. Fenves have stimulated the object-oriented organization
+of the toolbox without resorting to the use of objects. His criticism of early versions of the
+program has helped in its improvement.
+The contribution of these colleagues over the course of FEDEASLab's growth is gratefully
+acknowledged. Their input can be found in various functions of the toolbox. Any errors and
+omissions are, however, entirely the fault of its creator.
+After its inclusion as simulation component of NEESgrid in late 2003, FEDEASLab received
+financial support for documentation, validation, and example preparation through NEESgrid
+subcontract award 04-344 from the NEESgrid System Integrator at the University of Illinois,
+Champaign-Urbana under NSF grant CMS-0117853. Special thanks go to Professor Bill
+Spencer for his vision and leadership toward the inclusion of simulation capabilities in NEESgrid
+and to Professor Gregory L. Fenves for championing FEDEASLab's inclusion as one of the
+simulation components of NEESgrid.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.1
+Build Date UTC : 2020-03-12 05:36:08
+-->

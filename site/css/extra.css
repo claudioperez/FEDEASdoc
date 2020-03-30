@@ -1,0 +1,28 @@
+/* 
+Claudio Perez
+03/2020
+ */
+
+
+.bg-primary{
+  background-color:rgb(0,50,98) !important; /* navbar background color */
+  border-color: rgb(196,130,14);            /* navbar border color */
+}
+
+
+/* text color for navbar menu items */
+.navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  color: rgb(196,130,14); 
+}
+
+/* text color for menu items when hovering */
+ul.nav a:hover { color: rgb(196,130,14) !important; }
+
+a {
+  color: rgb(196,130,14);
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  background-color: transparent;
+}

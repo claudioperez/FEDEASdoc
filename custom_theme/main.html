@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% macro myfunc(src,desc='') -%}
+<img style="display:block;" src="{{src}}">
+<span>{{desc}}</span>
+{%- endmacro %}
+
+{% set myvariable = "Hello world!" %}
+
+{%- from "jinja.html" import jinja %}
+{%- set allowed = {"myfunc": myfunc, "myvariable": myvariable} %}
+{{ jinja(page_content, allowed) }}
