@@ -201,29 +201,23 @@
 
 <h1 id="nonlinear-material-modeling">Nonlinear Material Modeling</h1>
 <h2 id="overview">Overview</h2>
-<p>Material formulations</p>
-<ol>
-<li>
-<p>Rigorous 3D.</p>
-</li>
-<li>
-<p>Hysteretic with strength/stiffness deterioration.</p>
-<ol>
-<li><strong>polygonal</strong>. Piecewise linear</li>
-<li><strong>smooth</strong>.</li>
-</ol>
-</li>
-<li>
-<p>Damage index models.</p>
-</li>
-</ol>
-<p>Response relations</p>
-<ol>
-<li>Moment-curvature   [FL     vs  L^-1  ]</li>
-<li>Moment-rotation    [FL     vs   -    ]</li>
-<li>Force-deformation  [F      vs   L    ]</li>
-<li>Stress-strain      [FL^-2  vs   -    ]</li>
-</ol>
+<!-- Material formulations
+
+  1. Rigorous 3D.
+
+  2. Hysteretic with strength/stiffness deterioration.
+    1. **polygonal**. Piecewise linear
+    2. **smooth**.
+
+  3. Damage index models.
+
+Response relations
+
+  1. Moment-curvature   [FL     vs  L^-1  ]
+  2. Moment-rotation    [FL     vs   -    ]
+  3. Force-deformation  [F      vs   L    ]
+  4. Stress-strain      [FL^-2  vs   -    ] -->
+
 <h2 id="basic-data-structures">Basic Data Structures</h2>
 <p>MATSTATE is a data structure with information about the current material state in fields
       eps    = total strain (tensor for 2d or 3d)
