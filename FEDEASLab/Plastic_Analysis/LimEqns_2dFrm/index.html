@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>LimEqns_Frm2d - FEDEASLab Documentation</title>
+        <title>Plastic Analysis - FEDEASLab Documentation</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -62,7 +62,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Functions <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -79,7 +79,7 @@
 </li>
                                     
 <li>
-    <a href="../LimEqns2dFrm.md" class="dropdown-item">Plastic Analysis</a>
+    <a href="./" class="dropdown-item active">Plastic Analysis</a>
 </li>
                                     
 <li>
@@ -118,6 +118,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Dynamics/FEDEASLab/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Element_Library/FEDEASLab/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -136,13 +146,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#limeqns_frm2d" class="nav-link">LimEqns_Frm2d</a>
+            <li class="nav-item" data-level="1"><a href="#limeqns_2dfrm" class="nav-link">LimEqns_2dFrm</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#syntax" class="nav-link">Syntax</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#formulation" class="nav-link">Formulation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -153,52 +159,67 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="limeqns_frm2d">LimEqns_Frm2d</h1>
+<h1 id="limeqns_2dfrm">LimEqns_2dFrm</h1>
+<p>Returns a matrix of element limit-surface equations, <code>LimEqns</code>, for the frame element specified in data structure <code>ElemData</code>.</p>
 <h2 id="syntax">Syntax</h2>
 <ul>
-<li>LimEqns = LimEqns2dFrm (ELEMDATA)</li>
-<li>LimEqns = LimEqns2dFrm (ELEMDATA,lim_coef)</li>
+<li><code>LimEqns = LimEqns_2dFrm (ElemData, lim_coef)</code></li>
+<li><code>LimEqns = LimEqns_2dFrm (ElemData, lim_coef, xyz)</code></li>
 </ul>
-<p>sets up a matrix of element limit-surface equations, $a_{in}$, for the structural model specified in data structure MODEL with element property information in cell array ELEMDATA. Options for parameter lim_coef are specified below.</p>
 <h3 id="parameters">Parameters</h3>
 <hr />
 <ul>
-<li>
-<p><code>ElemData</code>: cell array\
-  Contains element property data.</p>
-</li>
-<li>
-<p><code>lim_coef</code>: (Optional) Char array or float array.</p>
-</li>
+<li><code>ElemData</code>: cell array\
+  Contains element property data.</li>
 </ul>
-<p><strong>Array.</strong>
-   If an $n \times 2$ array is passed, $n$ piecewise linear axial-moment interaction equations of the following form will be generated for each element:
+<p>Element plastic capacity information is stored in the fields <code>Np</code>, <code>Mp</code>, and <code>Vp</code>, and may take the following forms: (REWRITE/CLARIFY)</p>
+<p>
+<script type="math/tex; mode=display">\left[\begin{array}{ll}
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{  (-)} \\
+  \mathrm{Q}_{\mathrm{pj}}^{(+)} & \mathrm{Q}_{\mathrm{pj}}^{  (-)}
+  \end{array}\right]</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\left[\begin{array}{ll}
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(-)}
+  \end{array}\right]
+  \quad \rightarrow \left[\begin{array}{ll}
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(-)}   \\
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(-)}
+  \end{array}\right]</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+  \left[\begin{array}{l}
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} \\
+  \mathrm{Q}_{\mathrm{pj}}^{(+)}
+  \end{array}\right] 
+  \quad \rightarrow \left[\begin{array}{ll}
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(+)}   \\
+  \mathrm{Q}_{\mathrm{pj}}^{(+)} & \mathrm{Q}_{\mathrm{pj}}^{(+)}
+  \end{array}\right]
+  </script>
+</p>
+<p>
+<script type="math/tex; mode=display">\mathrm{Q}_{\mathrm{pi}}^{(+)} \rightarrow
+  \left[\begin{array}{ll}
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(+)}   \\
+  \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(+)}
+  \end{array}\right]</script>
+</p>
+<ul>
+<li><code>lim_coef</code>: float array.</li>
+</ul>
+<p>If an $n \times 1$ array is passed, $n$ piecewise linear equations of the following form will be generated for each element:
+   <script type="math/tex; mode=display">a_n \frac{|Q_i|}{Q_{i,pl}}    \leq 1.0</script>
+</p>
+<p>If an $n \times 2$ array is passed, $n$ piecewise linear axial-moment interaction equations of the following form will be generated for each element:
    <script type="math/tex; mode=display">a_n \frac{|N|}{N_{pl}} + b_n\frac{|M_z|}{M_{p,z}}   \leq 1.0</script>
 </p>
 <p>If an $n \times 3$ array is passed, $n$ piecewise linear axial-moment-shear interaction equations of the following form will be applied:
    <script type="math/tex; mode=display">a_n \frac{|N|}{N_{p}} + b_n \frac{|M|}{M_{p}} + c_n \frac{|V|}{V_{p}} \leq 1.0</script>
-<strong>String.</strong>
-   Alternatively, a <code>char array</code> may be passed indicating one of the following options:</p>
-<ul>
-<li><code>'AISC-H2'</code> (Default)</li>
-<li><code>'AISC-H1'</code></li>
-</ul>
-<p><strong>Empty.</strong>
-   If no parameter is passed in the third position, the function will go to the <code>NMOpt</code> field of the cell <code>ElemData</code> for each element, which may also contain a string or an array. Elements with no such field will default to the <code>AISC-H2</code> option.</p>
-<h2 id="formulation">Formulation</h2>
-<p>The matrix $A_{in}$ forms the upper bound plastic conditions in the form
-   <script type="math/tex; mode=display">\mathbf{A}_{in} \mathbf{Q} \leq \mathbf{1}</script>
-for the lower bound linear programming problem expressed as follows:
-<script type="math/tex; mode=display">\begin{aligned}
-\lambda_{c}=\max \lambda & \\
-\text { with } &\left\{\begin{aligned}
-\lambda P_{r e f}+P_{c f} &=\mathbf{B}_{f} Q \\
-\mathbf{A}_{in} \mathbf{Q} & \leq \mathbf{1} \\
-\end{aligned}\right.
-\end{aligned}
-</script>
 </p>
-<h3 id="2d-shear-moment-axial-interaction">2D Shear-moment-axial interaction</h3>
+<h3 id="case-iii-nvm-interaction">Case III: NVM interaction</h3>
 <hr />
 <p>Interaction between shear, moment, and axial forces is implemented with $n$ piecewise linear equations of the following form:</p>
 <p>
