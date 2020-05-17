@@ -15,6 +15,7 @@ nav:
   - Index: 'FEDEASLab.md'
   - Basic: 'FEDEASLab/Basic/FEDEASLab.md'
   - Dynamics: 'FEDEASLab/Dynamics/FEDEASLab.md'
+  - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
   - Element Library: 'FEDEASLab/Element_Library/FEDEASLab.md'
   - General: 'FEDEASLab/General/FEDEASLab.md'
   - Material Library: 'FEDEASLab/Material_Library/FEDEASLab.md'
@@ -23,7 +24,6 @@ nav:
   - Utilities: 'FEDEASLab/Utilities/FEDEASLab.md'
 
 - Examples: examples/index.md
-
 
 theme:
   name: lumen

@@ -46,6 +46,10 @@
 </li>
                                     
 <li>
+    <a href="../DataStructs/" class="dropdown-item">Data Structures</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Nonlinear Materials</a>
 </li>
                                     
@@ -75,6 +79,10 @@
 </li>
                                     
 <li>
+    <a href="../FEDEASLab/Plastic_Analysis/LimEqns_2dFrm/" class="dropdown-item">Plastic Analysis</a>
+</li>
+                                    
+<li>
     <a href="../FEDEASLab/Element_Library/FEDEASLab/" class="dropdown-item">Element Library</a>
 </li>
                                     
@@ -100,7 +108,7 @@
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="../Examples/index.md" class="nav-link">Examples</a>
+                                <a href="../examples/" class="nav-link">Examples</a>
                             </li>
                         </ul>
 
@@ -111,7 +119,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../DataStructs/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -193,29 +201,23 @@
 
 <h1 id="nonlinear-material-modeling">Nonlinear Material Modeling</h1>
 <h2 id="overview">Overview</h2>
-<p>Material formulations</p>
-<ol>
-<li>
-<p>Rigorous 3D.</p>
-</li>
-<li>
-<p>Hysteretic with strength/stiffness deterioration.</p>
-<ol>
-<li><strong>polygonal</strong>. Piecewise linear</li>
-<li><strong>smooth</strong>.</li>
-</ol>
-</li>
-<li>
-<p>Damage index models.</p>
-</li>
-</ol>
-<p>Response relations</p>
-<ol>
-<li>Moment-curvature   [FL     vs  L^-1  ]</li>
-<li>Moment-rotation    [FL     vs   -    ]</li>
-<li>Force-deformation  [F      vs   L    ]</li>
-<li>Stress-strain      [FL^-2  vs   -    ]</li>
-</ol>
+<!-- Material formulations
+
+  1. Rigorous 3D.
+
+  2. Hysteretic with strength/stiffness deterioration.
+    1. **polygonal**. Piecewise linear
+    2. **smooth**.
+
+  3. Damage index models.
+
+Response relations
+
+  1. Moment-curvature   [FL     vs  L^-1  ]
+  2. Moment-rotation    [FL     vs   -    ]
+  3. Force-deformation  [F      vs   L    ]
+  4. Stress-strain      [FL^-2  vs   -    ] -->
+
 <h2 id="basic-data-structures">Basic Data Structures</h2>
 <p>MATSTATE is a data structure with information about the current material state in fields
       eps    = total strain (tensor for 2d or 3d)
@@ -300,31 +302,35 @@
 <h3 id="state_1">State</h3>
 <p>MATSTATE is a data structure with information about the current material state in fields</p>
 <ul>
-<li>eps    = total strain (tensor for 2d or 3d)</li>
-<li>Deps   = strain increments from last convergence</li>
-<li>DDeps  = strain increments from last iteration</li>
-<li>epsdot = strain rate (tensor for 2d or 3d)</li>
-<li>km     = material tangent modulus; returned under ACTION = 'stif'</li>
-<li>sig    = stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'</li>
-<li>Past   = material history variables at last converged state</li>
-<li>Pres   = current values of material history variables</li>
+<li>eps    : total strain (tensor for 2d or 3d)</li>
+<li>Deps   : strain increments from last convergence</li>
+<li>DDeps  : strain increments from last iteration</li>
+<li>epsdot : strain rate (tensor for 2d or 3d)</li>
+<li>km     : material tangent modulus; returned under ACTION = 'stif'</li>
+<li>sig    : stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'</li>
+<li>Past   : material history variables at last converged state</li>
+<li>Pres   : current values of material history variables</li>
 </ul>
 <h3 id="data_1">Data</h3>
-<p>MATDATA is a data structure with material property information in fields
-        sig1p  = positive stress at first transition
-        eps1p  = positive strain at first transition
-        sig2p  = ultimate positive stress
-        eps2p  = ultimate positive strain
-        sig1n  = negative stress at first transition
-        eps1n  = negative strain at first transition
-        sig2n  = ultimate negative stress
-        eps2n  = ultimate negative strain
-        pnchx(+ve ; -ve) = x-pinching parameters under +ve and -ve deformation 
-        pnchy(+ve ; -ve) = y-pinching parameters under +ve and -ve deformation</p>
+<p>MATDATA is a data structure with material property information in fields</p>
+<ul>
+<li>sig1p  = positive stress at first transition</li>
+<li>eps1p  = positive strain at first transition</li>
+<li>sig2p  = ultimate positive stress</li>
+<li>eps2p  = ultimate positive strain</li>
+<li>sig1n  = negative stress at first transition</li>
+<li>eps1n  = negative strain at first transition</li>
+<li>sig2n  = ultimate negative stress</li>
+<li>eps2n  = ultimate negative strain</li>
+<li>pnchx(+ve ; -ve) = x-pinching parameters under +ve and -ve deformation </li>
+<li>pnchy(+ve ; -ve) = y-pinching parameters under +ve and -ve deformation</li>
+</ul>
 <h3 id="post_1">Post</h3>
-<p>MATPOST is a data structure with material response information for post-processing in fields
-         eps = total strain
-         sig = uniaxial stress</p>
+<p>MATPOST is a data structure with material response information for post-processing in fields</p>
+<ul>
+<li>eps = total strain</li>
+<li>sig = uniaxial stress</li>
+</ul>
 <h2 id="bilininel1dmat">BiLinInel1dMat</h2>
 <p>uniaxial stress-strain relation for bilinear inelastic material</p>
 <p>MATRESP = BiLinINEL1dMAT (ACTION,MATNO,MATDATA,MATSTATE)

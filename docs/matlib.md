@@ -2,7 +2,7 @@
 
 ## Overview
 
-Material formulations
+<!-- Material formulations
 
   1. Rigorous 3D.
 
@@ -17,7 +17,7 @@ Response relations
   1. Moment-curvature   [FL     vs  L^-1  ]
   2. Moment-rotation    [FL     vs   -    ]
   3. Force-deformation  [F      vs   L    ]
-  4. Stress-strain      [FL^-2  vs   -    ]
+  4. Stress-strain      [FL^-2  vs   -    ] -->
 
 ## Basic Data Structures
 
