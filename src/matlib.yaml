@@ -256,7 +256,7 @@
     - name: Pres  
       description: current values of material history variables
   parameters:
-    - name: E  
+    - name: E
       description: initial modulus
     - name: fy 
       description: yield strength

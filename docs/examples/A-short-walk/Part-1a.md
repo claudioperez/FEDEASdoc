@@ -37,7 +37,7 @@ reference axis location, $y_{ref}$.
 
 ### 4
 
-![](docs/img/p1/moment-curvature-4.pdf){#fig:mc4}
+![](docs/img/p1/moment-curvature-4.png){#fig:mc4}
 
 ### 5
 
