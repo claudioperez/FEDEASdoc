@@ -12,6 +12,4 @@ Perfectly plastic structures analyzed through minimization principles.
 
 ## Finite Element Analysis
 
-
-
 - [Tapered cantilever](222_HW04_P2/222_HW04_P2.md)
