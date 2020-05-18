@@ -1,6 +1,5 @@
 site_name: FEDEASLab Documentation
 
-
 nav:
 - Home: 'index.md'
 
