@@ -6,7 +6,7 @@ nav:
 - Getting Started:
   - Quick Start: 'quick.md'
   - Data Structures: 'DataStructs.md'
-  - Nonlinear Materials: 'matlib.md'
+  - Material Library: 'matlib.md'
   - Nonlinear Elements: 'elemlib.md'
   - Frequently-asked questions: 'faq.md'
 
@@ -17,7 +17,8 @@ nav:
   - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
   - Element Library: 'FEDEASLab/Element_Library/FEDEASLab.md'
   - General: 'FEDEASLab/General/FEDEASLab.md'
-  - Material Library: 'FEDEASLab/Material_Library/FEDEASLab.md'
+  # - Material Library: 'FEDEASLab/Material_Library/FEDEASLab.md'
+  - Material Library: matlib.md
   - Section Library: 'FEDEASLab/Section_Library/FEDEASLab.md'
   - Solution Library: 'FEDEASLab/Solution_Library/FEDEASLab.md'
   - Utilities: 'FEDEASLab/Utilities/FEDEASLab.md'
