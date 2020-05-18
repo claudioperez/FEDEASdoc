@@ -3,7 +3,7 @@ Claudio Perez
 03/2020
  */
 
- /* F6F6F6 */
+
 .bg-primary{
   background-color:rgb(0,50,98) !important; /* navbar background color */
   border-color: rgb(196,130,14);            /* navbar border color */
@@ -25,51 +25,4 @@ a {
   text-decoration-style: initial;
   text-decoration-color: initial;
   background-color: transparent;
-}
-
-/* Added for collapsible table */
-tr.hide-table-padding td {
-  padding: 0;
-}
-
-.expand-button {
-	position: relative;
-}
-
-.accordion-toggle .expand-button:after
-{
-  position: absolute;
-  left:.75rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  content: '-';
-}
-.accordion-toggle.collapsed .expand-button:after
-{
-  content: '+';
-}
-
-/* Inline code */
-
-code {
-  padding: 1px 3px;
-  background: #f5f5f5;
-  border: solid 1px #ccc;
-  /* color: #333; */
-}
-
-pre code {
-  background: transparent;
-  border: none;
-}
-
-a > code {
-  color: #eb6864;
-}
-code {
-  color: #eb6864;
-}
-
-a > code:hover, a > code:focus {
-  color: #e22620;
 }

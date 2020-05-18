@@ -1,4 +1,4 @@
-site_name: FEDEASLab Documentation
+site_name: FEDEASLab
 
 nav:
 - Home: 'index.md'

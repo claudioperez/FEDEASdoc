@@ -1,8 +1,8 @@
 # Examples
 
-## [A Short Walk](A-short-walk/index.md)
+## General
 
-Take a short walk through some of the more salient topics of nonlinear analysis.
+[Take a short walk through some salient topics in nonlinear analysis.](A-short-walk/index.md)
 
 ## Plastic Analysis
 
