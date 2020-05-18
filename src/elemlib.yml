@@ -12,47 +12,64 @@ ElementLibrary:
     - name: Inel2dFrm_wLHNMYS
       description: 2d linear elastic frame element with linear plastic hardening axial-flexure hinges
       geometry: GeomTran_2dFrm
-      data:
-        - Geom    : character variable for geometric transformation of node variables
+      properties:
+        - name: Geom
+          description: character variable for geometric transformation of node variables
           datatype: string
           options:
             - linear 
             - PDelta 
             - corotational
           default: linear
-        - rho     : mass density
+        - name: rho    
+          description: mass density
+          datatype: null
+        - name: A      
+          description: cross sectional area
+          datatype: null
+        - name: I      
+          description: moment of inertia
+          datatype: null
+        - name: E      
+          description: modulus of elasticity
           datatype: none
-        - A       : cross sectional area
-          datatype: none
-        - I       : moment of inertia
-          datatype: none
-        - E       : modulus of elasticity
-          datatype: none
-        - Np      : plastic axial capacity of element
+        - name: Np     
+          description: plastic axial capacity of element
           datatype: array
           details: nxm
-        - Mp      : plastic moment capacity of element
+        - name: Mp     
+          description: plastic moment capacity of element
           datatype: array
-        - GPYSC   : polynomial exponents for plastic surface (see help for function GPYS)
+        - name: GPYSC  
+          description: polynomial exponents for plastic surface (see help for function GPYS)
           datatype: none
-        - Hir     : isotropic hardening ratio for flexural end i and j 
+        - name: Hir    
+          description: isotropic hardening ratio for flexural end i and j 
           default : [0;0]
           datatype: array
-        - Hkr     : kinematic hardening ratio for axial, flexural end i and end j 
+        - name: Hkr    
+          description: kinematic hardening ratio for axial, flexural end i and end j 
           default: [0;0;0]
           datatype: none
-        - w       : uniform element load ( w(1) = longitudinal, w(2) = transverse )
+        - name: w      
+          description: uniform element load ( w(1) = longitudinal, w(2) = transverse )
           datatype: array
-        - jntoff  : rigid joint offsets in global X and Y at element ends;
+        - name: jntoff 
+          description: rigid joint offsets in global X and Y at element ends;
           datatype: none
           details : column 1 for node i, column 2 for node j
-        - LdIdx   : load history no for element loading in x-direction
-        - LdIdy   : load history no for element loading in y-direction
-        - Wtol    : incremental work tolerance for state convergence 
-          default: 10^-16
-        - MaxIter : maximum number of iterations for state convergence 
+        - name: LdIdx  
+          description: load history no for element loading in x-direction
+        - name: LdIdy  
+          description: load history no for element loading in y-direction
+        - name: Wtol   
+          description: incremental work tolerance for state convergence 
+          default: 10e-16
+        - name: MaxIter 
+          description: maximum number of iterations for state convergence 
           default: 15
-        - SubDivNo: number of element deformation subdivisions 
+        - name: SubDivNo
+          description: number of element deformation subdivisions 
           default: 5
 
     - name: Inel2dFrm_wLPPM
@@ -77,43 +94,143 @@ ElementLibrary:
         - GeomTran_2dFrm
       attributes:
         - data:
-          - Geom: character variable for geometric transformation of node variables
+          - name: Geom
+            description: character variable for geometric transformation of node variables
             datatype: string
             options:
-              - linear 
-              - PDelta 
+              - linear
+              - PDelta
               - corotational
             default: linear
-          - A     : cross sectional area
-          - E     : modulus of elasticity
-          - I     : moment of inertia
-          - Mp    : plastic moment capacity
-            datatype: array 
-            shape : 
-          - rho   : mass density
-          - jntoff: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j
+          - name: A 
+            description: cross sectional area
+          - name: E 
+            description: modulus of elasticity
+          - name: I 
+            description: moment of inertia
+          - name: Mp
+            description: plastic moment capacity
+            datatype: array
+          - name: rho   
+            description: mass density
+          - name: jntoff
+            description: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j
         - state:
-          - u    : vector of total element displacements in global reference
-          - Du   : vector of element displacement increments from last convergence
-          - DDu  : vector of element displacement increments from last iteration
-          - ke   : element stiffness matrix in global reference; updated under ACTION = 'stif'
-          - p    : element resisting force vector in global reference; updated under ACTION = 'stif' or 'forc'
-          - Past : element history variables at last converged state
-          - Pres : current element history variables
-          - lamda: row vector of current load factor(s)
+          - name: u    
+            description: vector of total element displacements in global reference
+          - name: Du   
+            description: vector of element displacement increments from last convergence
+          - name: DDu  
+            description: vector of element displacement increments from last iteration
+          - name: ke   
+            description: element stiffness matrix in global reference; updated under ACTION = 'stif'
+          - name: p    
+            description: element resisting force vector in global reference; updated under ACTION = 'stif' or 'forc'
+          - name: Past 
+            description: element history variables at last converged state
+          - name: Pres 
+            description: current element history variables
+          - name: lamda
+            description: row vector of current load factor(s)
         - mass:
           - ml: lumped mass vector
           - mc: consistent mass matrix
         - post:
           - v: element deformations
           - q: element basic forces
-
     - name: LE2dFrm_wPdelta
       description: 2d linear elastic frame element with P-delta effect under linear or nonlinear geometry
       geometry: GeomTran_2dFrm
   - frame3d: null
   - truss2d: null
   - truss3d: null
+
+- name: HomoCircSecw1dMat
+  syntax: SecResp = HomoCircSecw1dMat (action,SecNo,ndm,SecData,SecState)
+  properties:
+    - name: R(1:2)  
+      description: outer radius and inner radius of section (default = R(1) only)
+    - name: nr      
+      description: no of integration points (fibers) over radius (default=5)(thus 2 x nr across diameter)
+    - name: nth     
+      description: no of integration points (fibers) in circumferential direction (used for 3d only),(default=10) 
+    - name: Rdrat   
+      description: ratio of inner to outer radius for switching to uniform dicretization
+    - name: IntTyp  
+      description: function name for section integration ('Midpoint' or 'Cubature')
+    - name: MatName 
+      description: function name for material uniaxial stress-strain relation
+    - name: MatData 
+      description: data structure with material property data
+
+- name: HomoRectSecw1dMat
+  syntax: SecResp = HomoRectSecw1dMat (action,SecNo,ndm,SecData,SecState) 
+  state: 
+  - name: e   
+    description: vector of total section deformations
+  - name: De  
+    description: vector of section deformation increments from last convergence
+  - name: DDe 
+    description: vector of section deformation increments from last iteration
+  - name: edot
+    description: vector of section deformation rates
+  - name: ks  
+    description: section stiffness matrix; returned under ACTION = 'stif'
+  - name: s   
+    description: section resisting force vector; returned under ACTION = 'stif' or 'forc'
+  - name: Past
+    description: section history variables at last converged state
+  - name: Pres
+    description: current section history variables
+  post:
+  - name: e     
+    description: section deformations
+  - name: s     
+    description: section stress resultants
+  - name: Mat{i}
+    description: material response information for post-processing (see material function with MatName)
+    properties:
+    - name: d      
+      description: section depth
+    - name: b      
+      description: section width
+    - name: ny     
+      description: no of integration points (fibers) in y (default = 10)
+    - name: nz     
+      description: no of integration points (fibers) in z (default = 1 for 2d and 10 for 3d)
+    - name: IntTyp 
+      description: function name for section integration
+    - name: MatName
+      description: function name for material uniaxial stress-strain relation
+    - name: MatData
+      description: data structure with material property data
+  state: 
+  - name: e   
+    description: vector of total section deformations
+  - name: De  
+    description: vector of section deformation increments from last convergence
+  - name: DDe 
+    description: vector of section deformation increments from last iteration
+  - name: edot
+    description: vector of section deformation rates
+  - name: ks  
+    description: section stiffness matrix; returned under ACTION = 'stif'
+  - name: s   
+    description: section resisting force vector; returned under ACTION = 'stif' or 'forc'
+  - name: Past
+    description: section history variables at last converged state
+  - name: Pres
+    description: current section history variables
+  post: 
+  - name: e     
+    description: section deformations
+  - name: s     
+    description: section stress resultants
+  - name: Mat{i}
+    description: material response information for post-processing (see material function with MatName)
+
+- name: HomoWFSecw1dMat
+  syntax: SecResp = HomoWFSecw1dMat (action,SecNo,ndm,SecData,SecState)
 
 
 # ## ElemResp

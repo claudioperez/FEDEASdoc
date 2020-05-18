@@ -1,5 +1,5 @@
 - name: BiLinElastic1dMat
-  description: uniaxial stress-strain relation for a bilinear elastic material
+  description: Uniaxial stress-strain relation for a bilinear elastic material
   syntax: MATRESP = BILINELASTIC1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
   actions:
     - option: chec
@@ -107,7 +107,7 @@
       description: y-pinching parameters under +ve and -ve deformation
 
 - name: BiLinInel1dMat
-  description: uniaxial stress-strain relation for bilinear inelastic material
+  description: Uniaxial stress-strain relation for bilinear inelastic material
   syntax: MATRESP = BiLinINEL1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
   action:
     chec: check material property data for omissions and returns default values in MATDATA
@@ -144,7 +144,7 @@
     sig: uniaxial stress
 
 - name: BiLinOrOr1dMat
-  description: uniaxial stress-strain relation for bilinear origin-oriented material
+  description: Uniaxial stress-strain relation for bilinear origin-oriented material
   syntax: MATRESP = BILINOROR1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
   action:
     data: print material properties in output file IOW
@@ -192,7 +192,7 @@
     sig : uniaxial stress
 
 - name: BiLinPKOr1dMat
-  description: uniaxial stress-strain relation for bilinear origin-oriented material
+  description: Uniaxial stress-strain relation for bilinear origin-oriented material
   syntax: MATRESP = BILINPKOR1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
   action:
     - chec: checks material property data for omissions and returns default values in MATDATA
@@ -230,7 +230,7 @@
     sig: uniaxial stress
 
 - name: GMP1DMAT
-  description: uniaxial stress-strain relation for Giuffre-Menegotto-Pinto hysteretic material
+  description: Uniaxial stress-strain relation for Giuffre-Menegotto-Pinto hysteretic material
   syntax: MATRESP = GMP1DMAT (ACTION,MATNO,MATDATA,MATSTATE)
   action:
     chec: checks material property data for omissions and returns default values in MATDATA
@@ -239,25 +239,50 @@
     stif: returns the material tangent modulus and the stress (tensor) in MATSTATE
     post: returns data structure MATPOST with post-processing information
   state:
-    eps   : total strain (tensor for 2d or 3d)
-    Deps  : strain increments from last convergence
-    DDeps : strain increments from last iteration
-    epsdot: strain rate (tensor for 2d or 3d)
-    km    : material tangent modulus; returned under ACTION = 'stif'
-    sig   : stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
-    Past  : material history variables at last converged state
-    Pres  : current values of material history variables
-  data:
-    E   : initial modulus
-    fy  : yield strength
-    b   : strain hardening ratio
-    R0  : exp transition elastic-plastic  (default value 20)
-    cR1 : coefficient for variation of R0 (default value 0.925)
-    cR2 : coefficient for variation of R0 (default value 0.15)
-    a1  : isotropic hardening (IH) coefficient in compression (default value 0)
-    a2  : trigger strain ductility for IH      in compression (default value 0)
-    a3  : isotropic hardening (IH) coefficient in tension     (default value 0)
-    a4  : trigger strain ductility for IH      in tension     (default value 0) 
+    - name: eps   
+      description: total strain (tensor for 2d or 3d)
+    - name: Deps  
+      description: strain increments from last convergence
+    - name: DDeps 
+      description: strain increments from last iteration
+    - name: epsdot
+      description: strain rate (tensor for 2d or 3d)
+    - name: km    
+      description: material tangent modulus; returned under ACTION = 'stif'
+    - name: sig   
+      description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+    - name: Past  
+      description: material history variables at last converged state
+    - name: Pres  
+      description: current values of material history variables
+  parameters:
+    - name: E  
+      description: initial modulus
+    - name: fy 
+      description: yield strength
+    - name: b  
+      description: strain hardening ratio
+    - name: R0 
+      description: exp transition elastic-plastic  
+      default: 20
+    - name: cR1
+      description: coefficient for variation of R0 
+      default: 0.925
+    - name: cR2
+      description: coefficient for variation of R0 
+      default: 0.15
+    - name: a1 
+      description: isotropic hardening (IH) coefficient in compression 
+      default: 0.0
+    - name: a2 
+      description: trigger strain ductility for IH      in compression 
+      default: 0.0
+    - name: a3 
+      description: isotropic hardening (IH) coefficient in tension     
+      default: 0.0
+    - name: a4 
+      description: trigger strain ductility for IH      in tension     
+      default: 0.0
   post:
     eps: total strain
     sig: uniaxial stress
@@ -272,20 +297,39 @@
     stif: returns the material tangent modulus and the stress (tensor) in MATSTATE
     post: returns data structure MATPOST with post-processing information
   state:
-    eps   : total strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
-    Deps  : strain increments from last convergence
-    DDeps : strain increments from last iteration
-    epsdot: strain rate tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
-    km    : material stiffness matrix; returned under ACTION = 'stif'
-    sig   : stress tensor in 6x1 vector form; returned under ACTION = 'stif' or 'forc'
-    Past  : material history variables at last converged state
-    Pres  : current values of material history variables
-  data:
-    E : initial modulus
-    fy: yield strength
-    nu: Poisson ratio               (default = 0)
-    Hk: kinematic hardening modulus (default = 0)
-    Hi: isotropic hardening modulus (default = 0)
+    - name: eps   
+      description: total strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+    - name: Deps  
+      description: strain increments from last convergence
+    - name: DDeps 
+      description: strain increments from last iteration
+    - name: epsdot
+      description: strain rate tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+    - name: km    
+      description: material stiffness matrix; returned under ACTION = 'stif'
+    - name: sig   
+      description: stress tensor in 6x1 vector form; returned under ACTION = 'stif' or 'forc'
+    - name: Past  
+      description: material history variables at last converged state
+    - name: Pres  
+      description: current values of material history variables
+  parameters:
+    - name: E 
+      description: initial modulus
+    - name: fy
+      description: yield strength
+    - name: nu
+      description: Poisson ratio               
+      default: 0.0
+      datatype: float
+    - name: Hk
+      description: kinematic hardening modulus 
+      default: 0.0
+      datatype: float
+    - name: Hi
+      description: isotropic hardening modulus 
+      default: 0.0
+      datatype: float
   post:
     eps  : strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
     sig  : stress tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
@@ -337,13 +381,16 @@
     - name: fy
       description: yield strength
     - name: Hi
-      description: isotropic plastic   modulus
+      description: isotropic plastic modulus
     - name: Hk
       description: kinematic hardening modulus
   post:
-    eps  : total strain
-    sig  : uniaxial stress
-    eps_p: plastic strain
+    - name: eps  
+      description: total strain
+    - name: sig  
+      description: uniaxial stress
+    - name: eps_p
+      description: plastic strain
 - name: MANDERCONCR1DMAT
   description: hysteretic concrete stress-strain relation after Mander
   syntax: MATRESP = MANDERCONCR1DMAT (ACTION,MATNO,MATDATA,MATSTATE)

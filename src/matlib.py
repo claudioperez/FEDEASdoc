@@ -6,7 +6,7 @@ with open('matlib.yaml') as read_file:
 with open('../docs/matlib.md','w+') as output:
     output.write('# Material Library\n')
     for mat in lib:
-        output.write('## `{}`\n'.format(mat['name']))
+        output.write('## {}\n'.format(mat['name']))
         output.write('<details>\n')
         output.write('<summary>{}</summary>\n'.format( mat['description']) )
         try: 
