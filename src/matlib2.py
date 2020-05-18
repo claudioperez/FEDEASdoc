@@ -6,8 +6,10 @@ def detail2(item,output):
     output.write('<tr class="hide-table-padding"> \n <td></td> \
                   <td colspan="3">  \
                   <div id="collapse{}" class="collapse in p-3">'.format(item['name']))
+    output.write('<div class="row">')
+    output.write('<div class="col-6">')
     try: 
-        output.write('\nParameters\n')
+        output.write('\n<b>Parameters</b>\n')
         output.write('<ul>\n')
         for param in item['parameters']:
             output.write('<li> <code>{}</code>: {}</li>\n'.format(param['name'],param['description']) )
@@ -15,15 +17,20 @@ def detail2(item,output):
     except:
         pass
     try: 
-        output.write('\nState\n')
+        output.write('\n<b>State</b>\n')
         output.write('<ul>\n')
         for param in item['state']:
             output.write('<li> <code>{}</code>: {}</li>\n'.format(param['name'],param['description']) )
         output.write('</ul>\n')
     except:
         pass
-        
-    output.write('</div></td> \n </tr>')
+    output.write('</div>\n')
+
+    try:
+        output.write('<div class="col-6"><img src="../img/{}.png"></div>'.format(item['name'])) 
+    except: 
+        pass
+    output.write('</div>\n</td> \n </tr>')
 
 
 def row2(item,output):
