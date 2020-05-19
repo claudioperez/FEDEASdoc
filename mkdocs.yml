@@ -6,6 +6,9 @@ nav:
 - Getting Started:
   - Quick Start: 'quick.md'
   - Data Structures: 'DataStructs.md'
+  - Libraries:
+    - Materials: 'matlib.md'
+    - Elements: 'elemlib.md'
   - Material Library: 'matlib.md'
   - Nonlinear Elements: 'elemlib.md'
   - Frequently-asked questions: 'faq.md'
@@ -27,14 +30,12 @@ nav:
 
 theme:
   name: lumen
-  # nav_style: dark
   highlightjs: true # Code snippet syntax highlighting
 
 theme_dir: custom_theme
 
 extra_css:
     - css/extra.css
-    # - css/second_extra.css
 
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
