@@ -2,6 +2,17 @@
 
 Notes to developers for building/contributing to the FEDEASLab website
 
+## Tools
+
+### Preliminary
+
+1. Create a Github account to gain access to files.
+2. Download Anaconda
+
+### Other
+
+- [Pandoc](#2-pure-text---data-structuresfundamentals)
+
 ## Three types of components
 
 ### 1. Text from code - API/Functions
@@ -38,10 +49,6 @@ These pages are intimately linked with code.
 
 The layout of the website is specified in the file `/mkdocs.yml`. For more information go to [mkdocs.org](https://www.mkdocs.org).
 
-## Styling
-
-Colors schemes and fonts used throughout the site are specified in the file `css/extra.css`.
-
 ## Other notes
 
 ### Directory layout
@@ -57,6 +64,9 @@ Colors schemes and fonts used throughout the site are specified in the file `css
         ├── FEDEASLab.md        # 
         ├── index.md 
             └── README.md
+### Styling
+
+Colors schemes and fonts used throughout the site are specified in the file `css/extra.css`.
 
 ### Commands
 
