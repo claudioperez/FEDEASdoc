@@ -1,4 +1,4 @@
-# Developer Notes
+# Read Me
 
 Notes to developers for building/contributing to the FEDEASLab website
 
