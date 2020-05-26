@@ -2,19 +2,29 @@
 
 Notes to developers for building/contributing to the FEDEASLab website
 
-## Tools
+## Tool Overview
 
 ### Preliminary
 
-1. Create a Github account to gain access to files.
-2. Download Anaconda
+1. **Git/Version control**: Create a Github account to gain access to files.
+   1. FEDEASLab V3 - V5 example
+2. **Python and package management:**
+   1. Download Anaconda
 
-### Other
+### Secondary
 
-- [Pandoc](#2-pure-text---data-structuresfundamentals)
-- [yaml](https://yaml.org/spec/1.1/#id857168)
+1. **Data serialization**: [yaml](https://yaml.org/spec/1.1/#id857168), [JSON]()
+2. **Static site building**:
+   - Dynamic Sites: (Wordpress)
+   - [mkdocs](empty) (Md) vs [Sphinx](empty) (RST)
+     - Markdown arguably has a larger developer base than RST with more tools - *arguably*.
+     - Markdown is easier/more intuitive than RST.
+  
+### Extra
 
-## Three types of components
+1. **Document translation**:  [Pandoc](#2-pure-text---data-structuresfundamentals)
+
+## Site Overview
 
 ### 1. Text from code - API/Functions
 
