@@ -14,7 +14,7 @@ Notes to developers for building/contributing to the FEDEASLab website
 ### Secondary
 
 1. **Data serialization**: [yaml](https://yaml.org/spec/1.1/#id857168), [JSON]()
-2. **Static site building**:
+2. **Static site**: [markdown](https://commonmark.org/)
    - Dynamic Sites: (Wordpress)
    - [mkdocs](empty) (Md) vs [Sphinx](empty) (RST)
      - Markdown arguably has a larger developer base than RST with more tools - *arguably*.
@@ -28,7 +28,7 @@ Notes to developers for building/contributing to the FEDEASLab website
 
 ### 1. Text from code - API/Functions
 
-> [Github markdown cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+> [Markdown](https://commonmark.org/help/)
 
 These pages are automatically extracted from code.
 
