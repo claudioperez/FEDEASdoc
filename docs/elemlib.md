@@ -1,3 +1,6 @@
+---
+hide_toc: true
+...
 # Element Library<div class="table-responsive">
 <table class="table"><thead> 
          <tr> 

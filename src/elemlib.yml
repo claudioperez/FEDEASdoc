@@ -2,7 +2,9 @@
 
 - name: Dinel2dFrm_EBwDF 
   description: 2d-frame element with distributed inelasticity (displacement formulation)
-  formulation: primal
+  reference-formulations: 
+    - doi: null 
+    - variational-fields: null
   configuration:
     - name: Geom   
       description: character variable for geometric transformation of node variables
@@ -45,7 +47,14 @@
 
 - name: Dinel2dFrm_EBwFF 
   description: 2d-frame element with distributed inelasticity (force formulation)
-  formulation: primal-dual
+  reference-formulations:
+    - doi: null
+      variational-fields: [stress, strain, displacement]
+      configuration: 
+        Geom: linear
+        MR: null 
+
+
   geometry: GeomTran_2dFrm
   configuration:
     - name: Geom    
@@ -54,7 +63,12 @@
       default: linear
     - name: MR      
       description: moment release code (0=cont,1=hinge) 
-      default: [0; 0]
+      default: [[0], [0]]
+      options:
+        - [[0], [0]]
+        - [[1], [0]]
+        - [[0], [1]]
+        - [[1], [1]]
     - name: jntoff  
       description: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j
     - name: nIP     
@@ -317,6 +331,7 @@
       description: section stress resultants
     - name: Mat{i}
       description: material response information for post-processing (see material function with MatName)
+      type: list(object)
   parameters:
     - name: d      
       description: section depth

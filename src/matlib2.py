@@ -86,6 +86,7 @@ with open('matlib.yaml') as read_file:
     data = yaml.full_load(read_file)
 
 with open('../docs/matlib.md','w+') as output:
+    output.write('---\nhide_toc: true \n...\n')
 
     output.write('# Material Library')
 

@@ -1,4 +1,5 @@
 site_name: FEDEASLab
+site_dir: ../../FEDEASdocs
 
 nav:
 - Home: 'index.md'
@@ -6,22 +7,20 @@ nav:
 - Getting Started:
   - Quick Start: 'quick.md'
   - Data Structures: 'DataStructs.md'
-  - Libraries:
-    - Materials: 'matlib.md'
-    - Elements: 'elemlib.md'
-  - Material Library: 'matlib.md'
-  - Nonlinear Elements: 'elemlib.md'
   - Frequently-asked questions: 'faq.md'
 
 - Functions:
   - Index: 'FEDEASLab.md'
-  - Basic: 'FEDEASLab/Basic/FEDEASLab.md'
-  - Dynamics: 'FEDEASLab/Dynamics/FEDEASLab.md'
+  - Libraries:
+    - Materials: 'matlib.md'
+    - Elements: 'elemlib.md'
+  - Basic analysis: 'FEDEASLab/Basic/FEDEASLab.md'
+  - Transient analysis: 'FEDEASLab/Dynamics/FEDEASLab.md'
   - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
-  - Element Library: 'FEDEASLab/Element_Library/FEDEASLab.md'
+  # - Element Library: 'FEDEASLab/Element_Library/FEDEASLab.md'
   - General: 'FEDEASLab/General/FEDEASLab.md'
   # - Material Library: 'FEDEASLab/Material_Library/FEDEASLab.md'
-  - Material Library: matlib.md
+  # - Material Library: matlib.md
   - Section Library: 'FEDEASLab/Section_Library/FEDEASLab.md'
   - Solution Library: 'FEDEASLab/Solution_Library/FEDEASLab.md'
   - Utilities: 'FEDEASLab/Utilities/FEDEASLab.md'
@@ -31,8 +30,9 @@ nav:
 theme:
   name: lumen
   highlightjs: true # Code snippet syntax highlighting
+  custom_dir: docs/theme 
 
-theme_dir: custom_theme
+# theme_dir: custom_theme
 
 extra_css:
     - css/extra.css
