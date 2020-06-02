@@ -131,7 +131,7 @@ The displaying of equations typeset in Latex is handled by the python package `p
 
 There are two groups of styles, block and flow. Block styles use indentation to denote nesting and scope within the document. In contrast, flow styles rely on explicit indicators to denote nesting and scope [3.2.3.1. Node Styles].
 
-There are 5 styles of scalars in YAML: plain, single-quoted, double-quoted, literal, and folded:
+There are 5 styles of scalars in YAML: plain, single-quoted, double-quoted, literal, and folded
 
 ### References
 

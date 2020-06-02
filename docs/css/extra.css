@@ -28,9 +28,12 @@ a {
 }
 
 .navbar-brand {
-  font-family: "freight-text-pro" !important;
-  font-weight: 200;
-  font-style: normal;
+  /* https://www.dafontfree.net/freefonts-californian-fb-f64598.htm */
+  font-family: "Californian FB" !important;
+  font-size: 1.49375rem
+  /* font-family: "freight-text-pro" !important; */
+  /* font-weight: 200; */
+  /* font-style: normal; */
 }
 
 /* Added for collapsible table */
