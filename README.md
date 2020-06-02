@@ -1,20 +1,28 @@
 # Read Me
 
+This document outlines the basic structure of the FEDEASLab documentation website, and the primary tools which are used in its implementation. 
 
+The current repository [(claudioperez/FEDEASdoc)]() contains the source files from which FEDEASLab documentation is built. The static website files which are generated from the source in this repository are hosted in the separate [claudioperes/FEDEASdoc**s**](https://github.com/claudioperez/FEDEASdocs) repository, which is currently serving the website.
 
-## Site Overview
+## Site structure
 
 -------
+
+This section outlines 3 basic types of pages used by the website, and explains the different workflows they entail:
+
+1. Pages which are automatically generated from comments in program source code.
+2. Pages which are manually written for the purpose of explaining certain concepts
+3. Pages which are deeply linked to scripts or code, but also contain a lot of written content (e.g. examples).
 
 ### 1. Text from code - API/Functions
 
 > [Markdown](https://commonmark.org/help/)
 
-These pages are automatically extracted from code.
+These pages are automatically extracted from comments or docstrings in source code files, and serve the purpose of documenting specific function APIs.
 
 #### To build API documentation from a FEDEAS release.
 
-*Assuming no changes are made to the current `m2html` scripts, which could easily be done.*
+*Assuming no changes are made to the current `m2html` scripts.*
 
 1. build docs with m2html
 2. copy created directories into `docs/FEDEASLab/`
@@ -28,7 +36,7 @@ These pages are automatically extracted from code.
 
 >[Pandoc](https://pandoc.org/MANUAL.html)
 
-These pages describe aspects of FEDEASLab beyond what is written in the code comments. These pages are not linked to any code files.
+These pages describe aspects of FEDEASLab in detail beyond what is written in the code comments. These pages are not directly linked to any program files.
 
 #### Fundamental elements
 
