@@ -1,30 +1,10 @@
 # Read Me
 
-Notes to developers for building/contributing to the FEDEASLab website
 
-## Tool Overview
-
-### Preliminary
-
-1. **Git/Version control**: Create a Github account to gain access to files.
-   1. FEDEASLab V3 - V5 example
-2. **Python and package management:**
-   1. Download Anaconda
-
-### Secondary
-
-1. **Data serialization**: [yaml](https://yaml.org/spec/1.1/#id857168), [JSON]()
-2. **Static site**: [markdown](https://commonmark.org/)
-   - Dynamic Sites: (Wordpress)
-   - [mkdocs](empty) (Md) vs [Sphinx](empty) (RST)
-     - Markdown arguably has a larger developer base than RST with more tools - *arguably*.
-     - Markdown is easier/more intuitive than RST.
-  
-### Extra
-
-1. **Document translation**:  [Pandoc](#2-pure-text---data-structuresfundamentals)
 
 ## Site Overview
+
+-------
 
 ### 1. Text from code - API/Functions
 
@@ -32,7 +12,7 @@ Notes to developers for building/contributing to the FEDEASLab website
 
 These pages are automatically extracted from code.
 
-#### To build documentation from a FEDEAS release.
+#### To build API documentation from a FEDEAS release.
 
 *Assuming no changes are made to the current `m2html` scripts, which could easily be done.*
 
@@ -56,11 +36,38 @@ These pages describe aspects of FEDEASLab beyond what is written in the code com
 
 These pages are intimately linked with code.
 
+## Tool Overview
+
+----------
+
+### Preliminary
+
+1. [**Github**]()
+   File sharing, version control and site serving (via Github Pages)
+
+2. **Anaconda**
+   Provides an implementation of Python which is required to run some of the other tools. In addition to Python, Anaconda also 
+
+### Secondary
+
+1. **Data serialization**: [yaml](https://yaml.org/spec/1.1/#id857168), [JSON]()
+2. **Static site**: [markdown](https://commonmark.org/)
+   - Dynamic Sites: (Wordpress)
+   - [mkdocs](empty) (Md) vs [Sphinx](empty) (RST)
+     - Markdown arguably has a larger developer base than RST with more tools - *arguably*.
+     - Markdown is easier/more intuitive than RST.
+  
+### Extra
+
+1. **Document translation**:  [Pandoc](#2-pure-text---data-structuresfundamentals)
+
 ## Layout
 
 The layout of the website is specified in the file `/mkdocs.yml`. For more information go to [mkdocs.org](https://www.mkdocs.org).
 
 ## Other notes
+
+-------
 
 ### Directory layout
 
@@ -83,19 +90,11 @@ Colors schemes and fonts used throughout the site are specified in the file `css
 
 #### Powershell / Cmd
 
-Build site html
+Build site html files.
 > `mkdocs build`
 
-Create a local server for editing.
+Create a local server for real-time editing.
 > `mkdocs serve`
-
-Deploy to Github pages.
-> `mkdocs gh-deploy`
->
-> 1. Run command above while signed in to master branch.
-> 2. Once build is complete, if mkdocs fails to push to gh-pages brance, do so manually as follows:
->   - In Gh-Desktop switch to gh-pages brance **and transfer changes**.
->   - Push to gh-pages branch origin
 
 Convert all html files in the active directory to markdown.
 > gci -r -i *.html |foreach{$md=$_.directoryname+"\"+$_.basename+".md";pandoc $_.name -o $md}
