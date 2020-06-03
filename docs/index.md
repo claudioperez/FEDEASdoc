@@ -9,7 +9,6 @@ full_width: true
 
 <header>
 
-
 <div class="hero position-relative overflow-hidden p-3 text-center text-dark">
     <div class="col-md-5 p-lg-1 mx-auto my-5">
     <!-- <img src="_static/FEDEASLab-logo.svg" style="max-width: 30rem;" alt="FEDEASLab logo"> -->
@@ -40,7 +39,6 @@ full_width: true
 
 </header>
 <main role="main">
-    <!-- Wrap the rest of the page in another container to center all the content. -->
     <div class="container marketing p-md-5">
 
     <div class="row featurette">
@@ -49,11 +47,9 @@ full_width: true
         <p class="lead">Post-processing is accommodated in the program by generating a data object that carries all important material, element and structural information for plotting or printing. Several functions that address basic post-processing tasks are provided. The user can easily enhance and extend the current capabilities.</p>
 
         <a class="btn btn-outline-secondary" href="http://FEDEASLab/linktoPostlib.html" role="button">Post Library &raquo;</a>
-        <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fbasics.ipynb" role="button">Link 2 &raquo;</a>
+        <a class="btn btn-secondary" href="https://possibly-link-to-binder-example" role="button">Link 2 &raquo;</a>
         </div>
     </div>
-
-
 
     <hr class="featurette-divider">
 
@@ -105,7 +101,7 @@ full_width: true
 <section id="supporters">
 <div class="container supporters">
     <h2>Acknowledgements</h2>
-    <p class="lead">FEDEASLab development has been made possible through the following current and past supportorters:<p>
+    <p class="lead">FEDEASLab development has been made possible through the following past and present supportorters:<p>
     <div class="row">
     <div class="col supporter">
         <a href="https://ce.berkeley.edu/programs/semm"><img src="img/UCBEngineering_logo.png" alt="SEMM logo"></a>
@@ -125,10 +121,36 @@ full_width: true
 </div>
 </section>
 
+<hr class="featurette-divider">
+
+<!-- </section> -->
+
 </main>
 
+<!-- <section id="ucb-fea"> -->
+<div class="container supporters">
+    <h3>UC Berkeley Family of FEA Tools</h3>
+    <div class="row">
+    <div class="col">
+        <a href="https://ce.berkeley.edu/programs/semm"><img src="img/logo.png" alt="SEMM logo"></a>
+    </div>
+    <div class="col">
+        <a href="https://www.support.link.2"><img src="_static/support_logo_2.png" alt="FEAP"></a>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+        <a href="https://www.support_link3.missing"><img src="_static/support_logo_3.png" alt="OpenSees"></a>
+    </div>
+    <div class="col">
+        <a href=""><img src="_static/logo.png" alt="SimCenter"></a>
+    </div>
+    </div>
+</div>
 <!-- Code highlighting -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-python.min.js"></script>
 
 </body>
+
+<!-- Claudio Perez  -->
