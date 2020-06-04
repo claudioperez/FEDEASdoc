@@ -1,8 +1,8 @@
 # Read Me
 
-This document outlines the basic structure of the FEDEASLab documentation website, and the primary tools which are used in its implementation. 
+This document outlines the basic structure of the FEDEASLab documentation website, and the primary tools which are used for it's development.
 
-The current repository [(claudioperez/FEDEASdoc)]() contains the source files from which FEDEASLab documentation is built. The static website files which are generated from the source in this repository are hosted in the separate [claudioperes/FEDEASdoc**s**](https://github.com/claudioperez/FEDEASdocs) repository, which is currently serving the website.
+The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files which are generated from the source in this repository are hosted in the separate [claudioperez/FEDEASdoc**s**](https://github.com/claudioperez/FEDEASdocs) repository, which is currently serving the website.
 
 ## Site structure
 
@@ -11,16 +11,14 @@ The current repository [(claudioperez/FEDEASdoc)]() contains the source files fr
 This section outlines 3 basic types of pages used by the website, and explains the different workflows they entail:
 
 1. Pages which are automatically generated from comments in program source code.
-2. Pages which are manually written for the purpose of explaining certain concepts
+2. Pages which are manually written for the purpose of explaining certain concepts.
 3. Pages which are deeply linked to scripts or code, but also contain a lot of written content (e.g. examples).
 
-### 1. Text from code - API/Functions
-
-> [Markdown](https://commonmark.org/help/)
+### Type I: Text from code - API/Functions
 
 These pages are automatically extracted from comments or docstrings in source code files, and serve the purpose of documenting specific function APIs.
 
-#### To build API documentation from a FEDEAS release.
+The following steps are currently being followed to build API documentation from a FEDEASLab release:
 
 *Assuming no changes are made to the current `m2html` scripts.*
 
@@ -32,65 +30,76 @@ These pages are automatically extracted from comments or docstrings in source co
 2. Change file extensions from .html to .md.
 3. *delete* `<head>` section from files
 
-### 2. Pure text - Data Structures/Fundamentals
+### Type II: Pure text - Data Structures/Fundamentals
 
->[Pandoc](https://pandoc.org/MANUAL.html)
+Type II pages describe aspects of FEDEASLab in detail beyond what is written in the code comments. These pages are not directly linked to any program files and are provided directly in either Markdown or HTML files.
 
-These pages describe aspects of FEDEASLab in detail beyond what is written in the code comments. These pages are not directly linked to any program files.
+#### Latex documents
 
-#### Fundamental elements
+ Markdown and HTML files can be automatically generated from Latex using tools like [Pandoc](https://pandoc.org/MANUAL.html). A simple example of this conversion is presented. If interest arises in this method, a system can be arranged to accomodate more complex document elements such as custom Latex definitions and Bibtex referencing.
 
-### 3. Text with code - Examples
+#### Data Structures
 
-These pages are intimately linked with code.
+### Type III: Text with code - Examples
+
+These pages are intimately linked with code, but contain substantial blocks of writing. Examples of this page type include annotated application demonstrations and documents with dynamic or data-driven figures. Ideal source file formats include notebooks (.ipynb, .mlx).
 
 ## Tool Overview
 
-----------
+-------
 
-### Preliminary
+### Primary
 
-1. [**Github**]()
+1. [**Github**]() \
    File sharing, version control and site serving (via Github Pages)
 
-2. **Anaconda**
-   Provides an implementation of Python which is required to run some of the other tools. In addition to Python, Anaconda also 
+2. **Anaconda** \
+   Provides an implementation of Python which is required to run some of the other tools (e.g. mkdocs, sphinx, plotting). In addition to Python, Anaconda also provides a package manager which allows the organized management of software and dependencies.
+
+   To install all project dependencies, run `conda env create -f environment.yml`
+   - `conda config --add channels conda-forge`
+   - `conda install mkdocs`
+   - `conda install python-markdown-math`
+   - `conda install mkdocs-bootswatch`
 
 ### Secondary
 
-1. **Data serialization**: [yaml](https://yaml.org/spec/1.1/#id857168), [JSON]()
-2. **Static site**: [markdown](https://commonmark.org/)
+1. [**JSON**](https://www.json.org/json-en.html) \
+    Also see [yaml](https://yaml.org/spec/1.1/#id857168).
+2. **Static site**:
    - Dynamic Sites: (Wordpress)
    - [mkdocs](empty) (Md) vs [Sphinx](empty) (RST)
      - Markdown arguably has a larger developer base than RST with more tools - *arguably*.
      - Markdown is easier/more intuitive than RST.
+3. [**Markdown**](https://commonmark.org/)
+   - Read about markdown from its creator [here](https://daringfireball.net/projects/markdown/syntax)
+   - Find a quick markdown reference [here](https://daringfireball.net/projects/markdown/syntax)
   
 ### Extra
 
-1. **Document translation**:  [Pandoc](#2-pure-text---data-structuresfundamentals)
-
-## Layout
-
-The layout of the website is specified in the file `/mkdocs.yml`. For more information go to [mkdocs.org](https://www.mkdocs.org).
+1. [**Pandoc**](#2-pure-text---data-structuresfundamentals)
 
 ## Other notes
 
 -------
 
-### Directory layout
+### Site layout
+
+The layout of the website is specified in the file `/mkdocs.yml`. For more information go to [mkdocs.org](https://www.mkdocs.org).
+
+### Project layout
 
     docs
-    ├── css                     # 
-    ├── src                     #
-    ├── FEDEASLab.md            # 
-    ├── index.md                # 
-    ├── css/                     # 
-    ├── src/                    #
+    ├── css/                    # Files that dictate site styling. 
+    ├── src/                    # File that are used to generate pages
+    ├── FEDEASLab.md            # Index page, generated by `m2html`
+    ├── index.md                # Home page
     └── FEDEASLab/ 
         ├── FEDEASLab.md        # 
         ├── index.md 
             └── README.md
-### Styling
+
+### Site styling
 
 Colors schemes and fonts used throughout the site are specified in the file `css/extra.css`.
 
@@ -113,27 +122,27 @@ Convert all html files in the active directory to markdown.
 
 >make doc-serve
 
-### Resources
-
-
-
 ### Equation Handling
 
 Details regarding equation handling and supported Latex commands can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/).
 
-The displaying of equations typeset in Latex is handled by the python package `python-markdown-math`. This can be installed by running the following command in an Anaconda-activated command line environment. 
+The displaying of equations typeset in Latex is handled by the python package `python-markdown-math`. This can be installed by running the following command in an Anaconda-activated command line environment.
 
 > `conda install -c conda-forge python-markdown-math`
 
 [stackoverflow answer](https://stackoverflow.com/questions/27882261/mkdocs-and-mathjax/31926644#31926644)
 
-### YAML
+### YAML Notes
 
 There are two groups of styles, block and flow. Block styles use indentation to denote nesting and scope within the document. In contrast, flow styles rely on explicit indicators to denote nesting and scope [3.2.3.1. Node Styles].
 
 There are 5 styles of scalars in YAML: plain, single-quoted, double-quoted, literal, and folded
 
-### References
+### Json Tools
+
+- [Schema Forms](http://schemaform.io/)
+
+### Inspiration
 
 Layout references
 

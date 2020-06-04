@@ -1,0 +1,5 @@
+defaults:
+  - conda-forge
+dependencies:
+  - mkdocs
+  - python-markdown-math
