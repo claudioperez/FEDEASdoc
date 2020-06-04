@@ -1,6 +1,6 @@
 
 site_name: FedeasLab
-site_dir: ../../FEDEASdocs
+site_dir: ../FEDEASdocs
 
 nav:
 - Home: 'index.md'
