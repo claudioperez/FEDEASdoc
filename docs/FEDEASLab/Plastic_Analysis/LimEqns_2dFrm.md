@@ -40,7 +40,6 @@ Returns a matrix of element limit-surface equations, `LimEqns`, for the frame el
   \end{array}\right]
   $$
   
-  
   $$\mathrm{Q}_{\mathrm{pi}}^{(+)} \rightarrow
   \left[\begin{array}{ll}
   \mathrm{Q}_{\mathrm{pi}}^{(+)} & \mathrm{Q}_{\mathrm{pi}}^{(+)}   \\
@@ -57,8 +56,6 @@ Returns a matrix of element limit-surface equations, `LimEqns`, for the frame el
 
    If an $n \times 3$ array is passed, $n$ piecewise linear axial-moment-shear interaction equations of the following form will be applied:
    $$a_n \frac{|N|}{N_{p}} + b_n \frac{|M|}{M_{p}} + c_n \frac{|V|}{V_{p}} \leq 1.0$$
-
-
 
 ### Case III: NVM interaction
 -----------------------------
