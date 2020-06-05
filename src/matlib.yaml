@@ -391,6 +391,7 @@
       description: uniaxial stress
     - name: eps_p
       description: plastic strain
+
 - name: MANDERCONCR1DMAT
   description: hysteretic concrete stress-strain relation after Mander
   syntax: MATRESP = MANDERCONCR1DMAT (ACTION,MATNO,MATDATA,MATSTATE)
