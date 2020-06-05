@@ -14,12 +14,13 @@ nav:
   - Libraries:
     - Materials: 'matlib.md'
     - Elements: 'elemlib.md'
+    - Section Library: 'FEDEASLab/Section_Library/FEDEASLab.md'
+    - Solution Library: 'FEDEASLab/Solution_Library/FEDEASLab.md'
   - Basic analysis: 'FEDEASLab/Basic/FEDEASLab.md'
   - Transient analysis: 'FEDEASLab/Dynamics/FEDEASLab.md'
   - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
   - Core: 'FEDEASLab/General/FEDEASLab.md'
-  - Section Library: 'FEDEASLab/Section_Library/FEDEASLab.md'
-  - Solution Library: 'FEDEASLab/Solution_Library/FEDEASLab.md'
+  
   - Utilities: 'FEDEASLab/Utilities/FEDEASLab.md'
 
 - Examples: examples/index.md
