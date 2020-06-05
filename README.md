@@ -56,7 +56,7 @@ These pages are intimately linked with code, but contain substantial blocks of w
 2. **Anaconda** \
    Provides an implementation of Python which is required to run some of the other tools (e.g. mkdocs, sphinx, plotting). In addition to Python, Anaconda also provides a package manager which allows the organized management of software and dependencies.
 
-   To install all project dependencies, run `conda env create -f environment.yml`
+   To install all project dependencies, run `conda env create -f environment.yml`, or run each of the following commands sequentially:
    - `conda config --add channels conda-forge`
    - `conda install mkdocs`
    - `conda install python-markdown-math`
@@ -130,13 +130,13 @@ The displaying of equations typeset in Latex is handled by the python package `p
 
 > `conda install -c conda-forge python-markdown-math`
 
-[stackoverflow answer](https://stackoverflow.com/questions/27882261/mkdocs-and-mathjax/31926644#31926644)
+<!-- [stackoverflow answer](https://stackoverflow.com/questions/27882261/mkdocs-and-mathjax/31926644#31926644) -->
 
 ### YAML Notes
 
-There are two groups of styles, block and flow. Block styles use indentation to denote nesting and scope within the document. In contrast, flow styles rely on explicit indicators to denote nesting and scope [3.2.3.1. Node Styles].
+"There are two groups of styles, block and flow. Block styles use indentation to denote nesting and scope within the document. In contrast, flow styles rely on explicit indicators to denote nesting and scope" [3.2.3.1. Node Styles].
 
-There are 5 styles of scalars in YAML: plain, single-quoted, double-quoted, literal, and folded
+"There are 5 styles of scalars in YAML: plain, single-quoted, double-quoted, literal, and folded"
 
 ### Json Tools
 
