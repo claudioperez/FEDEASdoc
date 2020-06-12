@@ -39,9 +39,7 @@ The discrete problem may then be stated as follows:
 > Given a vector, $\hat{\mathbf{x}}$, of $n_{IP}$ integration point locations, and a vector of corresponding stresses, $\mathbf{y}_\tau$ at instant $\tau$, find the following set, $Y$, of admissible stress vectors, $\mathbf{y}$:
 >$$Y_\tau = \{
 >  \mathbf{y} \in \mathbb{R}^{n_{IP}} \mid
->      (\exists a \in \mathbb{R})(\exists m \in \mathbb{R})[\mathbf{y} - \mathbf{y}_\tau = a + m\hat{\mathbf{x}}] \text{ and }
-      (\exists i \in N)[ y_i = \sigma_y ]
-\} $$
+>      (\exists a \in \mathbb{R})(\exists m \in \mathbb{R})[\mathbf{y} - \mathbf{y}_\tau = a + m\hat{\mathbf{x}}] \text{ and } (\exists i \in N)[ y_i = \sigma_y ]\} $$
 >which is the set of all discrete stress vectors, $\mathbf{y}$, such that there exists an admissible strain increment $\Delta \varepsilon = \Delta\varepsilon_a + \Delta\kappa \mathbf{x}$ which will produce the elastic stress increment $\mathbf{y} - \mathbf{y}_\tau = E \Delta\varepsilon$, and there exists an element, $y_i$, in $\mathbf{y}$ that is equal to the limit stress.
 
 Unlike similar discrete approximations of the **plastic** limit surface, the accuracy of this approximation for the **elastic** limit surface is dependent on the loading history. Furthermore, this dependence is very difficult to predict. As it is related to the distance between integration points and extrema in the residual stress field. 
@@ -56,14 +54,12 @@ The function `lim_clip` is formulated in terms of an arbitrary set of abscisssas
 
 The function `plot_evol` is used in these examples to produce a figure with two plots. The plot on the left shows the normalized stress vectors $y_k$ (also `Y_lim(:,k)`) that correspond to points in the normalized resultant plot on the right. It should be noted, however, that the stress distribution corresponding to the *current* stress distribution is not shown.
 
-Examples are executed through the following script:
+Examples are executed using the following Matlab script:
 
 <script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=surf_ex_2.m"></script>
 
 ```{include=surf_ex_2.m .matlab}
 ```
-
-
 
 ### Example 1 - Path O-A-B-O' (`LoadOpt=3`)
 

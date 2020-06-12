@@ -40,6 +40,7 @@ extra_javascript:
 
 markdown_extensions:
     - tables
-    - mdx_math
+    - mdx_math:
+        enable_dollar_delimiter: true 
     - meta
     # - mdx_snippets
