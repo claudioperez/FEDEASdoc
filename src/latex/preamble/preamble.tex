@@ -1,0 +1,42 @@
+\documentclass[titlepage,table,xcdraw]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{soul}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{float}
+\geometry{margin=1in}
+
+% section numbers in fig/table numbers
+\renewcommand{\thefigure}{\arabic{part}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{part}.\arabic{table}}
+
+% Header/Footer ---------------------------------------
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+% \input{preamble/header}
+
+% Appendix ------------------------------------------------
+\usepackage[toc]{appendix}
+
+% Other ----------------------------------------------
+\input{preamble/HeadingStyle.tex}
+
+% Loop over external pdf file pages
+\usepackage{multido}
+\usepackage{ifxetex}
+\ifxetex
+    \newcount\pdflastximagepages
+    \def\pdfximage#1{\pdflastximagepages=\XeTeXpdfpagecount"#1"\relax}
+\fi
+
+\def\filename{img/elf16.pdf}
+% \def\scale{0.4}
+\pdfximage{\filename}

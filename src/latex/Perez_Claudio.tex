@@ -1,0 +1,32 @@
+\input{preamble.tex}
+
+
+
+%Edit these as appropriate
+\newcommand\department{CE}
+\newcommand\course{229}
+\newcommand\hwnumber{-}                  % <-- homework number
+\newcommand\duedate{April 7, 2020}
+\newcommand\NetIDa{Perez, Claudio M.}
+  
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Header --------------------------------------------------------
+\headheight 35pt
+\lhead{ \department - \course \\ Midterm 1 \\}
+
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\fancyhf{}
+\chead{\textbf{ \fancyplain{}{\leftmark \rightmark }}}
+
+\rhead{\NetIDa \\ \duedate \\ \small{Page \thepage\  of \pageref{LastPage}}}
+
+% Footer --------------------------------------------------------
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+% ---------------------------------------------------------------
+
+

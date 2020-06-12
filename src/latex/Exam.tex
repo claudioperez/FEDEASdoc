@@ -1,0 +1,893 @@
+% 
+    
+    
+
+    
+    \hypertarget{problem-1}{%
+\section{Problem 1}\label{problem-1}}
+
+    \hypertarget{initialization}{%
+\subsubsection{Initialization}\label{initialization}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Formatting option for presentable plots:}
+\PY{o}{\PYZpc{}}\PY{k}{config} InlineBackend.figure\PYZus{}format = \PYZsq{}svg\PYZsq{} 
+
+\PY{c+c1}{\PYZsh{} Formatting option to display results}
+\PY{o}{\PYZpc{}}\PY{k}{config} InteractiveShell.ast\PYZus{}node\PYZus{}interactivity=\PYZsq{}last\PYZus{}expr\PYZus{}or\PYZus{}assign\PYZsq{}
+
+\PY{c+c1}{\PYZsh{} External libraries; see Appendix}
+\PY{k+kn}{from} \PY{n+nn}{external} \PY{k+kn}{import} \PY{o}{*} 
+
+\PY{c+c1}{\PYZsh{} Self\PYZhy{}written functions; see Appendix}
+\PY{k+kn}{from} \PY{n+nn}{internal} \PY{k+kn}{import} \PY{o}{*}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{basic-random-variables}{%
+\paragraph{Basic Random Variables}\label{basic-random-variables}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{names}  \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{EI}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{K}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}        \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{P}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\PY{n}{stddev} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mf}{1236.1606}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,}  \PY{l+m+mi}{1000}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{T}
+\PY{n}{Mx}     \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mf}{8194.7583}\PY{p}{,}            \PY{l+m+mf}{0.6}\PY{p}{,}  \PY{l+m+mi}{5000}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{T}
+\PY{n}{Rxx}    \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{eye}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+\PY{n}{Dx} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{n}{stddev}\PY{p}{[}\PY{n}{j}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{p}{(}\PY{n}{j}\PY{o}{==}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range} \PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{marginal-distributions}{%
+\subparagraph{Marginal distributions}\label{marginal-distributions}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+\PY{n}{s} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{Dx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{Mx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\PY{n}{mu} \PY{o}{=} \PY{n}{Mx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{Dx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{n}{Mx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{X0} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{lognorm}\PY{p}{(}\PY{n}{s}\PY{o}{=}\PY{n}{s}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{mu}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1} 
+\PY{n}{a} \PY{o}{=} \PY{l+m+mf}{0.5}
+\PY{n}{b} \PY{o}{=} \PY{l+m+mf}{0.7}
+\PY{n}{X1} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{n}{a}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.7}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)}
+\PY{n}{X1}\PY{o}{.}\PY{n}{cdf} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{0.2}
+\PY{n}{X1}\PY{o}{.}\PY{n}{pdf} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mf}{0.2}
+\PY{n}{X1}\PY{o}{.}\PY{n}{ppf} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{0.2}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.5}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{i} \PY{o}{=} \PY{l+m+mi}{2}
+\PY{n}{X2} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{n}{Mx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{Dx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{events}{%
+\paragraph{Events}\label{events}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{g\PYZus{}x1}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{/}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{\PYZhy{}}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} grad\PYZus{}x1 = grad(g\PYZus{}x1) }
+
+\PY{k}{def} \PY{n+nf}{grad\PYZus{}x1}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:} \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}
+                                 \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
+                                 \PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{transformation}{%
+\subsection{Transformation}\label{transformation}}
+
+The Nataf is not needed as the variables are independent, but the
+self-written class \texttt{Nataf} is used because it contains useful
+methods for displaying results.
+
+Transformation: \[\begin{aligned}
+&U_{0}=\frac{\ln x_{0}-\lambda}{\zeta}\\
+&U_{1}=\Phi^{-1}\left[\frac{x_{1}-a}{b-a}\right]\\
+&U_{2}=\frac{x_{2}-\mu}{\sigma}
+\end{aligned}\]
+
+Jacobian:
+
+\[\begin{array}{l}
+\frac{\partial u_{0}}{\partial x_{0}}=\frac{1}{\zeta x_{0}} \\
+\frac{\partial u_{1}}{\partial x_{1}}=\frac{1}{\phi\left(u_{1}\right)} \frac{1}{b-a} \\
+\frac{\partial u_{2}}{\partial x_{2}}=\frac{1}{\sigma}
+\end{array}\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{C} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{object}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} X = solrel.siSet([X0,X1,X2]); \PYZsh{} Statistically independent random variable set}
+\PY{n}{X} \PY{o}{=} \PY{n}{solrel}\PY{o}{.}\PY{n}{nataf}\PY{p}{(}\PY{n}{rvset}\PY{o}{=}\PY{p}{[}\PY{n}{X0}\PY{p}{,}\PY{n}{X1}\PY{p}{,}\PY{n}{X2}\PY{p}{]}\PY{p}{,} \PY{n}{Rxx}\PY{o}{=}\PY{n}{Rxx}\PY{p}{,} \PY{n}{C}\PY{o}{=}\PY{n}{C}\PY{p}{,}\PY{n}{names}\PY{o}{=}\PY{n}{names}\PY{p}{)}\PY{p}{;}
+\PY{n}{X}\PY{o}{.}\PY{n}{check\PYZus{}moments}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+vars: ['X1' 'X2' 'X3']
+mean: [8.194758e+03 6.000000e-01 5.000000e+03]
+stdv: [1.236161e+03 5.800000e-02 1.000000e+03]
+L0 :
+ [[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+Rzz:
+ [[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+Jxu:
+ [[1215.    0.    0.]
+ [   0.    0.    0.]
+ [   0.    0. 1000.]]
+    \end{Verbatim}
+
+    \hypertarget{ihl-rf-step}{%
+\subsection{iHL-RF Step}\label{ihl-rf-step}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{6000}\PY{p}{,} \PY{l+m+mf}{0.6}\PY{p}{,} \PY{l+m+mi}{7000}\PY{p}{]}\PY{p}{)}
+\PY{n}{u0} \PY{o}{=} \PY{n}{X}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n}{x0}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([-2.00323498e+00, -2.78291642e-16,  2.00000000e+00])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{func\PYZus{}u} \PY{o}{=} \PY{k}{lambda} \PY{n}{u}\PY{p}{:}    \PY{n}{g\PYZus{}x1}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}
+\PY{n}{grad\PYZus{}u} \PY{o}{=} \PY{k}{lambda} \PY{n}{u}\PY{p}{:} \PY{n}{grad\PYZus{}x1}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{o}{.}\PY{n}{Jxu}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+
+\PY{n}{ihlrf} \PY{o}{=} \PY{n}{iHLRF}\PY{p}{(}\PY{n}{func\PYZus{}u}\PY{p}{,} \PY{n}{grad\PYZus{}u}\PY{p}{,} \PY{n}{u0}\PY{o}{=}\PY{n}{u0}\PY{p}{)}
+\PY{n}{ihlrf}\PY{o}{.}\PY{n}{init}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ihlrf}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{p}{;}
+\PY{c+c1}{\PYZsh{} ihlrf.init()}
+\PY{c+c1}{\PYZsh{} ihlrf.run()}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+iHL-RF Algorithm (Zhang and Der Kiureghian 1995)***************
+Initialize iHL-RF:
+ u0:  [-2.0032 -0.      2.    ]
+ G0:  3280.8379
+ ui:  [[-2.0032 -0.      2.    ]]
+ Gi:  3280.8379
+ GradGi:  [ 1542.1257 -2734.3073 -1000.    ]
+ alphai:  [[-0.4681  0.8299  0.3035]]
+ spec1:  1.0
+ spec2:  2.3721
+
+
+iHL-RF step: 1
+ui:
+ [[-1.1891]
+ [ 2.1085]
+ [ 0.7711]]
+ Gi:  2849.1588
+ GradGi:  [ 1293.0403  -213.908  -1000.    ]
+ alphai:  [[-0.7844  0.1298  0.6066]]
+ spec1:  0.8684
+ spec2:  1.911
+
+    \end{Verbatim}
+
+    \hypertarget{form-results}{%
+\subsection{FORM Results}\label{form-results}}
+
+    \hypertarget{form-using-previously-written-function}{%
+\subsubsection{Form using previously written
+function}\label{form-using-previously-written-function}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{form} \PY{o}{=} \PY{n}{solrel}\PY{o}{.}\PY{n}{FORM}\PY{p}{(}\PY{n}{X}\PY{p}{,}\PY{n}{g\PYZus{}x1}\PY{p}{,} \PY{n}{grad\PYZus{}x1}\PY{p}{)}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{)}
+\PY{n}{form}\PY{o}{.}\PY{n}{print\PYZus{}analysis}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+
+FORM Results:
+u*:    [-2.524  1.424  2.304]
+x*:    [5.548783e+03 6.850000e-01 7.304124e+03]
+alpha: [-0.6818  0.3845  0.6223]
+beta:  3.7026
+pf1:   0.000107
+    \end{Verbatim}
+
+    \hypertarget{manual-computation-of-form-variables}{%
+\subsubsection{Manual Computation of FORM
+Variables}\label{manual-computation-of-form-variables}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}star} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{5549.0}\PY{p}{,} \PY{l+m+mf}{0.6845}\PY{p}{,} \PY{l+m+mf}{7304.0}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{} given}
+\PY{n}{u\PYZus{}star} \PY{o}{=} \PY{n}{X}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n}{x\PYZus{}star}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([-2.5241799 ,  1.42209043,  2.304     ])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{alpha} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{grad\PYZus{}u}\PY{p}{(}\PY{n}{u\PYZus{}star}\PY{p}{)}\PY{o}{/}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{grad\PYZus{}u}\PY{p}{(}\PY{n}{u\PYZus{}star}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([-0.68160651,  0.38538363,  0.62200645])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{beta} \PY{o}{=} \PY{n}{alpha} \PY{o}{@} \PY{n}{u\PYZus{}star}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{k+kc}{None}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([3.70165068])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pf1} \PY{o}{=} \PY{n}{Phi}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{beta}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([0.0001071])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{importance-nature-of-variables}{%
+\subsection{Importance \& Nature of
+Variables}\label{importance-nature-of-variables}}
+
+    Because the random variables are statistically independent, \(\alpha\)
+(\texttt{alpha}) may be interpreted as an importance measure for the
+original (untransformed) variables.
+
+\[\operatorname{Imp}(EI) > \operatorname{Imp}(P) > \operatorname{Imp}(K)\]
+
+The nature of the basic random variables is determined from the sign of
+\(\alpha\), and these align with the intuitive interpretation for the
+problem: - \(EI\): \textbf{Capacity} - \(K\): \textbf{Demand} - \(P\):
+\textbf{Demand}
+
+    \hypertarget{sensitivities}{%
+\subsection{Sensitivities}\label{sensitivities}}
+
+\[J_{u,(\mu,\sigma)}=\left[\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+\frac{-1}{\sigma} & \frac{-x_{2}}{\sigma^{2}}
+\end{array}\right]\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{J\PYZus{}u\PYZus{}musig} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\PY{n}{J\PYZus{}u\PYZus{}musig}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{Dx}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{n}{J\PYZus{}u\PYZus{}musig}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{x\PYZus{}star}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{/}\PY{n}{Dx}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
+\PY{n}{J\PYZus{}u\PYZus{}musig}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([[ 0.      ,  0.      ],
+       [ 0.      ,  0.      ],
+       [-0.001   , -0.007304]])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{alpha} \PY{o}{@} \PY{n}{J\PYZus{}u\PYZus{}musig}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([-0.00062201, -0.00454314])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{approx.-effect-of-l}{%
+\subsection{\texorpdfstring{Approx. Effect of
+\(L\)}{Approx. Effect of L}}\label{approx.-effect-of-l}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{grad\PYZus{}gx\PYZus{}L} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{)}\PY{o}{*}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\PY{n}{dbeta\PYZus{}dL} \PY{o}{=} \PY{n}{grad\PYZus{}gx\PYZus{}L}\PY{p}{(}\PY{n}{x\PYZus{}star}\PY{p}{)}\PY{o}{/}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{grad\PYZus{}u}\PY{p}{(}\PY{n}{u\PYZus{}star}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+-2.2720216928641213
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{new\PYZus{}beta} \PY{o}{=} \PY{n}{beta} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.1}\PY{o}{*}\PY{n}{dbeta\PYZus{}dL}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([3.92885285])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{updated-reliability}{%
+\subsection{Updated Reliability}\label{updated-reliability}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{alpha2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[} \PY{l+m+mf}{0.885}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.466}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+\PY{n}{u\PYZus{}star2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mf}{2.783}\PY{p}{,} \PY{l+m+mf}{1.469}\PY{p}{]}\PY{p}{)}
+\PY{n}{beta2} \PY{o}{=} \PY{p}{(}\PY{n}{alpha2} \PY{o}{@} \PY{n}{u\PYZus{}star2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{k+kc}{None}\PY{p}{]}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([-3.147509])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Pr\PYZus{}e2} \PY{o}{=} \PY{n}{Phi}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{beta2}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+0.9991766598168397
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{B} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{n}{beta}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{beta2}\PY{p}{]}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([-3.70165068,  3.147509  ])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Pr\PYZus{}e1e2} \PY{o}{=} \PY{n}{MVN}\PY{p}{(}\PY{n}{B}\PY{p}{,} \PY{n}{cov}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{eye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+0.00010701251288513536
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Pr\PYZus{}updated} \PY{o}{=} \PY{n}{Pr\PYZus{}e1e2}\PY{o}{/}\PY{n}{Pr\PYZus{}e2}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+0.00010710069318948258
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{beta3} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{invPhi}\PY{p}{(}\PY{n}{Pr\PYZus{}updated}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+3.7016506827903553
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{lifetime-reliability}{%
+\subsection{Lifetime Reliability}\label{lifetime-reliability}}
+
+    A rough approximation for one failure in 4 statistically independent
+events is given by the binomial distribution as follows:
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{stats}\PY{o}{.}\PY{n}{binom}\PY{o}{.}\PY{n}{pmf}\PY{p}{(}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{,}\PY{n}{k}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{p}\PY{o}{=}\PY{n}{pf1}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+array([0.00042827])
+\end{Verbatim}
+\end{tcolorbox}
+        
+    TIME
+    
+    
+\pagebreak
+
+    \hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
+
+    \hypertarget{external-imports}{%
+\subsection{External imports}\label{external-imports}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{26}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{itertools}
+
+\PY{c+c1}{\PYZsh{} Scientific computing libraries}
+\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np} \PY{c+c1}{\PYZsh{} Array manipulation / matrix computations}
+\PY{k+kn}{import} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{linalg} \PY{k}{as} \PY{n+nn}{linalg} \PY{c+c1}{\PYZsh{} Additional linear algebra functions}
+\PY{k+kn}{import} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k}{as} \PY{n+nn}{stats} \PY{c+c1}{\PYZsh{} Probability distributions}
+\PY{k+kn}{import} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k}{as} \PY{n+nn}{optimize} 
+\PY{k+kn}{from} \PY{n+nn}{autograd} \PY{k+kn}{import} \PY{n}{grad} \PY{c+c1}{\PYZsh{} Algorithmic differentiation}
+
+\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt} \PY{c+c1}{\PYZsh{} Plotting library}
+\PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k+kn}{import} \PY{n}{Axes3D}
+
+\PY{c+c1}{\PYZsh{} Convenient references to standard normal functions}
+\PY{n}{phi}    \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{pdf}
+\PY{n}{Phi}    \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{cdf}
+\PY{n}{invPhi} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{ppf}
+\PY{n}{mvn} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{multivariate\PYZus{}normal}\PY{o}{.}\PY{n}{pdf}
+\PY{n}{MVN} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{multivariate\PYZus{}normal}\PY{o}{.}\PY{n}{cdf}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{26}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+<bound method multivariate\_normal\_gen.cdf of
+<scipy.stats.\_multivariate.multivariate\_normal\_gen object at
+0x0000015FBFED4608>>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{internal-imports}{%
+\subsection{Internal imports}\label{internal-imports}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} My functions}
+\PY{k+kn}{import} \PY{n+nn}{solrel}
+\PY{k+kn}{import} \PY{n+nn}{solrel}\PY{n+nn}{.}\PY{n+nn}{systems} \PY{k}{as} \PY{n+nn}{systems}
+\PY{k+kn}{from} \PY{n+nn}{solrel}\PY{n+nn}{.}\PY{n+nn}{systems} \PY{k+kn}{import} \PY{n}{Event}
+\PY{k+kn}{from} \PY{n+nn}{ema}\PY{n+nn}{.}\PY{n+nn}{utilities}\PY{n+nn}{.}\PY{n+nn}{numerical} \PY{k+kn}{import} \PY{n}{iHLRF}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{my-code}{%
+\subsection{My Code}\label{my-code}}
+
+    \hypertarget{class-siset}{%
+\subsubsection{\texorpdfstring{\texttt{class\ siSet}}{class siSet}}\label{class-siset}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{siSet}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{ndarray}\PY{p}{)}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Statistically independent random variables\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}new\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{cls}\PY{p}{,} \PY{n}{rvset}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n}{rvset}\PY{p}{)}\PY{o}{.}\PY{n}{view}\PY{p}{(}\PY{n+nb+bp}{cls}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{rvset}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset} \PY{o}{=} \PY{n}{rvset}
+        \PY{n}{n\PYZus{}dist} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{rvset}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist} \PY{o}{=} \PY{n}{n\PYZus{}dist}
+
+        \PY{c+c1}{\PYZsh{}  check if all distributions have finite moments}
+        \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{:}
+            \PY{k}{if} \PY{p}{(}\PY{o+ow}{not}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{isfinite}\PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o+ow}{and}
+                     \PY{n}{np}\PY{o}{.}\PY{n}{isfinite}\PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                \PY{k}{raise} \PY{n+ne}{RuntimeError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The marginal distributions need to have }\PY{l+s+s2}{\PYZdq{}}
+                                   \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{finite mean and variance}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+
+    \PY{k}{def} \PY{n+nf}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{X}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{n}{u}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{X} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+    
+    \PY{k}{def} \PY{n+nf}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{X} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+    
+    \PY{k}{def} \PY{n+nf}{Jxu}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+        \PY{n}{X} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}
+        \PY{n}{snorm} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{pdf}
+        \PY{n}{d} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{identity}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}
+        \PY{n}{x} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} return np.array ([[X[i].pdf(x[i])/snorm(u[i])*d[i,j] for i in range(self.ndist)] for j in range(self.ndist)])}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array} \PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{n}{snorm}\PY{p}{(}\PY{n}{u}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{X}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{i}\PY{o}{==}\PY{n}{j}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{]} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+    
+    \PY{k}{def} \PY{n+nf}{Jux}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{n}{u} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        \PY{n}{Jux} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{inv}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Jxu}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}
+        \PY{k}{return} \PY{n}{Jux}
+
+    \PY{c+c1}{\PYZsh{} def Jux(self,x):}
+    \PY{c+c1}{\PYZsh{}     z = self.x\PYZus{}to\PYZus{}z(x)}
+    \PY{c+c1}{\PYZsh{}     u = self.x\PYZus{}to\PYZus{}u(x)}
+    \PY{c+c1}{\PYZsh{}     snorm = stats.norm.pdf}
+    \PY{c+c1}{\PYZsh{}     J = np.array ([[1/snorm(u[i])*(i==j)*X[i].pdf(x[i]) for i in range(self.ndist)] for j in range(self.ndist)])}
+    \PY{c+c1}{\PYZsh{}     return self.invL0@J}
+
+    \PY{c+c1}{\PYZsh{} def Jxu(self,u):}
+    \PY{c+c1}{\PYZsh{}     return np.linalg.inv(self.Jux(self.u\PYZus{}to\PYZus{}x(u)))}
+
+    \PY{k}{def} \PY{n+nf}{jpdf}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} 
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{class-nataf}{%
+\subsubsection{\texorpdfstring{\texttt{class\ nataf}}{class nataf}}\label{class-nataf}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{class} \PY{n+nc}{nataf}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{ndarray}\PY{p}{)}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Nataf transformation (Liu and Der Kiureghian 1986)\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}new\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{cls}\PY{p}{,} \PY{n}{rvset}\PY{p}{,} \PY{n}{Rxx}\PY{p}{,} \PY{n}{C}\PY{p}{,}\PY{n}{names}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n}{rvset}\PY{p}{)}\PY{o}{.}\PY{n}{view}\PY{p}{(}\PY{n+nb+bp}{cls}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{rvset}\PY{p}{,} \PY{n}{Rxx}\PY{p}{,} \PY{n}{C}\PY{p}{,}\PY{n}{names}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset} \PY{o}{=} \PY{n}{rvset}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rxx} \PY{o}{=} \PY{n}{Rxx}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C} \PY{o}{=} \PY{n}{C}
+        \PY{n}{n\PYZus{}dist} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{rvset}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist} \PY{o}{=} \PY{n}{n\PYZus{}dist}
+
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{identity}\PY{p}{(}\PY{n}{n}\PY{o}{=}\PY{n}{n\PYZus{}dist}\PY{p}{)}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist} \PY{o}{==} \PY{l+m+mi}{2}\PY{p}{:}
+            \PY{n}{rho} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rxx}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+            \PY{n}{deli} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{o}{/}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+            \PY{n}{delj} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{o}{/}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{rho}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{(}\PY{n}{deli}\PY{p}{,}\PY{n}{delj}\PY{p}{,}\PY{n}{rho}\PY{p}{)}
+        \PY{k}{else}\PY{p}{:}
+            \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{:}
+                \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{:}
+                    \PY{k}{if} \PY{n}{C}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None}\PY{p}{:}
+                        \PY{n}{rho} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rxx}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}
+                        \PY{n}{deli} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{o}{/}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+                        \PY{n}{delj} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{o}{/}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+                        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{[}\PY{n}{j}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{rho}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{C}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{p}{(}\PY{n}{deli}\PY{p}{,}\PY{n}{delj}\PY{p}{,}\PY{n}{rho}\PY{p}{)}
+
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{L0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{cholesky}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{invL0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{inv}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{L0}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{check\PYZus{}moments}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{n}{dists} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        \PY{n}{means} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{p}{[}\PY{n}{X}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{X} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{]}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+        \PY{n}{stdvs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{p}{[}\PY{n}{X}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{X} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{]}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{vars:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{dists}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{means}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{stdv:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{stdvs}\PY{p}{)}
+
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{L0 : }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{L0}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Rzz: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Jxu: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Jxu}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
+        \PY{k}{return}
+
+    \PY{k}{def} \PY{n+nf}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{z\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}z}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{z\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}z}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{x\PYZus{}to\PYZus{}z}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{X} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+    
+    \PY{k}{def} \PY{n+nf}{z\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{z}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{X}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{n}{z}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{k}{for} \PY{n}{i}\PY{p}{,}\PY{n}{X} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+    
+    \PY{k}{def} \PY{n+nf}{z\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{z}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{invL0}\PY{n+nd}{@z}
+
+    \PY{k}{def} \PY{n+nf}{u\PYZus{}to\PYZus{}z}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{L0}\PY{n+nd}{@u}
+
+    \PY{k}{def} \PY{n+nf}{Jxu}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+        \PY{n}{z} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}z}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+        \PY{n}{x} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+        \PY{n}{X} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}
+        \PY{n}{snorm} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{pdf}
+        \PY{n}{d} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{identity}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}
+        \PY{n}{J} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array} \PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{n}{snorm}\PY{p}{(}\PY{n}{z}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n}{d}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}\PY{o}{/}\PY{n}{X}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{]} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ndist}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+        \PY{k}{return} \PY{n}{J}\PY{n+nd}{@self}\PY{o}{.}\PY{n}{L0}
+    
+    \PY{k}{def} \PY{n+nf}{Jux}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{inv}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Jxu}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+    \PY{k}{def} \PY{n+nf}{jpdf}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+        \PY{n}{X} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}
+        \PY{n}{zx}\PY{p}{,}\PY{n}{zy} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}z}\PY{p}{(}\PY{p}{[}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{]}\PY{p}{)}
+        
+        \PY{n}{pos} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{zx}\PY{o}{.}\PY{n}{shape} \PY{o}{+} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{)}\PY{p}{)}
+        \PY{n}{pos}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{zx}
+        \PY{n}{pos}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{zy}
+        
+        \PY{n}{mvn} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{multivariate\PYZus{}normal}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{pos}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{cov}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Rzz}\PY{p}{)}
+        \PY{k}{return} \PY{n}{mvn}\PY{o}{*}\PY{p}{(}\PY{n}{X}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{zx}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{X}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{o}{/}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{pdf}\PY{p}{(}\PY{n}{zy}\PY{p}{)}
+    
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{class-form}{%
+\subsubsection{\texorpdfstring{\texttt{class\ FORM}}{class FORM}}\label{class-form}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{FORM}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}First order reliability analysis\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{rvset}\PY{p}{,} \PY{n}{func\PYZus{}x}\PY{p}{,} \PY{n}{grad\PYZus{}x}\PY{p}{,} \PY{n}{sensitivity}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}hasrun} \PY{o}{=} \PY{k+kc}{False}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset} \PY{o}{=} \PY{n}{rvset}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{func\PYZus{}x} \PY{o}{=} \PY{n}{func\PYZus{}x}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{grad\PYZus{}x} \PY{o}{=} \PY{n}{grad\PYZus{}x}
+        \PY{n}{X} \PY{o}{=} \PY{n}{rvset}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{func\PYZus{}u} \PY{o}{=} \PY{k}{lambda} \PY{n}{u}\PY{p}{:} \PY{n}{func\PYZus{}x}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{grad\PYZus{}u} \PY{o}{=} \PY{k}{lambda} \PY{n}{u}\PY{p}{:} \PY{n}{grad\PYZus{}x}\PY{p}{(}\PY{n}{X}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{T} \PY{o}{@} \PY{n}{X}\PY{o}{.}\PY{n}{Jxu}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sensitivity} \PY{o}{=} \PY{n}{sensitivity}
+
+    
+    \PY{k}{def} \PY{n+nf}{run}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{optimizer}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{scipy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{loss}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{norm}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+        \PY{n}{G} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{func\PYZus{}u}
+        \PY{n}{grad\PYZus{}u} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{grad\PYZus{}u}
+        \PY{n}{ndim} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{o}{.}\PY{n}{rvset}\PY{p}{)}
+        \PY{n}{u0} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{o}{.}\PY{n}{x\PYZus{}to\PYZus{}u}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{x}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} loss}
+        \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:} \PY{k}{return} \PY{n}{scipy}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+
+        \PY{k}{if} \PY{n}{optimizer}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ihlrf}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+            \PY{n}{u} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}u} \PY{o}{=} \PY{n}{iHLRF}\PY{p}{(}\PY{n}{G}\PY{p}{,}\PY{n}{grad\PYZus{}u}\PY{p}{,}\PY{n}{u0}\PY{p}{,}\PY{n}{loss}\PY{o}{=}\PY{n}{scipy}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{)}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{n}{verbose}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{options} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{disp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{verbose}\PY{p}{\PYZcb{}}
+            \PY{n}{con} \PY{o}{=} \PY{n}{scipy}\PY{o}{.}\PY{n}{optimize}\PY{o}{.}\PY{n}{NonlinearConstraint}\PY{p}{(}\PY{n}{G}\PY{p}{,} \PY{l+m+mf}{0.}\PY{p}{,} \PY{l+m+mf}{0.}\PY{p}{)}
+            \PY{n}{sol} \PY{o}{=} \PY{n}{minimize}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{ndim}\PY{p}{)}\PY{p}{,}\PY{n}{constraints}\PY{o}{=}\PY{n}{con}\PY{p}{,}\PY{n}{options}\PY{o}{=}\PY{n}{options}\PY{p}{)}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sol} \PY{o}{=} \PY{n}{sol}
+            \PY{k}{if} \PY{n}{verbose}\PY{p}{:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{sol}\PY{p}{)}
+            \PY{n}{u} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}u} \PY{o}{=} \PY{n}{sol}\PY{o}{.}\PY{n}{x}
+
+        \PY{n}{alpha} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{grad\PYZus{}u}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{o}{/}\PY{n}{scipy}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{grad\PYZus{}u}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha} \PY{o}{=} \PY{n}{alpha}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}x} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}\PY{o}{.}\PY{n}{u\PYZus{}to\PYZus{}x}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{beta} \PY{o}{=} \PY{n}{alpha}\PY{n+nd}{@u}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{pf} \PY{o}{=} \PY{n}{scipy}\PY{o}{.}\PY{n}{stats}\PY{o}{.}\PY{n}{norm}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{beta}\PY{p}{)}
+
+        \PY{c+c1}{\PYZsh{} Sensitivities}
+        \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sensitivity}\PY{p}{:}
+            \PY{n}{rvset}\PY{o}{=}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{rvset}
+            \PY{n}{Jxu} \PY{o}{=} \PY{n}{rvset}\PY{o}{.}\PY{n}{Jxu}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha}
+            \PY{n}{u} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}u} 
+            \PY{n}{x} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}x}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Mxl} \PY{o}{=} \PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{Jxu}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{n+nd}{@u}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Sxlxl} \PY{o}{=} \PY{n}{Jxu}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{n+nd}{@Jxu}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{o}{.}\PY{n}{T}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Dxl} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Sxlxl}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Sxlxl}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{gamma} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha}\PY{n+nd}{@rvset}\PY{o}{.}\PY{n}{Jux}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{n+nd}{@self}\PY{o}{.}\PY{n}{Dxl}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha}\PY{n+nd}{@rvset}\PY{o}{.}\PY{n}{Jux}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{n+nd}{@self}\PY{o}{.}\PY{n}{Dxl}\PY{p}{)}
+        
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}hasrun} \PY{o}{=} \PY{k+kc}{True}
+        \PY{k}{return} \PY{n+nb+bp}{self}
+
+    \PY{k}{def} \PY{n+nf}{print\PYZus{}analysis}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{form}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,}\PY{n}{sensitivity}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{o+ow}{not} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{\PYZus{}hasrun}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{)}
+
+        \PY{k}{if} \PY{n}{form}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FORM Results:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{u*:    }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}u}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x*:    }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{design\PYZus{}point\PYZus{}x}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alpha: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{beta:  }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{beta}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pf1:   }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{pf}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+        \PY{k}{if} \PY{n}{sensitivity}\PY{p}{:}
+            \PY{k}{if} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{gamma} \PY{o+ow}{is} \PY{k+kc}{None}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{n}{sensitivity}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sensitivity:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alpha: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alpha}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gamma: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{gamma}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{class-ihlrf}{%
+\subsubsection{\texorpdfstring{\texttt{class\ iHLRF}}{class iHLRF}}\label{class-ihlrf}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{iHLRF}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{gradf}\PY{p}{,} \PY{n}{u0}\PY{p}{,} \PY{n}{loss}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{tol1}\PY{o}{=}\PY{l+m+mf}{1.0e\PYZhy{}4}\PY{p}{,} \PY{n}{tol2}\PY{o}{=}\PY{l+m+mf}{1.0e\PYZhy{}4}\PY{p}{,} \PY{n}{maxiter}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{,} \PY{n}{maxiter\PYZus{}step}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u0} \PY{o}{=} \PY{n}{u0}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{f} \PY{o}{=} \PY{n}{f} 
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{gradf} \PY{o}{=} \PY{n}{gradf}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tol1} \PY{o}{=} \PY{n}{tol1}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tol2} \PY{o}{=} \PY{n}{tol2}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{maxiter} \PY{o}{=} \PY{n}{maxiter}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{maxiter\PYZus{}step} \PY{o}{=} \PY{n}{maxiter\PYZus{}step}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss} \PY{o}{=} \PY{n}{loss}
+        \PY{k}{if} \PY{n}{loss} \PY{o+ow}{is} \PY{k+kc}{None}\PY{p}{:} 
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}
+
+        \PY{c+c1}{\PYZsh{} self.init()}
+
+    \PY{k}{def} \PY{n+nf}{init}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{G0} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{f}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u0}\PY{p}{)} \PY{c+c1}{\PYZsh{} scale parameter}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u0}\PY{p}{[}\PY{k+kc}{None}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{o}{.}\PY{n}{T}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{f}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{gradf}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{k+kc}{None}\PY{p}{,}\PY{p}{:}\PY{p}{]}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec1} \PY{o}{=} \PY{n+nb}{abs}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi}\PY{o}{/}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{G0}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec2} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{n+nd}{@self}\PY{o}{.}\PY{n}{ui}\PY{p}{)}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{o}{.}\PY{n}{T} \PY{p}{)}
+
+        \PY{k}{if} \PY{n}{verbose}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{iHL\PYZhy{}RF Algorithm (Zhang and Der Kiureghian 1995)***************}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Initialize iHL\PYZhy{}RF: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{u0: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{u0}\PY{o}{.}\PY{n}{T}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G0: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{G0}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ui: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{o}{.}\PY{n}{T}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Gi: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{GradGi: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alphai: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{spec1: }\PY{l+s+s1}{\PYZsq{}} \PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{spec2: }\PY{l+s+s1}{\PYZsq{}} \PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{p}{)}
+    
+    \PY{k}{def} \PY{n+nf}{incr}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{basic}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{basic} \PY{o}{==} \PY{k+kc}{True}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{lamda} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{di}
+            \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1} 
+
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ci} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{)} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{10.0}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mi} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ci}\PY{o}{*}\PY{n+nb}{abs}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mi1} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ci}\PY{o}{*}\PY{n+nb}{abs}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi1}\PY{p}{)}
+
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count\PYZus{}step} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{k}{while} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mi1} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mi}\PY{p}{)} \PY{o+ow}{and} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count\PYZus{}step} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{maxiter\PYZus{}step}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{lamda} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{lamda}\PY{o}{/}\PY{l+m+mi}{2}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{lamda} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{di}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{f}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{mi1} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ci}\PY{o}{*}\PY{n+nb}{abs}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi1}\PY{p}{)}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count\PYZus{}step} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1}
+    
+    \PY{k}{def} \PY{n+nf}{dirn}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{di} \PY{o}{=} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi}\PY{p}{)} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{n+nd}{@self}\PY{o}{.}\PY{n}{ui}\PY{p}{)}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{o}{.}\PY{n}{T} \PY{o}{\PYZhy{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{di}
+
+    \PY{k}{def} \PY{n+nf}{step}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,}\PY{n}{basic}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{} self.di = (self.Gi/np.linalg.norm(self.GradGi) + self.alphai@self.ui)*self.alphai.T \PYZhy{} self.ui}
+        \PY{n}{di} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dirn}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{lamda} \PY{o}{=} \PY{l+m+mf}{1.0}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{+} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{lamda} \PY{o}{*} \PY{n}{di}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{f}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui1}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+
+        \PY{n}{ui1} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{incr}\PY{p}{(}\PY{n}{basic}\PY{p}{)}
+
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{=} \PY{n}{ui1}  
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{f}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{gradf}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{k+kc}{None}\PY{p}{,}\PY{p}{:}\PY{p}{]}
+
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec1} \PY{o}{=} \PY{n+nb}{abs}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi}\PY{o}{/}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{G0}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec2} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{loss}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{n+nd}{@self}\PY{o}{.}\PY{n}{ui}\PY{p}{)}\PY{o}{*}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{o}{.}\PY{n}{T}\PY{p}{)}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+
+
+        \PY{k}{if} \PY{n}{verbose}\PY{p}{:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{iHL\PYZhy{}RF step: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count}\PY{p}{)}\PY{p}{)}
+
+        \PY{k}{if} \PY{n}{verbose}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ui: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Gi: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}       \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{Gi}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{GradGi: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{GradGi}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{alphai: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alphai}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{spec1: }\PY{l+s+s1}{\PYZsq{}} \PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                  \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{spec2: }\PY{l+s+s1}{\PYZsq{}} \PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{around}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{p}{)}
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}
+    
+    \PY{k}{def} \PY{n+nf}{run}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{verbose}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{steps}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{init}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{n}{verbose}\PY{p}{)}
+        \PY{k}{if} \PY{n}{steps} \PY{o+ow}{is} \PY{o+ow}{not} \PY{k+kc}{None}\PY{p}{:} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{maxiter} \PY{o}{=} \PY{n}{steps}
+        \PY{k}{while} \PY{o+ow}{not}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec1} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tol1} \PY{o+ow}{and} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{spec2} \PY{o}{\PYZlt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{tol2}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{n}{verbose}\PY{p}{)}
+
+            \PY{k}{if} \PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{count} \PY{o}{\PYZgt{}} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{maxiter}\PY{p}{)}\PY{p}{:} \PY{k}{break}
+
+        \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ui}
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+% \end{document}

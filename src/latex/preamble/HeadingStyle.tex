@@ -1,0 +1,39 @@
+%% Heading style
+
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+\makeatletter
+\def\@seccntformat#1{\csname #1ignore\expandafter\endcsname\csname the#1\endcsname\quad}
+\let\sectionignore\@gobbletwo
+\let\latex@numberline\numberline
+\def\numberline#1{\if\relax#1\relax\else\latex@numberline{#1}\fi}
+
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-3.5ex plus -1ex minus -.2ex}%
+                                {2.3ex plus .2ex}%x
+                                {\normalfont\large\scshape}}%{\normalfont\large\scshape\bfseries}}%{\normalfont\large\bfseries}}
+                                
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+             {-3.25ex\@plus -1ex \@minus -.2ex}%
+             {1.5ex \@plus .2ex}%
+             {\normalfont\large\scshape\bfseries}}
+\makeatother
+
+
+
+%******************************************************
+
+\titleclass{\part}{}
+\titleformat{\part}
+% [hang]
+[display]
+{\centering\normalfont\Large}
+{\vspace{3pt} \scshape {\partname \hspace{} \thepart}}
+{0pt}
+{\titlerule[1pt]\vspace{1pc}\Huge}
+%
+\titlespacing*{\part}{0pt}{0pt}{20pt}
+%
+\renewcommand{\partmark}[1]{\markboth{\thepart.\ \ #1}{}}

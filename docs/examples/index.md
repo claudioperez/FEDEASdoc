@@ -4,6 +4,8 @@
 
 [Take a short walk through some salient topics in nonlinear analysis.](A-short-walk/index.md)
 
+[Yield surface](lim_evol.md)
+
 ## Plastic Analysis
 
 Perfectly plastic structures analyzed through minimization principles.

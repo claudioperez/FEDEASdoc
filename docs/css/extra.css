@@ -93,10 +93,10 @@ body {
   color: #5a5a5a;
 }
 
-/* img{
+img{
     width:70%;
-    max-width:500px;
-} */
+    /* max-width:500px; */
+}
 
 /* navbar
  * ----------------------------------------*/
