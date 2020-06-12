@@ -11,8 +11,8 @@ This note explores how the yield surface of certain cross sections evolve as the
 
 1. Shear interaction is negligible.
 2. Planar sections remain plane under deformation.
-3. For doubly symmetric sections, flexure occurs about a principle axis.
-4. For singly symmetric sections, flexure occurs about the asymmetric principle axis.
+3. For doubly symmetric sections, flexure occurs about a principal axis.
+4. For singly symmetric sections, flexure occurs about the asymmetric principal axis.
 
 An implementation is developed and examples are presented for a perfectly plastic rectangular homogeneous section, but the generalization of this case is relatively straight forward.
 
@@ -36,13 +36,15 @@ where N is the set of integration point indices $\{i \in\mathbb{Z}^+ \mid i \le 
 
 The discrete problem may then be stated as follows:
 
+>
 > Given a vector, $\hat{\mathbf{x}}$, of $n_{IP}$ integration point locations, and a vector of corresponding stresses, $\mathbf{y}_\tau$ at instant $\tau$, find the following set, $Y$, of admissible stress vectors, $\mathbf{y}$:
->$$Y_\tau = \{
->  \mathbf{y} \in \mathbb{R}^{n_{IP}} \mid
->      (\exists a \in \mathbb{R})(\exists m \in \mathbb{R})[\mathbf{y} - \mathbf{y}_\tau = a + m\hat{\mathbf{x}}] \text{ and } (\exists i \in N)[ y_i = \sigma_y ]\} $$
->which is the set of all discrete stress vectors, $\mathbf{y}$, such that there exists an admissible strain increment $\Delta \varepsilon = \Delta\varepsilon_a + \Delta\kappa \mathbf{x}$ which will produce the elastic stress increment $\mathbf{y} - \mathbf{y}_\tau = E \Delta\varepsilon$, and there exists an element, $y_i$, in $\mathbf{y}$ that is equal to the limit stress.
+>
+> $$Y_\tau = \{ \mathbf{y} \in \mathbb{R}^{n_{IP}} \mid (\exists a \in \mathbb{R})(\exists m \in \mathbb{R})[\mathbf{y} - \mathbf{y}_\tau = a + m\hat{\mathbf{x}}] \text{ and } (\exists i \in N)[ y_i = \sigma_y ]\}$$
+>
+> which is the set of all discrete stress vectors, $\mathbf{y}$, such that there exists an admissible strain increment $\Delta \varepsilon = \Delta\varepsilon_a + \Delta\kappa \mathbf{x}$ which will produce the elastic stress increment $\mathbf{y} - \mathbf{y}_\tau = E \Delta\varepsilon$, and there exists an element, $y_i$, in $\mathbf{y}$ that is equal to the limit stress.
+>
 
-Unlike similar discrete approximations of the **plastic** limit surface, the accuracy of this approximation for the **elastic** limit surface is dependent on the loading history. Furthermore, this dependence is very difficult to predict. As it is related to the distance between integration points and extrema in the residual stress field. 
+Unlike similar discrete approximations of the **plastic** limit surface, the accuracy of this approximation for the **elastic** limit surface is dependent on the loading history. Furthermore, this dependence is very difficult to predict as it is related to the distance between integration points and extrema in the residual stress field.
 
 ## Implementation
 
