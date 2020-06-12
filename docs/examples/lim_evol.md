@@ -1,8 +1,7 @@
 ---
-# title: Yield surface evolution
-# author:
-#   - Claudio Perez
-header-includes: <script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=surf_ex_2.m"></script> 
+title: Yield surface evolution
+author:
+  - Claudio Perez
 ...
 
 # Yield Surface Evolution
@@ -78,3 +77,19 @@ This example is identical to the previous up to point B, after which unloading o
 ![Point C, 30 integration points.](./oabco-c-30.png)
 
 ![Point O', 30 integration points.](./oabco-o-30.png)
+
+## Source Code
+
+### `lim_clip`
+
+<script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=lim_clip.m"></script>
+
+```{include=lim_clip.m .matlab}
+```
+
+### `plot_evol`
+
+<script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=plot_evol.m"></script>
+
+```{include=plot_evol.m .matlab}
+```
