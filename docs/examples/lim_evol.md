@@ -60,6 +60,7 @@ Examples are executed using the following Matlab script:
 <script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=surf_ex_2.m"></script>
 
 ```{include=surf_ex_2.m .matlab}
+
 ```
 
 ### Example 1 - Path O-A-B-O' (`LoadOpt=3`)
@@ -84,12 +85,10 @@ This example is identical to the previous up to point B, after which unloading o
 
 <script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=lim_clip.m"></script>
 
-```{include=lim_clip.m .matlab}
-```
+<!-- ``` {include=lim_clip.m .matlab}
+
+``` -->
 
 ### `plot_evol`
 
 <script src="https://gist.github.com/claudioperez/c6e9c9f108fe3706ef18aecd6984444a.js?file=plot_evol.m"></script>
-
-```{include=plot_evol.m .matlab}
-```
