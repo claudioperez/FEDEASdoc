@@ -67,11 +67,11 @@ Examples are executed using the following Matlab script:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6aVvPM5A2-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-![Point A, 30 integration points.](./oabo-a-30.png)
+<!-- ![Point A, 30 integration points.](./oabo-a-30.png)
 
 ![Point B, 30 integration points.](./oabo-b-30.png)
 
-![Point O', 30 integration points.](./oabo-o-30.png)
+![Point O', 30 integration points.](./oabo-o-30.png) -->
 
 ### Example 2 - Path O-A-B-C-O' (`LoadOpt=4`)
 
@@ -79,9 +79,9 @@ This example is identical to the previous up to point B, after which unloading o
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x0eixejN0IQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-![Point C, 30 integration points.](./oabco-c-30.png)
+<!-- ![Point C, 30 integration points.](./oabco-c-30.png)
 
-![Point O', 30 integration points.](./oabco-o-30.png)
+![Point O', 30 integration points.](./oabco-o-30.png) -->
 
 ## Source Code
 

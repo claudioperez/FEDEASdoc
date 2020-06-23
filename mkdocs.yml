@@ -44,3 +44,7 @@ markdown_extensions:
         enable_dollar_delimiter: true 
     - meta
     # - mdx_snippets
+  
+google_analytics: 
+  - UA-170527070-1
+  - auto
