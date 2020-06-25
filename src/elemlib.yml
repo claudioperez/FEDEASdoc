@@ -54,7 +54,6 @@
         Geom: linear
         MR: null 
 
-
   geometry: GeomTran_2dFrm
   configuration:
     - name: Geom    

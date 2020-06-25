@@ -14,6 +14,7 @@ nav:
   - Libraries:
     - Materials: 'matlib.md'
     - Elements: 'elemlib.md'
+    - Modeling Library: 'ModelLib.md'
     - Section Library: 'FEDEASLab/Section_Library/FEDEASLab.md'
     - Solution Library: 'FEDEASLab/Solution_Library/FEDEASLab.md'
   - Basic analysis: 'FEDEASLab/Basic/FEDEASLab.md'
