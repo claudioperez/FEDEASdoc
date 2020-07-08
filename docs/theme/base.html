@@ -166,6 +166,10 @@
                 {%- block content %}
                     {% if page and page.meta.hide_toc %}
                         <div>  </div>
+                    {% elif page and page.meta.lbry %}
+                    <div class="col-md-3">
+                        <div id="treeview-selectable" class="treeview"></div>
+                    </div>
                     {% else %}
                         <div class="col-md-3">{% include "toc.html" %}</div>
                     {% endif %}
