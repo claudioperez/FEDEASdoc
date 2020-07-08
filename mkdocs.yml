@@ -10,7 +10,7 @@ nav:
   - Data Structures: 'DataStructs.md'
 
 - Functions:
-  - Index: 'FEDEASLab.md'
+  - Index: 'api/index.md'
   - Libraries:
     - Materials: 'matlib.md'
     - Elements: 'elemlib.md'

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- <head>
+  <title>Description of Gaussq</title>
+  <meta name="keywords" content="Gaussq">
+  <meta name="description" content="returns the locations y_i and weights w_i for Gauss quadrature of order n">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head> -->
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">src</a> &gt; <a href="../index.html">Utilities</a> &gt; <a href="index.html">Quadrature</a> &gt; Gaussq.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for src\Utilities\Quadrature&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>Gaussq
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>returns the locations y_i and weights w_i for Gauss quadrature of order n</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [yi,wi] = Gaussq (n) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> returns the locations y_i and weights w_i for Gauss quadrature of order n
+ Requirements: n \in N</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [yi,wi] = Gaussq (n)</a>
+0002 <span class="comment">% returns the locations y_i and weights w_i for Gauss quadrature of order n</span>
+0003 <span class="comment">% Requirements: n \in N</span>
+0004 
+0005 <span class="comment">% set up matrix A</span>
+0006 i = 1:(n-1);
+0007 v = i./sqrt(4.*i.^2-1);
+0008 A = diag(v,1)+diag(v,-1);
+0009 <span class="comment">% determine eigenvalues and eigenvectors of A</span>
+0010 [Q,Y] = eig(A);
+0011 <span class="comment">% the eigenvalues give the locations</span>
+0012 yi = diag(Y)';
+0013 <span class="comment">% the first term of the eigenvectors gives the weight</span>
+0014 wi = 2.*Q(1,:).^2;</pre></div>
+<!-- <hr><address>Generated on Wed 08-Jul-2020 11:08:02 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+</body>
+</html>

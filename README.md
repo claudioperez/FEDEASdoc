@@ -4,6 +4,12 @@ This document outlines the basic structure of the FEDEASLab documentation websit
 
 The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files which are generated from the source in this repository are hosted in the separate [claudioperez/FEDEASdoc**s**](https://github.com/claudioperez/FEDEASdocs) repository, which is currently serving the website.
 
+## Build
+
+current folder: `FEDEASLab/
+>`m2html('mfiles','src', 'htmldir','../FEDEASdoc/docs/api', 'recursive','on', 'global','on');`
+
+
 ## Site structure
 
 -------
