@@ -7,8 +7,7 @@ The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudiopere
 ## Build
 
 current folder: `FEDEASLab/
->`m2html('mfiles','src', 'htmldir','../FEDEASdoc/docs/api', 'recursive','on', 'global','on');`
-
+>`m2html('mfiles','src', 'htmldir','../FEDEASdoc/docs/api', 'recursive','on', 'global','on','extension','.md','source','off');`
 
 ## Site structure
 

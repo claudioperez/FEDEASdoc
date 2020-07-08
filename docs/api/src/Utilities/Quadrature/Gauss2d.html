@@ -1,15 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
-<!-- <head>
-  <title>Description of Gauss2d</title>
-  <meta name="keywords" content="Gauss2d">
-  <meta name="description" content="GAUSS2D Gauss integration rule in two dimensions">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
-  <meta name="robots" content="index, follow">
-  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
-</head> -->
 <body>
 <a name="_top"></a>
 <div><a href="../../../index.html">Home</a> &gt;  <a href="#">src</a> &gt; <a href="../index.html">Utilities</a> &gt; <a href="index.html">Quadrature</a> &gt; Gauss2d.m</div>
@@ -45,27 +36,7 @@ This function is called by:
 
 
 
-<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre>0001 <a name="_sub0" href="#_subfunctions" class="code">function [xIP,wIP] = Gauss2d (nIP)</a>
-0002 <span class="comment">% GAUSS2D Gauss integration rule in two dimensions</span>
-0003 <span class="comment">% [XIP,WIP] = GAUSS2D (NIP) locations and weights of 2d Gauss-Legendre integration scheme</span>
-0004 <span class="comment">%  the function determines the locations in the intervals -1&lt;xi&lt;1, -1&lt;eta&lt;1, and the weights</span>
-0005 <span class="comment">%  of the Gauss-Legendre integration scheme for NIP integration points;</span>
-0006 <span class="comment">%  the locations are reported in vector XIP and the weights in vector WIP</span>
-0007 
-0008 <span class="comment">%  =========================================================================================</span>
-0009 <span class="comment">%  FEDEASLab - Release 5.1, July 2020</span>
-0010 <span class="comment">%  Matlab Finite Elements for Design, Evaluation and Analysis of Structures</span>
-0011 <span class="comment">%  Professor Filip C. Filippou (filippou@berkeley.edu)</span>
-0012 <span class="comment">%  Department of Civil and Environmental Engineering, UC Berkeley</span>
-0013 <span class="comment">%  Copyright(c) 1998-2020. The Regents of the University of California. All Rights Reserved.</span>
-0014 <span class="comment">%  =========================================================================================</span>
-0015 
-0016 [xIP,wIP] = Gauss(nIP);
-0017 [xIPy,xIPx] = meshgrid(xIP);
-0018 xIP = [xIPx(:) xIPy(:)];
-0019 wIP = wIP*wIP';
-0020 wIP = wIP(:);</pre></div>
-<!-- <hr><address>Generated on Wed 08-Jul-2020 11:08:02 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+
+<!-- <hr><address>Generated on Wed 08-Jul-2020 12:04:12 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
 </body>
 </html>

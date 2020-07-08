@@ -1,15 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
-<!-- <head>
-  <title>Description of S_InitialStep</title>
-  <meta name="keywords" content="S_InitialStep">
-  <meta name="description" content="% S_INITIALSTEP : script for initial step of incremental analysis">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
-  <meta name="robots" content="index, follow">
-  <link type="text/css" rel="stylesheet" href="../../m2html.css">
-</head> -->
 <body>
 <a name="_top"></a>
 <div><a href="../../index.html">Home</a> &gt;  <a href="#">src</a> &gt; <a href="index.html">Solution_Scripts</a> &gt; S_InitialStep.m</div>
@@ -49,46 +40,7 @@ This function is called by:
 
 
 
-<h2><a name="_source"></a>SOURCE CODE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
-<div class="fragment"><pre>0001 <span class="comment">%% S_INITIALSTEP : script for initial step of incremental analysis</span>
-0002 <span class="comment">%</span>
-0003 <span class="comment">%  =========================================================================================</span>
-0004 <span class="comment">%  FEDEASLab - Release 5.1, July 2020</span>
-0005 <span class="comment">%  Matlab Finite Elements for Design, Evaluation and Analysis of Structures</span>
-0006 <span class="comment">%  Professor Filip C. Filippou (filippou@berkeley.edu)</span>
-0007 <span class="comment">%  Department of Civil and Environmental Engineering, UC Berkeley</span>
-0008 <span class="comment">%  Copyright(c) 1998-2020. The Regents of the University of California. All Rights Reserved.</span>
-0009 <span class="comment">%  =========================================================================================</span>
-0010 
-0011 <span class="comment">%%  ****************************************************************************************</span>
-0012 <span class="comment">%   BEFORE INVOKING THE SCRIPT YOU NEED TO</span>
-0013 <span class="comment">%   DEFINE parameters in SolStrat</span>
-0014 <span class="comment">%%  ****************************************************************************************</span>
-0015 
-0016 <span class="comment">%% initialize state</span>
-0017 State = Initialize_State(Model,ElemData);
-0018 [State,SolStrat] = Initialize (Model,ElemData,Loading,State,SolStrat);
-0019 
-0020 pc = 1;    <span class="comment">% plot counter</span>
-0021 State    = Structure (<span class="string">'forc'</span>,Model,ElemData,State);
-0022 Post(pc) = Structure (<span class="string">'post'</span>,Model,ElemData,State);
-0023 
-0024 <span class="comment">%% perform single load step</span>
-0025 [State,SolStrat] = Increment (Model,ElemData,Loading,State,SolStrat);
-0026 <span class="keyword">if</span> State.ConvFlag
-0027    [State,SolStrat] = Iterate (Model,ElemData,Loading,State,SolStrat);
-0028 <span class="keyword">else</span>
-0029    SolStrat.ConvFlag = false;
-0030 <span class="keyword">end</span>
-0031 <span class="keyword">if</span> (SolStrat.ConvFlag)
-0032    State = Update_State (Model,ElemData,State);    
-0033    GoodState = State;
-0034    <span class="comment">% update plot counter and store results</span>
-0035    pc = pc+1;
-0036    Post(pc) = Structure (<span class="string">'post'</span>,Model,ElemData,State);
-0037 <span class="keyword">else</span>
-0038    fprintf (<span class="string">'\nNo convergence in initial step; check data and/or no of iterations \n'</span>);
-0039 <span class="keyword">end</span></pre></div>
-<!-- <hr><address>Generated on Wed 08-Jul-2020 11:08:02 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+
+<!-- <hr><address>Generated on Wed 08-Jul-2020 12:04:12 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
 </body>
 </html>
