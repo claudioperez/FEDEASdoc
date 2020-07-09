@@ -1,0 +1,3 @@
+## Udot Type
+
+`number[]`

@@ -1,0 +1,25 @@
+{%- from 'content.html' import content with context -%}
+--- 
+{%- set title = schema.keywords.get("title") -%}
+{% if title %}
+    {% set title = title.literal %}
+{% endif %}
+
+title:  {% if title -%}{{ title }}{%- else -%}Schema Docs{%- endif -%}
+
+schema: true
+...
+
+{%- if title -%}
+<h1>{{ title }}</h1>
+{%- endif -%}
+{%- if expand_buttons -%}
+<div class="text-right">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".collapse:not(.show)" aria-expanded="false">Expand all</button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".collapse.show" aria-expanded="false">Collapse all</button>
+</div>
+{%- endif -%}
+
+{{ content(schema) }}
+<!-- </body> -->
+<!-- </html> -->

@@ -1,5 +1,5 @@
 ---
-hide_toc: true 
+hide_toc: true
 ...
 # Material Library<div class="table-responsive">
 <table class="table"><thead> 

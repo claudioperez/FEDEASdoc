@@ -1,0 +1,3 @@
+## nq Type
+
+`integer`

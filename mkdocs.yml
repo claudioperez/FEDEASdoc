@@ -3,11 +3,13 @@ site_name: FedeasLab
 site_dir: ../FEDEASdocs
 
 nav:
-- Home: 'index.md'
+- About: 'about.md'
 
 - Getting Started:
   - Quick Start: 'quick.md'
   - Data Structures: 'DataStructs.md'
+  - Schemas: 'dat/README.md'
+  - Schemas-2: 'sch/index'
 
 - Functions:
   - Index: 'api/index.md'
@@ -22,7 +24,6 @@ nav:
   - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
   - Core: 'FEDEASLab/General/FEDEASLab.md'
   
-  - Utilities: 'FEDEASLab/Utilities/FEDEASLab.md'
 
 - Examples: examples/index.md
 

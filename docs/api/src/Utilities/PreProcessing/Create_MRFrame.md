@@ -4,18 +4,24 @@
 
 <!--<table width="100%"><tr><td align="left"><a href="../../../index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.md">Index for src\Utilities\PreProcessing&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+# Create_MRFrame
+<!-- <h1>Create_MRFrame
+</h1> -->
 
-<h1>Create_MRFrame
-</h1>
+## <a name="_name"></a>Purpose
 
-<h2 id="purpose"><a name="_name"></a>Purpose <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame</strong></div>
+<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
-<h2><a name="_synopsis"></a>Synopsis <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function Frame = Create_MRFrame (Lbv,Hsv,nsub) </strong></div>
+CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame
 
-<h2><a name="_description"></a>Description <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment">CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame    
+<!-- <div class="box"><strong>CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame</strong></div> -->
+
+## <a name="_synopsis"></a>Synopsis
+
+`function Frame = Create_MRFrame (Lbv,Hsv,nsub)` 
+## <a name="_description"></a>Description
+
+<pre class="comment">CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame    
  FRAME = CREATE_MRFRAME (LBV,HSV,NSUB)
   function generates the node coordinates XYZ and element connectivity CON
   for a regular N-story, M-bay frame with bay spans in row vector LBV and
@@ -25,10 +31,22 @@
   with fields XYZ (node coordinates), CON (element connectivity),
   CINDX (column index by story), GINDX (girder index by floor),
   NBY (no of bays), NST (no of stories), NC (no of columns), NG (no of girders)
-  NN (no of nodes), NE (no of elements)</pre></div>
+  NN (no of nodes), NE (no of elements)</pre>
+<!-- <div class="fragment"><pre class="comment">CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame    
+ FRAME = CREATE_MRFRAME (LBV,HSV,NSUB)
+  function generates the node coordinates XYZ and element connectivity CON
+  for a regular N-story, M-bay frame with bay spans in row vector LBV and
+  story heights in row vector HSV; the optional row vector NSUB specifies
+  the number of subelements for each frame girder 
+  the function returns the generated information in data structure FRAME
+  with fields XYZ (node coordinates), CON (element connectivity),
+  CINDX (column index by story), GINDX (girder index by floor),
+  NBY (no of bays), NST (no of stories), NC (no of columns), NG (no of girders)
+  NN (no of nodes), NE (no of elements)</pre></div> -->
 
 <!-- crossreference -->
-<h2><a name="_cross"></a>Cross-Reference Information <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+## <a name="_cross"></a>Cross-Reference Information
+
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -40,4 +58,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Wed 08-Jul-2020 12:41:00 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Wed 08-Jul-2020 17:32:04 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

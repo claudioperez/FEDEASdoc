@@ -1,0 +1,3 @@
+## ntrm Type
+
+`integer`

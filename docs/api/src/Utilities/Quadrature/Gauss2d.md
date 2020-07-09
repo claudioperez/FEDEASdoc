@@ -4,25 +4,37 @@
 
 <!--<table width="100%"><tr><td align="left"><a href="../../../index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.md">Index for src\Utilities\Quadrature&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+# Gauss2d
+<!-- <h1>Gauss2d
+</h1> -->
 
-<h1>Gauss2d
-</h1>
+## <a name="_name"></a>Purpose
 
-<h2 id="purpose"><a name="_name"></a>Purpose <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>GAUSS2D Gauss integration rule in two dimensions</strong></div>
+<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
-<h2><a name="_synopsis"></a>Synopsis <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function [xIP,wIP] = Gauss2d (nIP) </strong></div>
+GAUSS2D Gauss integration rule in two dimensions
 
-<h2><a name="_description"></a>Description <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> GAUSS2D Gauss integration rule in two dimensions
+<!-- <div class="box"><strong>GAUSS2D Gauss integration rule in two dimensions</strong></div> -->
+
+## <a name="_synopsis"></a>Synopsis
+
+`function [xIP,wIP] = Gauss2d (nIP)` 
+## <a name="_description"></a>Description
+
+<pre class="comment"> GAUSS2D Gauss integration rule in two dimensions
  [XIP,WIP] = GAUSS2D (NIP) locations and weights of 2d Gauss-Legendre integration scheme   
   the function determines the locations in the intervals -1&lt;xi&lt;1, -1&lt;eta&lt;1, and the weights
   of the Gauss-Legendre integration scheme for NIP integration points;
-  the locations are reported in vector XIP and the weights in vector WIP</pre></div>
+  the locations are reported in vector XIP and the weights in vector WIP</pre>
+<!-- <div class="fragment"><pre class="comment"> GAUSS2D Gauss integration rule in two dimensions
+ [XIP,WIP] = GAUSS2D (NIP) locations and weights of 2d Gauss-Legendre integration scheme   
+  the function determines the locations in the intervals -1&lt;xi&lt;1, -1&lt;eta&lt;1, and the weights
+  of the Gauss-Legendre integration scheme for NIP integration points;
+  the locations are reported in vector XIP and the weights in vector WIP</pre></div> -->
 
 <!-- crossreference -->
-<h2><a name="_cross"></a>Cross-Reference Information <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+## <a name="_cross"></a>Cross-Reference Information
+
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -34,4 +46,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Wed 08-Jul-2020 12:41:00 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Wed 08-Jul-2020 17:32:04 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

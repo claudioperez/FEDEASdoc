@@ -1,0 +1,3 @@
+## ElemName Type
+
+`string[]`
