@@ -4,7 +4,7 @@ This document outlines the basic structure of the FEDEASLab documentation websit
 
 The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files which are generated from the source in this repository are hosted in the separate [claudioperez/FEDEASdoc**s**](https://github.com/claudioperez/FEDEASdocs) repository, which is currently serving the website.
 
-## Build
+## Local Directory
 
       dir/
       ├── FEDEASdocs/...
@@ -17,8 +17,10 @@ The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudiopere
       └── FEDEASLab/ 
          ├── m2html/       
          └── src/
-            ├── m2html/   
-            └── Element_Library...
+            ├── Solution_Scripts/   
+            └── Element_Library/...
+
+## Steps to Build
 
 1. Build function pages from FEDEASLab source
    1. Set current folder in Matlab to `dir/FEDEASLab/`
@@ -26,13 +28,19 @@ The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudiopere
    3. run the following:
       `>> m2html('mfiles','src', 'htmldir','../FEDEASdoc/docs/api', 'recursive','on', 'global','on','extension','.md','source','off');`
 2. Build website
-   1. Open terminal and cd to `dir/FEDEASdoc`
+   1. Open terminal and cd to `dir/FEDEASdoc$`
    2. run the following: `$ mkdocs build`
 3. Upload site pages to server
    1. Open Github desktop
    2. Set current repository to **FEDEASdocs**
    3. **commit** changes
    4. **Push origin**
+
+-------------------------
+
+**END OF STAGE 1 MATERIAL**
+
+-------------------------
 
 ### Build API docs
 

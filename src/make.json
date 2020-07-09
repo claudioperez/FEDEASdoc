@@ -1,0 +1,13 @@
+{
+    "src": {
+        "args": ["mfiles","../../FEDEASLab/src", "htmldir","../docs/api", "recursive","on", "global","on","extension",".md","source","off"]
+    },
+    "api":{
+        "kwds": {
+            "schema_file_name" : "../../FedeasAPI/schemas/post.schema.json",
+            "result_file_name" : "../docs/sch/index.md",
+            "minify":  true,
+            "expand_buttons": true
+        }
+    }
+}
