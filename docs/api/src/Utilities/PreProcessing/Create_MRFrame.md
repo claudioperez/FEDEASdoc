@@ -16,7 +16,7 @@ CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR fram
 
 <!-- <div class="box"><strong>CREATE_FRAME generation of nodes and elements for regular N-story, M-bay MR frame</strong></div> -->
 
-## <a name="_synopsis"></a>Synopsis
+## <a name="_synopsis"></a>Syntax
 
 `function Frame = Create_MRFrame (Lbv,Hsv,nsub)` 
 ## <a name="_description"></a>Description
@@ -58,4 +58,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Wed 08-Jul-2020 17:32:04 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Thu 09-Jul-2020 17:34:06 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

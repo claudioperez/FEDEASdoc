@@ -16,7 +16,7 @@ INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotr
 
 <!-- <div class="box"><strong>INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotropic hardening</strong></div> -->
 
-## <a name="_synopsis"></a>Synopsis
+## <a name="_synopsis"></a>Syntax
 
 `function MatResp = InelLPwLH1dMat (action,MatNo,MatData,MatState)` 
 ## <a name="_description"></a>Description
@@ -134,4 +134,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Wed 08-Jul-2020 17:32:04 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Thu 09-Jul-2020 17:34:06 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

@@ -16,7 +16,7 @@ separate truss and frame elements
 
 <!-- <div class="box"><strong>separate truss and frame elements</strong></div> -->
 
-## <a name="_synopsis"></a>Synopsis
+## <a name="_synopsis"></a>Syntax
 
 `function Ain = Set_PlastCond (Model,ElemData)` 
 ## <a name="_description"></a>Description
@@ -38,4 +38,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Wed 08-Jul-2020 17:32:04 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Thu 09-Jul-2020 17:34:06 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

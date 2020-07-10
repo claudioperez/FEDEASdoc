@@ -26,7 +26,7 @@ The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudiopere
    1. Set current folder in Matlab to `dir/FEDEASLab/`
    2. Add `dir/FEDEASLab/m2html/` to path
    3. run the following:
-      `>> m2html('mfiles','src', 'htmldir','../FEDEASdoc/docs/api', 'recursive','on', 'global','on','extension','.md','source','off');`
+      `>> m2html('mfiles','src', 'htmldir','../FEDEASdoc/docs/FEDEASLab', 'recursive','on', 'global','on','extension','.md','source','off');`
 2. Build website
    1. Open terminal and cd to `dir/FEDEASdoc$`
    2. run the following: `$ mkdocs build`
