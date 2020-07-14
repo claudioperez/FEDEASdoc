@@ -1,3 +1,0 @@
-## sig Type
-
-`number`

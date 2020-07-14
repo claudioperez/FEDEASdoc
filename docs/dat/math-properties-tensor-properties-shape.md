@@ -1,3 +1,0 @@
-## shape Type
-
-`array`

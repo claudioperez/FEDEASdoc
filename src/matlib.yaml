@@ -179,13 +179,10 @@
       description: current values of material history variables
   parameters:
     - name: E 
-      default: null
       description: initial modulus
     - name: fy
-      default: null
       description: yield strength
     - name: Eh
-      default: null
       description: post-yield modulus
   post:
     eps : total strain
@@ -193,7 +190,7 @@
 
 - name: BiLinPKOr1dMat
   description: Uniaxial stress-strain relation for bilinear origin-oriented material
-  syntax: MATRESP = BILINPKOR1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
+  syntax: MATRESP = BiLinPKOr1dMat (ACTION,MATNO,MATDATA,MATSTATE)
   action:
     - chec: checks material property data for omissions and returns default values in MATDATA
     - data: prints material properties in output file IOW
@@ -204,9 +201,9 @@
   state:
     - name: eps   
       description: total strain (tensor for 2d or 3d)
-    - name: Deps  
+    - name: Deps
       description: strain increments from last convergence
-    - name: DDeps 
+    - name: DDeps
       description: strain increments from last iteration
     - name: epsdot
       description: strain rate (tensor for 2d or 3d)
@@ -229,9 +226,9 @@
     eps: total strain
     sig: uniaxial stress
 
-- name: GMP1DMAT
+- name: GMP1dMat
   description: Uniaxial stress-strain relation for Giuffre-Menegotto-Pinto hysteretic material
-  syntax: MATRESP = GMP1DMAT (ACTION,MATNO,MATDATA,MATSTATE)
+  syntax: MATRESP = GMP1dMat (ACTION,MATNO,MATDATA,MATSTATE)
   action:
     chec: checks material property data for omissions and returns default values in MATDATA
     init: returns the material history variables in MATSTATE
@@ -255,6 +252,7 @@
       description: material history variables at last converged state
     - name: Pres  
       description: current values of material history variables
+  required: ['E','fy']
   parameters:
     - name: E
       description: initial modulus
@@ -262,26 +260,35 @@
       description: yield strength
     - name: b  
       description: strain hardening ratio
+      type: number
+      default: 0.0
     - name: R0 
       description: exp transition elastic-plastic  
-      default: 20
+      type: number
+      default: 20.0
     - name: cR1
       description: coefficient for variation of R0 
+      type: number
       default: 0.925
     - name: cR2
       description: coefficient for variation of R0 
+      type: number
       default: 0.15
-    - name: a1 
+    - name: a1
       description: isotropic hardening (IH) coefficient in compression 
       default: 0.0
+      type: number
     - name: a2 
-      description: trigger strain ductility for IH      in compression 
+      description: trigger strain ductility for IH in compression 
       default: 0.0
+      type: number
     - name: a3 
       description: isotropic hardening (IH) coefficient in tension     
       default: 0.0
+      type: number
     - name: a4 
-      description: trigger strain ductility for IH      in tension     
+      description: trigger strain ductility for IH in tension     
+      type: number
       default: 0.0
   post:
     eps: total strain
@@ -289,7 +296,7 @@
 
 - name: InelJ2PwLH3DMat
   description: inelastic 3d material model with J2 plasticity and linear kinematic and isotropic hardening
-  syntax: MATRESP = INELJ2PwLH3DMAT (ACTION,MAT_NO,MATDATA,MATSTATE)
+  syntax: MATRESP = InelJ2PwLH3DMat (ACTION,MAT_NO,MATDATA,MATSTATE)
   action:
     chec: checks material property data for omissions and returns default values in MATDATA
     init: returns the material history variables in MATSTATE
@@ -321,15 +328,15 @@
     - name: nu
       description: Poisson ratio               
       default: 0.0
-      datatype: float
+      type: number
     - name: Hk
       description: kinematic hardening modulus 
       default: 0.0
-      datatype: float
+      type: number
     - name: Hi
       description: isotropic hardening modulus 
       default: 0.0
-      datatype: float
+      type: number
   post:
     eps  : strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
     sig  : stress tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23

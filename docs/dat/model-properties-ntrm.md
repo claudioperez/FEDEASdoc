@@ -1,3 +1,0 @@
-## ntrm Type
-
-`integer`

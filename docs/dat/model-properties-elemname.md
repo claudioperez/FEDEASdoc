@@ -1,3 +1,0 @@
-## ElemName Type
-
-`string[]`

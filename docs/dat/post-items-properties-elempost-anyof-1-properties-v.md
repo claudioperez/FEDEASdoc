@@ -1,3 +1,0 @@
-## v Type
-
-`number[]`

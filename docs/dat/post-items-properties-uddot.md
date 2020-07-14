@@ -1,3 +1,0 @@
-## Uddot Type
-
-`number[]`

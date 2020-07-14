@@ -8,8 +8,8 @@ nav:
 - Getting Started:
   - Quick Start: 'quick.md'
   - Data Structures: 'DataStructs.md'
-  - Schemas: 'dat/README.md'
-  - Schemas-2: 'sch/index'
+  # - Schemas: 'dat/README.md'
+  # - Schemas-2: 'sch/index'
 
 - Functions:
   - Index: 'FEDEASLab/index.md'
