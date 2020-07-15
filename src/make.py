@@ -27,7 +27,7 @@ build_opts['api']['kwds'] = dict(
 
 if __name__ == "__main__":
     eng = matlab.engine.start_matlab()
-    eng.addpath('m2html/')
+    eng.addpath('../../FEDEASLab/m2html/')
 
     if 'serve' in sys.argv:
         pass
@@ -40,6 +40,7 @@ if __name__ == "__main__":
             with open('make.json') as f: build_opts = json.load(f)['src']
             eng.m2html(*build_opts['args'],nargout=0)
         elif option == 'api':
-            with open('make.json') as f: build_opts = json.load(f)['api']
-            mdjs.generate_from_filename(**build_opts['kwds'])
+            pass
+            # with open('make.json') as f: build_opts = json.load(f)['api']
+            # mdjs.generate_from_filename(**build_opts['kwds'])
 
