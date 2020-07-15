@@ -6,16 +6,15 @@ full_width: true
 <!-- <body> -->
 
 <header>
-
 <div class="hero position-relative overflow-hidden p-3 text-center text-dark">
     <div class="col-md-5 p-lg-1 mx-auto my-5">
     <!-- <img src="_static/FEDEASLab-logo.svg" style="max-width: 30rem;" alt="FEDEASLab logo"> -->
         <!-- <p class="lead font-weight-normal"> -->
-        <p> <h2 class="featurette-heading"> Φϵιδιας</h2> </p>
+        <p> <h2 class="featurette-heading"> Φϵιδιας</h2></p>
         <p class="lead ">
     FEDEASLab is a modular research framework for the simulation of nonlinear structural response under static and dynamic loads, with a reference implementation written in <a href="https://www.mathworks.com/products/matlab.html">Matlab©</a>.
     </p>
-    <a class="btn outline-FEDEASLab btn-lg" href="http://missing/link.html">Download</a>
+    <a class="btn outline-FEDEASLab btn-lg" href="get-started" role="button">Get Started</a>
     <!-- <a class="btn filled-FEDEASLab btn-lg" href="http://missing/link.html"
                     role="button">Download</a> -->
     </div>
@@ -27,22 +26,21 @@ full_width: true
 <main role="main">
 <div class="container marketing p-md-5">
 
-
 <hr class="featurette-divider">
     <div class="row featurette">
     <!-- <h2 class="featurette-heading">State of the art</h2> -->
     <!-- <p>FEDEASLab supports path-dependent static or transient response under several independent force and displacement patterns.</p> -->
     <div class="row">
         <div class="col-lg-4">
-        <h2 class="mt-3">Modularity</h2>
-        <p>FEDEASLab functions interact through a consistent API that allows users to easily implement new finite element and material models..</p>
+        <h2 class="mt-3">Guides</h2>
+        <p>...</p>
         <p>
             <a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/parallel.html" role="button">Library</a>
             <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fthreads.ipynb" role="button">Example</a>
         </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-        <h2 class="mt-3">Path-dependence</h2>
+        <h2 class="mt-3">Function Index</h2>
         <p>The solution procedures implemented by FEDEASLab .</p>
         <p>
             <a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/performance-tips.html" role="button">Library</a>
@@ -50,7 +48,7 @@ full_width: true
         </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-        <h2 class="mt-3">Transient</h2>
+        <h2 class="mt-3">Examples</h2>
         <p> Model transient response under several support acceleration patterns with state-of-the-art integration algorithms.</p>
         <p>
             <a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/cuda/index.html" role="button">Library &raquo;</a>
@@ -61,21 +59,32 @@ full_width: true
     </div>
 
 <div class="row featurette">
-    <div class="col-md-7">
+    <div class="col-md-12">
+    <h2 class="featurette-heading">Rapid Development</h2>
+    <p class="lead"><code>FEDEASLab</code> functions interact through a consistent API that allows users to rapidly implement and explore new finite element and material models.</p>
+    <a class="btn btn-outline-secondary" href="http://missing.link/fix.html" role="button">Introduction to Finite Element Modeling&raquo;</a>
+    </div>
+    <!-- <div class="col-md-7">
     <h2 class="featurette-heading">Post-Processing</h2>
     <p class="lead">Post-processing is accommodated in the program by generating a data object that carries all important material, element and structural information for plotting or printing. Several functions that address basic post-processing tasks are provided. The user can easily enhance and extend the current capabilities.</p>
     <a class="btn btn-outline-secondary" href="http://FEDEASLab/linktoPostlib.html" role="button">Library &raquo;</a>
     <a class="btn btn-secondary" href="https://possibly-link-to-binder-example" role="button">Examples &raquo;</a>
-    </div>
+    </div> -->
 </div>
 <hr class="featurette-divider">
 
 <div class="row featurette">
-    <div class="col-md-12">
-    <h2 class="featurette-heading">Learning</h2>
+    <div class="col-md-7">
+    <h2 class="featurette-heading">Insight through Visualization</h2>
+    <p class="lead"><code>FEDEASLab</code> provides a powerful post-processing module that is integrated with Matlab's state-of-the art visualization tools. This module is built on top of a simple, unified <a href="schema/post">data model</a> that can be leveraged by users to build insightful illustrations of responses at the model, element, and material level, at any point in a model's lifecycle.</p>
+    <a class="btn btn-outline-secondary" href="http://FEDEASLab/linktoPostlib.html" role="button">Library &raquo;</a>
+    <a class="btn btn-secondary" href="https://possibly-link-to-binder-example" role="button">Examples &raquo;</a>
+    </div>
+    <!-- <div class="col-md-12">
+    <h2 class="featurette-heading">Rapid Development</h2>
     <p class="lead">Talk about use in the classroom, probably link to examples.</p>
     <a class="btn btn-outline-secondary" href="http://missing.link/fix.html" role="button">Introduction to Finite Element Modeling &raquo;</a>
-    </div>
+    </div> -->
 </div>
 </div>
 
@@ -83,7 +92,7 @@ full_width: true
 <section id="supporters">
 <div class="container supporters">
     <h2>Acknowledgements</h2>
-    <p class="lead">FEDEASLab development has been made possible through the following past and present supportorters:<p>
+    <p class="lead">Development of <code>FEDEASLab</code> has been made possible through the following past and present supportorters:<p>
     <div class="row">
     <div class="col supporter">
         <a href="https://ce.berkeley.edu/programs/semm"><img src="img/UCBEngineering_logo.png" alt="SEMM logo"></a>

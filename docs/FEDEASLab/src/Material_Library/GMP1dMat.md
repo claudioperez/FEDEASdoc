@@ -4,7 +4,7 @@
 
 <!--<table width="100%"><tr><td align="left"><a href="../../index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.md">Index for src\Material_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
-# GMP1dMat
+# `GMP1dMat`
 <!-- <h1>GMP1dMat
 </h1> -->
 
@@ -128,4 +128,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 09-Jul-2020 18:43:17 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Tue 14-Jul-2020 22:59:26 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

@@ -5,8 +5,8 @@ site_dir: ../FEDEASdocs
 nav:
 - About: 'about.md'
 
-- Getting Started:
-  - Quick Start: 'quick.md'
+- Guides:
+  - Getting Started: 'get-started'
   - Data Structures: 'DataStructs.md'
   # - Schemas: 'dat/README.md'
   # - Schemas-2: 'sch/index'
