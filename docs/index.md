@@ -15,8 +15,6 @@ full_width: true
     FEDEASLab is a modular research framework for the simulation of nonlinear structural response under static and dynamic loads, with a reference implementation written in <a href="https://www.mathworks.com/products/matlab.html">Matlab©</a>.
     </p>
     <a class="btn outline-FEDEASLab btn-lg" href="get-started" role="button">Get Started</a>
-    <!-- <a class="btn filled-FEDEASLab btn-lg" href="http://missing/link.html"
-                    role="button">Download</a> -->
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
@@ -25,7 +23,6 @@ full_width: true
 
 <main role="main">
 <div class="container marketing p-md-5">
-
 <hr class="featurette-divider">
     <div class="row featurette">
     <!-- <h2 class="featurette-heading">State of the art</h2> -->
@@ -34,18 +31,14 @@ full_width: true
         <div class="col-lg-4">
         <h2 class="mt-3">Guides</h2>
         <p>...</p>
-        <p>
-            <a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/parallel.html" role="button">Library</a>
-            <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fthreads.ipynb" role="button">Example</a>
-        </p>
+        <p><a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/parallel.html" role="button">Library</a>
+            <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fthreads.ipynb" role="button">Example</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
         <h2 class="mt-3">Function Index</h2>
         <p>The solution procedures implemented by FEDEASLab .</p>
-        <p>
-            <a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/performance-tips.html" role="button">Library</a>
-            <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fsimd.ipynb" role="button">Example</a>
-        </p>
+        <p><a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/performance-tips.html" role="button">Library</a>
+            <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fsimd.ipynb" role="button">Example</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
         <h2 class="mt-3">Examples</h2>
@@ -56,8 +49,31 @@ full_width: true
         </p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
-    </div>
+    <div class="row">
+        <div class="col-lg-4">
+        <h2 class="mt-3">Guides</h2>
+        <p>...</p>
+        <p><a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/parallel.html" role="button">Library</a>
+            <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fthreads.ipynb" role="button">Example</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+        <h2 class="mt-3">Function Index</h2>
+        <p>The solution procedures implemented by FEDEASLab .</p>
+        <p><a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/user/performance-tips.html" role="button">Library</a>
+            <a class="btn btn-secondary" href="https://mybinder.org/v2/gh/FEDEASLab/FEDEASLab-examples/master?filepath=notebooks%2Fsimd.ipynb" role="button">Example</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+        <h2 class="mt-3">Examples</h2>
+        <p> Model transient response under several support acceleration patterns with state-of-the-art integration algorithms.</p>
+        <p>
+            <a class="btn btn-outline-secondary" href="http://FEDEASLab.pydata.org/FEDEASLab-doc/latest/cuda/index.html" role="button">Library &raquo;</a>
+            <a class="btn btn-outline-secondary" href="http://link-to-dynamic.library/index.html" role="button">Examples &raquo;</a>
+        </p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    </div><!-- /.row-featurette -->
 
+<hr class="featurette-divider">
 <div class="row featurette">
     <div class="col-md-12">
     <h2 class="featurette-heading">Rapid Development</h2>
