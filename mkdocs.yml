@@ -28,13 +28,14 @@ nav:
 
 theme:
   name: lumen
+  # name: simplex
   # highlightjs: true # Code snippet syntax highlighting
   custom_dir: docs/theme 
-  # custom_dir: custom_theme
+  # custom_dir: ucb_theme
 
 
 extra_css:
-    - css/extra.css
+    - theme/css/extra.css
 
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML

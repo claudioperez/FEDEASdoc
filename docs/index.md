@@ -10,7 +10,7 @@ full_width: true
     <div class="col-md-5 p-lg-1 mx-auto my-5">
     <!-- <img src="_static/FEDEASLab-logo.svg" style="max-width: 30rem;" alt="FEDEASLab logo"> -->
         <!-- <p class="lead font-weight-normal"> -->
-        <p> <h2 class="featurette-heading"> Φϵιδιας</h2></p>
+        <p> <h2 class="featurette-heading"> Φειδιας</h2></p>
         <p class="lead ">
     FEDEASLab is a modular research framework for the simulation of nonlinear structural response under static and dynamic loads, with a reference implementation written in <a href="https://www.mathworks.com/products/matlab.html">Matlab©</a>.
     </p>
