@@ -10,10 +10,10 @@ Claudio Perez
 
 
 
-.bg-primary{
-  background-color:rgb(0,50,98) !important; /* navbar background color */
-  border-color: rgb(196,130,14);            /* navbar border color */
-}
+/* .bg-primary{
+  background-color:rgb(0,50,98) !important; // navbar background color 
+  border-color: rgb(196,130,14);            // navbar border color 
+} */
 
 
 /* text color for navbar menu items */

@@ -1,4 +1,5 @@
 ---
+is_homepage: true
 hide_toc: true
 full_width: true
 ---
