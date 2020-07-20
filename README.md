@@ -97,6 +97,7 @@ The displaying of equations typeset in Latex is handled by the python package `p
 Layout references
 
 - [Google](https://cloud.google.com/apis/design/documentation#checklist)
+- [Linux theme](https://mrmierzejewski.com/posts/hugo-theme-console/)
 - [pandas](https://pandas.pydata.org/docs/)- Sphinx
 - [Stripe](https://stripe.com/docs/api?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier&utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier)
 - [pyramid](https://trypyramid.com/documentation.html)

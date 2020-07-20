@@ -8,6 +8,10 @@ The toolbox consists of several functions grouped in categories. These functions
 
 The process of performing the nonlinear response analysis of a structure under static or transient conditions is broken down into logical steps. Each step is represented by a separate function. With this approach the definition of the model, the element properties and the loading as well as the analysis of the model under the given loading is accomplished with scripts that invoke the individual functions. Alternative solution strategies can be readily explored. Moreover, the user can easily exchange a function to provide additional capabilities. It is equally easy to access the data objects and enhance the information stored in them. A common task is the addition of element and material models. This task is simplified by the consistent function interface used throughout the toolbox.
 
+## Acknowledgements
+
+<!-- TODO -->
+
 ## License
 
 
