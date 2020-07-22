@@ -13,7 +13,7 @@ full_width: true
         <!-- <p class="lead font-weight-normal"> -->
         <p> <h2 class="featurette-heading"> Φειδιας</h2></p>
         <p class="lead ">
-    FEDEASLab is a modular research framework for the simulation of nonlinear structural response under static and dynamic loads, with a reference implementation written in <a href="https://www.mathworks.com/products/matlab.html">Matlab©</a>.
+    FEDEASLab is a modular framework for teaching and research on the simulation of nonlinear structural response under static and dynamic loads, with a reference implementation in <a href="https://www.mathworks.com/products/matlab.html">Matlab©</a>.
     </p>
     <a class="btn outline-FEDEASLab btn-lg" href="get-started" role="button">Get Started</a>
     </div>
@@ -110,7 +110,7 @@ full_width: true
 </div>
 </div>
 
-<hr class="featurette-divider">
+<!-- <hr class="featurette-divider">
 <section id="supporters">
 <div class="container supporters">
     <h2>Acknowledgements</h2>
@@ -132,26 +132,21 @@ full_width: true
     </div>
     </div>
 </div>
-</section>
+</section> -->
 
-<hr class="featurette-divider">
+<!-- <hr class="featurette-divider"> -->
 
 <!-- </section> -->
 
 </main>
 
 <!-- <section id="ucb-fea"> -->
-<div class="container supporters">
-    <h3>UC Berkeley Family of FEA Tools</h3>
+<!-- <div class="container supporters">
+    <h3>Other UC Berkeley FEA tools</h3>
     <div class="row">
-    <div class="col">
-        <a href="https://ce.berkeley.edu/programs/semm"><img src="img/logo.png" alt="SEMM logo"></a>
-    </div>
     <div class="col">
         <a href="https://www.support.link.2"><img src="_static/support_logo_2.png" alt="FEAP"></a>
     </div>
-    </div>
-    <div class="row">
     <div class="col">
         <a href="https://www.support_link3.missing"><img src="_static/support_logo_3.png" alt="OpenSees"></a>
     </div>
@@ -159,7 +154,7 @@ full_width: true
         <a href=""><img src="_static/logo.png" alt="SimCenter"></a>
     </div>
     </div>
-</div>
+</div> -->
 <!-- Code highlighting -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-python.min.js"></script>
