@@ -27,8 +27,8 @@ nav:
 - Examples: examples/index.md
 
 theme:
-  name: lumen
-  # name: simplex
+  # name: lumen
+  name: simplex
   # highlightjs: true # Code snippet syntax highlighting
   custom_dir: docs/theme 
   # custom_dir: ucb_theme
