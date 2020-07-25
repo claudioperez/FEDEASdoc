@@ -201,7 +201,7 @@
          vp    = plastic deformations
 - title: Inel2dFrm_wOneComp
   description: one component 2d frame element with rigid-linear hardening end hinges
-  geometry: GeomTran_2dFrm
+  keywords: [one component, series, Giberson, concentrated plasticity]
   configuration:
     - title: Geom  
       description: character variable for geometric transformation of node variables

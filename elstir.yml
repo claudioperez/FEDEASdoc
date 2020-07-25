@@ -25,6 +25,44 @@ nav:
     - Core: 'FEDEASLab/General/FEDEASLab.md'
   - Examples: examples/index.md
 
+    # - Dynamics: 'FEDEASLab/Dynamics'
+    # - Element Library: 'FEDEASLab/Element_Library'
+    #  # - frames
+    #  #   - Distributed/
+    #  #   - Concentrated/
+    #  #   - Linear/ 
+    #  # - shell/ # **Consider renaming**
+    #  #   - Inelastic/
+    #  #   - Linear/
+    #  # - special/
+    #  #   - Section wrapper
+    #  #   - Mat wrapper 
+    #  #   - Shear beam
+    #  #   - ...
+    # - General: 'FEDEASLab/General/'
+    # - Geometry: 'FEDEASLab/Geometry/' 
+    # - Material/
+    # - Section/
+    # - Solution/
+    # - General Utilities/
+    #   - funcs...
+    # - Utilities/
+    #   - Interpolation-Quadrature/
+    #     - funcs...
+    # - Processing/
+    #   - Pre/
+    #     - Elements/
+    #     - Sections/
+    #     - Materials/
+    #     - Structure/ 
+    #   - Plotting/
+    #     - Elements/
+    #     - Sections/
+    #     - Structure/
+    #     - funcs...
+    #   - Post: 'FEDEASLab/Post/'
+    #     - Get story shear...
+
 theme:
   name: berkeley
 
