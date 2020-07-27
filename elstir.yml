@@ -1,4 +1,4 @@
-
+---
 site_name: FEDEASLab
 site_dir: ../FEDEASdocs
 # site_dir: ../../tache/fedeasdraft/v1
@@ -6,23 +6,29 @@ site_dir: ../FEDEASdocs
 nav:
   - About: 'about.md'
   - Guides:
-    - Getting Started: 'get-started'
-    - Data Structures: 'api'
-    - Developers: 'developers'
-    # - Schemas: 'dat/README.md'
-    # - Schemas-2: 'sch/index'
+    - Getting Started: # Article/Chapter
+      - Guides/get-started.md!
+    - Data Structures: # Article/Chapter
+      - indexx!:  index # article-index
+      - Model!:   page # article-leaf
+      - Loading!: page
+      - State!:   page
+    - Creating Elements:
+        - indexx: index
   - Functions:
-    - Index: 'FEDEASLab/index.md'
+    - Index: 'FEDEASLab/latest'
     - Libraries:
-      - Materials: 'matlib.md'
-      - Elements: 'elemlib.md'
-      - Modeling Library: 'ModelLib.md'
-      - Section Library: 'FEDEASLab/src/Section_Library/'
-      - Solution Library: 'FEDEASLab/src/Solution_Library/'
-    - Basic analysis: 'FEDEASLab/Basic/FEDEASLab.md'
-    - Transient analysis: 'FEDEASLab/Dynamics/'
+      - Materials:
+        - matlib.md
+      - Elements: 
+        - elemlib.md
+      - Section Library: 
+        - 'FEDEASLab/latest/Section_Library/'
+      - Solution Library: 
+        - 'FEDEASLab/latest/Solution_Scripts/'
+    - Basic analysis!: 'FEDEASLab/latest/Basic/FEDEASLab.md'
     - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
-    - Core: 'FEDEASLab/General/FEDEASLab.md'
+    - Core: 'FEDEASLab/General/index.md'
   - Examples: examples/index.md
 
     # - Dynamics: 'FEDEASLab/Dynamics'

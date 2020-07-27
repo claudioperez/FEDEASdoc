@@ -82,10 +82,10 @@ def detail(item,output):
 
 import yaml
 
-with open('matlib.yaml') as read_file:
+with open('src/matlib.yaml') as read_file:
     data = yaml.full_load(read_file)
 
-with open('../docs/matlib.md','w+') as output:
+with open('docs/FEDEASLab/v5.1.0/Material_Library/index.md','w+') as output:
     output.write('---\nhide_toc: true \n...\n')
 
     output.write('# Material Library')
