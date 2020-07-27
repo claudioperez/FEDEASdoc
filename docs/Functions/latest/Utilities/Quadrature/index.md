@@ -1,3 +1,6 @@
+---
+title: Quadrature
+...
 <!-- <!DOCTYPE html> -->
 <!-- <html lang="en"> -->
 <!-- <body> -->

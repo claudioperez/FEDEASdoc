@@ -1,6 +1,6 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en"> -->
-<!-- <body> -->
+---
+title: Utilities
+...
 <!-- <a name="_top"></a>
 <table width="100%"><tr><td align="left"><a href="../../index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.md">Index for `v5.1.0\Utilities`&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table> -->
