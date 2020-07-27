@@ -3,9 +3,9 @@ title: Modeling Libraries
 ...
 # Modeling Libraries
 
-
-
-<div class="row">
+<section>
+<h2>Elements</h2>
+<div class="card-deck mt-3">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
@@ -25,8 +25,25 @@ title: Modeling Libraries
     </div>
   </div>
 </div>
-<hr>
-<div class="row">
+<div class="card-deck mt-3 mb-2">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special Elements</h5>
+        <p class="card-text"></p>
+        <a href="Special_Elements" class="card-link">Explore library</a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-sm-6">
+  </div> -->
+</div>
+</section>
+
+
+<section>
+<h2>Sub-Element</h2>
+<div class="card-deck mt-3">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
@@ -46,3 +63,4 @@ title: Modeling Libraries
     </div>
   </div>
 </div>
+</section>
