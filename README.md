@@ -72,6 +72,9 @@ Convert all html files in the active directory to markdown.
 
 >make doc-serve
 
+Convert all html files in the active directory to markdown.
+>find ./ -iname "*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;
+
 ### Equation Handling
 
 Details regarding equation handling and supported Latex commands can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/).

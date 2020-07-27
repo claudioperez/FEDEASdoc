@@ -1,5 +1,5 @@
 ---
-custom_toc:
+oc:
     - url: #Index
       title: Directories
       level: 1
