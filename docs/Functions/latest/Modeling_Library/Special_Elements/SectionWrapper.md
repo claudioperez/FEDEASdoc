@@ -5,7 +5,7 @@ description: |
 generator: 'm2html v1.5 © 2003-2005 Guillaume Flandin'
 keywords: SectionWrapper
 robots: 'index, follow'
-title: Description of SectionWrapper
+title: SectionWrapper
 ---
 
 []{#_top}

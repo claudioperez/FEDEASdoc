@@ -8,9 +8,7 @@ GeomTran_2dFrm:
       default: linear
 
 
-
-
-Skeletal_Library:
+Frame_Elements:
   Dinel2dFrm_EBwDF:
     description: 2d-frame element with distributed inelasticity (displacement formulation)
     reference-formulations: 
@@ -29,7 +27,7 @@ Skeletal_Library:
           description: load history no for element loading in x-direction
         LdIdy: 
           description: load history no for element loading in y-direction
-        w      : 
+        w: 
           description: uniform element load ( w(1) = longitudinal, w(2) = transverse )
         jntoff : 
           description: rigid joint offsets in global X and Y at element ends column 1 for node i, column 2 for node j       
@@ -37,44 +35,47 @@ Skeletal_Library:
     description: 2d-frame element with distributed inelasticity (force formulation)
     reference-formulations:
       - doi: null
-        variational-fields: [stress, strain, displacement]
-        configuration: 
-          Geom: linear
-          MR: null 
     properties:
-      MR      : 
+      MR: 
         description: moment release code (0=cont,1=hinge) 
         default: [[0], [0]]
-        enum:
+        enum: # options
           - [[0], [0]]
           - [[1], [0]]
           - [[0], [1]]
           - [[1], [1]]
       jntoff  : 
-        description: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j
-      nIP     : 
-        description: number of integration points
+        description: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j.
+      nIP     :
+        type: integer
+        description: number of integration points.
       IntTyp  : 
-        description: function name for element integration
+        description: function name for element integration.
+        type: string
       Tol     : 
+        type: number
         description: relative tolerance for convergence of state determination (10^-16)
       MaxIter : 
         description: maximum number of iterations for state convergence (15)
       SubDivNo: 
         description: number of element deformation subdivisions (5)
       SecName : 
-        description: function name for section s-e response
-      SecData{i}:  
+        type: string
+        description: function name for section s-e response.
+      SecData:
+        type: object
         description: section property data at integration point i (see function with SecName)
-      LdIdx   : 
-        description: load history no for element loading in x-direction
-      LdIdy   : 
-        description: load history no for element loading in y-direction
-    parameters:
-      w       : 
+      LdIdx: 
+        type: integer
+        description: load history index for element loading in x-direction
+      LdIdy: 
+        type: integer
+        description: load history index for element loading in y-direction
+    properties:
+      w: 
         description: uniform element load ( w(1) = longitudinal, w(2) = transverse )
     state:
-      u    : 
+      u: 
         description: vector of total element displacements in global reference
       Du   : 
         description: vector of element displacement increments from last convergence
@@ -91,54 +92,42 @@ Skeletal_Library:
       lamda: 
         description: row vector of current load factor(s)
   Inel2dFrm_wLHNMYS:
-    description: 2d linear elastic frame element with linear plastic hardening axial-flexure hinges
-    geometry: GeomTran_2dFrm
-    configuration:
-      Geom: 
-        description: character variable for geometric transformation of node variables
-        datatype: string
-        enum:
-          - linear 
-          - PDelta 
-          - corotational
-        default: linear
-    parameters:
+    description: 2d linear elastic frame element with linear plastic hardening axial-flexure hinges.
+    properties:
       rho    : 
         description: mass density
-        datatype: null
-      A      : 
+        type: null
+      A: 
         description: cross sectional area
-        datatype: null
-      I      : 
+        type: null
+      I: 
         description: moment of inertia
-        datatype: null
-      E      : 
+        type: null
+      E: 
         description: modulus of elasticity
-        datatype: none
+        type: none
       Np     : 
         description: plastic axial capacity of element
-        datatype: array
+        type: array
         details: nxm
       Mp     : 
         description: plastic moment capacity of element
-        datatype: array
+        type: array
       GPYSC  : 
         description: polynomial exponents for plastic surface (see help for function GPYS)
-        datatype: none
+        type: none
       Hir    : 
         description: isotropic hardening ratio for flexural end i and j 
-        default : [0;0]
-        datatype: array
+        default: [0;0]
+        type: array
       Hkr    : 
         description: kinematic hardening ratio for axial, flexural end i and end j 
         default: [0;0;0]
-        datatype: none
-      w      : 
+      w: 
         description: uniform element load ( w(1) = longitudinal, w(2) = transverse )
-        datatype: array
-      jntoff : 
-        description: rigid joint offsets in global X and Y at element ends;
-        datatype: none
+        type: array
+      jntoff :
+        description: rigid joint offsets in global X and Y at element ends.
         details : column 1 for node i, column 2 for node j
       LdIdx  : 
         description: load history no for element loading in x-direction
@@ -155,20 +144,14 @@ Skeletal_Library:
         default: 5
   Inel2dFrm_wLPPM:
     description: 2d frame linear elastic element perfectly plastic flexural response
-    geometry: GeomTran_2dFrm
   Inel2dFrm_wOneComp:
     description: one component 2d frame element with rigid-linear hardening end hinges
     geometry: GeomTran_2dFrm
-    configuration:
-      Geom  : 
-        description: character variable for geometric transformation of node variables
-        enum: [linear, PDelta, corotational]
-        default: linear
+    properties:
       LdIdx : 
         description: load history no for element loading in x-direction
       LdIdy : 
         description: load history no for element loading in y-direction
-    parameters:
       rho   : 
         description: mass density
       E: 
@@ -189,19 +172,14 @@ Skeletal_Library:
         description: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j
   Inel2dFrm_wTwoComp:
     description: two component 2d frame element (linear + linear-perfectly plastic)
-    geometry: GeomTran_2dFrm
-    configuration:
-        Geom: 
-          description: character variable for geometric transformation of node variables
-                (linear, PDelta or corotational) (default=linear)
     properties:
         rho    : 
           description: mass density
-        E      : 
+        E: 
           description: Young's Modulus
-        A      : 
+        A: 
           description: cross-sectional area
-        I      : 
+        I: 
           description: moment of inertia
         Mp     : 
           description: plastic moment capacity at end nodes i & j ( Mp = [Mpi, Mpj] )
@@ -211,26 +189,19 @@ Skeletal_Library:
           description: rigid joint offsets in global X and Y at element ends; column 1 for node i, column 2 for node j
   LE2dFrm:
     description: 2d LE frame element under linear or nonlinear geometry
-    dependencies: 
-      - GeomTran_2dFrm
-    configuration:
-      Geom: 
-        description: character variable for geometric transformation of node variables
-        enum:
-          - corotational
-          - PDelta 
-          - linear
-        default: linear
-    parameters:
+    properties:
       A : 
+        type: number
         description: cross sectional area
       E : 
+        type: number
         description: modulus of elasticity
       I : 
+        type: number
         description: moment of inertia
       Mp: 
         description: plastic moment capacity
-        datatype: array
+        type: array
       rho   : 
         description: mass density
       jntoff: 
@@ -259,17 +230,16 @@ Skeletal_Library:
       - v: element deformations
       - q: element basic forces
   LE2dFrm_wPdelta:
-    description: 2d linear elastic frame element with P-delta effect under linear or nonlinear geometry
-    geometry: GeomTran_2dFrm
+    description: 2d linear elastic frame element with P-delta effect under linear or nonlinear geometry.
 
 Section_Library:
   HomoCircSecw1dMat:
-    description: null 
+    description: Circular homogeneous cross section 
     syntax: SecResp = HomoCircSecw1dMat (action,SecNo,ndm,SecData,SecState)
-    parameters:
-      R(1:2)  : 
+    properties:
+      R: 
         description: outer radius and inner radius of section (default = R(1) only)
-      nr      : 
+      nr: 
         description: no of integration points (fibers) over radius (default=5)(thus 2 x nr across diameter)
       nth     : 
         description: no of integration points (fibers) in circumferential direction (used for 3d only),(default=10) 
@@ -277,14 +247,16 @@ Section_Library:
         description: ratio of inner to outer radius for switching to uniform dicretization
       IntTyp  : 
         description: function name for section integration ('Midpoint' or 'Cubature')
-      MatName : 
+      MatName :
+        type: string
         description: function name for material uniaxial stress-strain relation
-      MatData : 
+      MatData :
+        type: object 
         description: data structure with material property data
   HomoRectSecw1dMat:
-    description: null
+    description: Rectangular homogeneous cross section.
     syntax: SecResp = HomoRectSecw1dMat (action,SecNo,ndm,SecData,SecState)
-    state: 
+    properties: 
       e   : 
         description: vector of total section deformations
       De  : 
@@ -301,18 +273,9 @@ Section_Library:
         description: section history variables at last converged state
       Pres: 
         description: current section history variables
-    post:
-      e     : 
-        description: section deformations
-      s     : 
-        description: section stress resultants
-      Mat: 
-        description: material response information for post-processing (see material function with MatName)
-        type: array(object)
-    parameters:
-      d      : 
+      d: 
         description: section depth
-      b      : 
+      b: 
         description: section width
       ny     : 
         description: no of integration points (fibers) in y (default = 10)
@@ -324,6 +287,14 @@ Section_Library:
         description: function name for material uniaxial stress-strain relation
       MatData: 
         description: data structure with material property data
+    post:
+      e     : 
+        description: section deformations
+      s     : 
+        description: section stress resultants
+      Mat: 
+        description: material response information for post-processing (see material function with MatName)
+        type: array(object)
     state: 
       e   : 
         description: vector of total section deformations
@@ -348,10 +319,384 @@ Section_Library:
         description: section stress resultants
       Mat: 
         description: material response information for post-processing (see material function with MatName)
-        type: array(object)
+        type: array
   HomoWFSecw1dMat:
-    description: null
+    description: Wide flange section with homogeneous 1D material.
     syntax: SecResp = HomoWFSecw1dMat (action,SecNo,ndm,SecData,SecState)
+    properties: null
 
-Material_Library: ~
-Plane_Stress-Strain: ~
+Material_Library: 
+  BiLinElastic1dMat:
+    description: Uniaxial stress-strain relation for a bilinear elastic material
+    syntax: MATRESP = BiLinElastic1dMat (ACTION,MATNO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain (tensor for 2d or 3d)
+      Deps  :
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        description: material stiffness matrix; returned under ACTION = 'stif'
+      sig   :
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    properties:
+      E :
+        description: initial modulus
+      fy:
+        description: yield strength
+      Eh:
+        description: post-yield modulus
+    post:
+      eps: total strain
+      sig: uniaxial stress
+
+  BiLinHyst1dMat:
+    description: Bilinear hysteretic force-deformation relation with pinching
+    syntax: MATRESP = BILINHYST1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
+    action:
+      - option: chec
+        description: function checks material property data for omissions and returns default values in MATDATA
+      - option: init
+        description: function returns the material history variables in MATSTATE
+      - option: forc
+        description: function returns the material stress (tensor) in MATSTATE
+      - option: stif
+        description: function returns the material tangent modulus and the stress (tensor) in MATSTATE
+      - option: post
+        description: function returns data structure MATPOST with post-processing information
+    state:
+      eps   :
+        dtype: null
+        description: total strain (tensor for 2d or 3d)
+      Deps  :
+        dtype: null
+        description: strain increments from last convergence
+      DDeps :
+        dtype: null
+        description: strain increments from last iteration
+      epsdot:
+        dtype: null
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        dtype: null
+        description: material tangent modulus; returned under ACTION = 'stif'
+      sig   :
+        dtype: null
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        dtype: null
+        description: material history variables at last converged state
+      Pres  :
+        dtype: null
+        description: current values of material history variables
+    properties:
+      sig1p:
+        description: positive stress at first transition
+      eps1p:
+        description: positive strain at first transition
+      sig2p:
+        description: ultimate positive stress
+      eps2p:
+        description: ultimate positive strain
+      sig1n:
+        description: negative stress at first transition
+      eps1n:
+        description: negative strain at first transition
+      sig2n:
+        description: ultimate negative stress
+      eps2n:
+        description: ultimate negative strain
+      pnchx(+ve ; -ve):
+        description: x-pinching parameters under +ve and -ve deformation 
+      pnchy(+ve ; -ve):
+        description: y-pinching parameters under +ve and -ve deformation
+
+  BiLinInel1dMat:
+    description: Uniaxial stress-strain relation for bilinear inelastic material
+    syntax: MATRESP = BiLinINEL1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain (tensor for 2d or 3d)
+      Deps  :
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        description: material stiffness matrix; returned under ACTION = 'stif'
+      sig   :
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    properties:
+      E :
+        description: initial modulus
+      fy:
+        description: yield strength
+      Eh:
+        description: post-yield modulus
+    post:
+      eps: total strain
+      sig: uniaxial stress
+
+  BiLinOrOr1dMat:
+    description: Uniaxial stress-strain relation for bilinear origin-oriented material
+    syntax: MATRESP = BILINOROR1dMAT (ACTION,MATNO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain (tensor for 2d or 3d)
+      Deps  :
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        description: material stiffness matrix; returned under ACTION = 'stif'
+      sig   :
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    properties:
+      E :
+        description: initial modulus
+      fy:
+        description: yield strength
+      Eh:
+        description: post-yield modulus
+    post:
+      eps : total strain
+      sig : uniaxial stress
+
+  BiLinPKOr1dMat:
+    description: Uniaxial stress-strain relation for bilinear origin-oriented material
+    syntax: MATRESP = BiLinPKOr1dMat (ACTION,MATNO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain (tensor for 2d or 3d)
+      Deps:
+        description: strain increments from last convergence
+      DDeps:
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        description: material stiffness matrix; returned under ACTION = 'stif'
+      sig   :
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    properties:
+      E :
+        description: initial modulus
+      fy:
+        description: yield strength
+      Eh:
+        description: post-yield modulus
+    post:
+      eps: total strain
+      sig: uniaxial stress
+
+  GMP1dMat:
+    description: Uniaxial stress-strain relation for Giuffre-Menegotto-Pinto hysteretic material
+    syntax: MATRESP = GMP1dMat (ACTION,MATNO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain (tensor for 2d or 3d)
+      Deps  :
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        description: material tangent modulus; returned under ACTION = 'stif'
+      sig   :
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    required: ['E','fy']
+    properties:
+      E:
+        description: initial modulus
+      fy :
+        description: yield strength
+      b  :
+        description: strain hardening ratio
+        type: number
+        default: 0.0
+      R0 :
+        description: exp transition elastic-plastic  
+        type: number
+        default: 20.0
+      cR1:
+        description: coefficient for variation of R0 
+        type: number
+        default: 0.925
+      cR2:
+        description: coefficient for variation of R0 
+        type: number
+        default: 0.15
+      a1:
+        description: isotropic hardening (IH) coefficient in compression 
+        default: 0.0
+        type: number
+      a2 :
+        description: trigger strain ductility for IH in compression 
+        default: 0.0
+        type: number
+      a3 :
+        description: isotropic hardening (IH) coefficient in tension     
+        default: 0.0
+        type: number
+      a4 :
+        description: trigger strain ductility for IH in tension     
+        type: number
+        default: 0.0
+    post:
+      eps: total strain
+      sig: uniaxial stress
+
+  InelJ2PwLH3DMat:
+    description: inelastic 3d material model with J2 plasticity and linear kinematic and isotropic hardening
+    syntax: MATRESP = InelJ2PwLH3DMat (ACTION,MAT_NO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+      Deps  :
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+      km    :
+        description: material stiffness matrix; returned under ACTION = 'stif'
+      sig   :
+        description: stress tensor in 6x1 vector form; returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    properties:
+      E :
+        description: initial modulus
+      fy:
+        description: yield strength
+      nu:
+        description: Poisson ratio               
+        default: 0.0
+        type: number
+      Hk:
+        description: kinematic hardening modulus 
+        default: 0.0
+        type: number
+      Hi:
+        description: isotropic hardening modulus 
+        default: 0.0
+        type: number
+    post:
+      eps  : strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+      sig  : stress tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+      eps_p: plastic strain tensor in 6x1 vector form in the order 11, 22, 33, 12, 13, 23
+
+  InelLPwLH1dMAT:
+    description: inelastic linear-plastic 1d model with linear kinematic and isotropic hardening. Material state under total strain EPSI for an inelastic linear-plastic 1d model with linear kinematic and isotropic hardening with the return map algorithm; the plastic strain EPS_P, the back stress SIG_B and the isotropic hardening variable ALPHA are the history variables of the model
+    syntax: MATRESP = INELLPwLH1dMAT (ACTION,MAT_NO,MATDATA,MATSTATE)
+    reference: 
+      title: JC Simo and TJR Hughes, Computational Inelasticity, pp. 43-45
+      isbn: 978-0-387-22763-4
+    state:
+      eps:
+        description: total strain
+      Deps:
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate
+      km:
+        description: material stiffness matrix; returned under ACTION = 'stif'
+      sig:
+        description: stress; returned under ACTION = 'stif' or 'forc'
+      Past:
+        description: material history variables at last converged state
+        state:
+          - eps_p: plastic strain
+          - alpha: isotropic hardening variable
+          - sig_b: back stress (for kinematic hardening)
+      Pres  :
+        description: current values of material history variables
+        state:
+          eps_p:
+            description: plastic strain
+          alpha:
+            description: isotropic hardening variable
+          sig_b:
+            description: back stress (for kinematic hardening)
+    properties:
+      E:
+        description: initial modulus
+      fy:
+        description: yield strength
+      Hi:
+        description: isotropic plastic modulus
+      Hk:
+        description: kinematic hardening modulus
+    post:
+      eps  :
+        description: total strain
+      sig  :
+        description: uniaxial stress
+      eps_p:
+        description: plastic strain
+
+  ManderConcr1dMat:
+    description: hysteretic concrete stress-strain relation after Mander
+    syntax: MATRESP = ManderConcr1dMat (ACTION,MATNO,MATDATA,MATSTATE)
+    state:
+      eps   :
+        description: total strain (tensor for 2d or 3d)
+      Deps  :
+        description: strain increments from last convergence
+      DDeps :
+        description: strain increments from last iteration
+      epsdot:
+        description: strain rate (tensor for 2d or 3d)
+      km    :
+        description: material tangent modulus; returned under ACTION = 'stif'
+      sig   :
+        description: stress (tensor for 2d or 3d); returned under ACTION = 'stif' or 'forc'
+      Past  :
+        description: material history variables at last converged state
+      Pres  :
+        description: current values of material history variables
+    properties:
+      fc  :
+        description: compressive strength for unconfined concrete
+      epc0:
+        description: strain at compressive strength for unconfined concrete
+      Ec  :
+        description: initial modulus for unconfined concrete
+      Kfc :
+        description: ratio of confined to unconfined concrete strength
+    post:
+      eps : total strain
+      sig : uniaxial stress
+
+Plane_Elements: ~

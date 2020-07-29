@@ -1,5 +1,8 @@
 ---
-title: Frame Collection
+title: Frame Elements
+template: modellib.html
+data: src/registry/modellib.yml
+collection: Frame_Elements
 ...
 <!-- <!DOCTYPE html> -->
 <!-- <html lang="en"> -->

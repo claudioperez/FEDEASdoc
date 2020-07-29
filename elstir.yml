@@ -2,79 +2,31 @@
 site_name: FEDEASLab
 site_dir: ../FEDEASdocs
 
+copyright: '&copy 1998-2020 UC Regents, <a href="http://filippou.ce.berkeley.edu/">Filip C. Filippou</a>'
 nav:
   - About: 'About/'
   - Guides:
     - Getting Started: Guides/get-started
     - Data Structures: Guides/DataStructures
-#      - index!:  index # article-index
-#      - Model!:   page # article-leaf
-#      - Loading!: page
-#      - State!:   page
-    - Creating Elements:
-        - indexx: index
+    - Creating Elements: ~
     - Developing: Developers/
   - Functions:
     - Index: 'Functions/latest' 
     - Pre-processing: 'Functions/latest/PreProcessing/'
     - Modeling Libraries:
-      - Material Models:
-        - 'Functions/latest/Modeling_Library/Material_Library/'
-      - Frame Elements: 
-        - 'Functions/latest/Modeling_Library/Frame_Elements/'
-      - Section Library: 
-        - 'Functions/latest/Modeling_Library/Section_Library/'
+      - Material Models: 'Functions/latest/Modeling_Library/Material_Library/'
+      - Frame Elements: 'Functions/latest/Modeling_Library/Frame_Elements/'
+      - Section Library: 'Functions/latest/Modeling_Library/Section_Library/'
     - Solution Library: 'Functions/latest/Solution_Scripts/'
-   # - Plastic Analysis: 'FEDEASLab/Plastic_Analysis/LimEqns_2dFrm.md'
     - Utilities: 'Functions/latest/Utilities/'
   - Examples: Examples/
-
-    # - Dynamics: 'FEDEASLab/Dynamics'
-    # - Element Library: 'FEDEASLab/Element_Library'
-    #  # - frames
-    #  #   - Distributed/
-    #  #   - Concentrated/
-    #  #   - Linear/ 
-    #  # - shell/ # **Consider renaming**
-    #  #   - Inelastic/
-    #  #   - Linear/
-    #  # - special/
-    #  #   - Section wrapper
-    #  #   - Mat wrapper 
-    #  #   - Shear beam
-    #  #   - ...
-    # - General: 'FEDEASLab/General/'
-    # - Geometry: 'FEDEASLab/Geometry/' 
-    # - Material/
-    # - Section/
-    # - Solution/
-    # - General Utilities/
-    #   - funcs...
-    # - Utilities/
-    #   - Interpolation-Quadrature/
-    #     - funcs...
-    # - Processing/
-    #   - Pre/
-    #     - Elements/
-    #     - Sections/
-    #     - Materials/
-    #     - Structure/ 
-    #   - Plotting/
-    #     - Elements/
-    #     - Sections/
-    #     - Structure/
-    #     - funcs...
-    #   - Post: 'FEDEASLab/Post/'
-    #     - Get story shear...
 
 theme:
   name: berkeley
 
-# extra_css:
-#     - theme/css/extra.css
+extra_css: _static/css/extra.css
 
-extra_javascript: 
-    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+extra_javascript: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
     - tables
