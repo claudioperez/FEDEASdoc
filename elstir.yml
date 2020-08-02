@@ -8,25 +8,35 @@ nav:
   - Guides:
     - Getting Started: Guides/get-started
     - Data Structures: Guides/DataStructures
-    - Creating Elements: ~
     - Developing: Developers/
   - Functions:
     - Index: 'Functions/latest' 
     - Pre-processing: 'Functions/latest/PreProcessing/'
     - Modeling Libraries:
-      - Material Models: 'Functions/latest/Modeling_Library/Material_Library/'
       - Frame Elements: 'Functions/latest/Modeling_Library/Frame_Elements/'
+      - Plane Elements: 'Functions/latest/Modeling_Library/Plane_Elements/'
+      - Material Models: 'Functions/latest/Modeling_Library/Material_Library/'
       - Section Library: 'Functions/latest/Modeling_Library/Section_Library/'
+      - Special Elements: 'Functions/latest/Modeling_Library/Special_Elements/'
     - Solution Library: 'Functions/latest/Solution_Scripts/'
     - Utilities: 'Functions/latest/Utilities/'
   - Examples: Examples/
 
+
+sidebar:
+  min_depth: 1
+  max_depth: 10
+
+
 theme:
   name: berkeley
+  custom_dir: theme/
 
-extra_css: _static/css/extra.css
+extra_css: 
+  - _static/css/extra.css
 
-extra_javascript: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+extra_javascript: 
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
     - tables
@@ -37,3 +47,5 @@ markdown_extensions:
 google_analytics: 
   - UA-170527070-1
   - auto
+
+

@@ -15,7 +15,7 @@ full_width: true
         <p class="lead ">
     FEDEASLab is a modular framework for teaching and research on the simulation of nonlinear structural response under static and dynamic loads, with a reference implementation in <a href="https://www.mathworks.com/products/matlab.html">Matlab©</a>.
     </p>
-    <a class="btn outline-FEDEASLab btn-lg" href="Guides/get-started" role="button">Get Started</a>
+    <a class="btn btn-outline-primary btn-lg" href="Guides/get-started" role="button">Get Started</a>
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
@@ -26,52 +26,43 @@ full_width: true
 <div class="container marketing p-md-5">
 <hr class="featurette-divider">
     <div class="row featurette">
-    <!-- <h2 class="featurette-heading">State of the art</h2> -->
-    <!-- <p>FEDEASLab supports path-dependent static or transient response under several independent force and displacement patterns.</p> -->
-    <div class="row card-group">
+    <div class="row card-group text-center">
         <div class="col-lg-4">
-        <!-- <h2 class="mt-3">Guides</h2> -->
         <img src="img/Frame-4.png" alt="3D Truss Image" class="img-fluid">
-        <!-- <p><a class="btn btn-outline-secondary" href="" role="button">Library</a> -->
-            <a class="btn btn-secondary" href="" role="button">See example.</a></p>
+        <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-        <!-- <h2 class="mt-3">Function Index</h2> -->
-        <img src="_static/missing.png" alt="FEA Image" class="img-fluid">
-        <!-- <p><a class="btn btn-outline-secondary" href="" role="button">Library</a> -->
-            <a class="btn btn-secondary" href="" role="button">See example.</a></p>
+        <img src="img/output_4_1.png" alt="FEA Image" class="img-fluid">
+        <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p>
         </div><!-- /.col-lg-4 -->
 
 
         <div class="col-lg-4">
         <!-- <h2 class="mt-3">Examples</h2> -->
-        <img src="img/T-600.png" alt="Concrete cross-section." class="img-fluid" >
-        <p><!-- <p><a class="btn btn-outline-secondary" href="" role="button">Library</a> -->
-            <a class="btn btn-secondary" href="" role="button">See example.</a></p></p>
+        <img src="img/T-600.png" alt="Concrete cross-section." class="card-img-top" >
+        <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p></p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
+    </div><!-- /.row -->
 
-
-    <div class="row">
+    <div class="row featurette">
+    <div class="row text-center">
         <div class="col-lg-4">
         <p><a class="btn btn-outline-secondary" href="Guides/get-started" role="button">Guides</a></p>
-        <!-- <h2 class="mt-3">Guides</h2> -->
-        <p>View guides that explain the concepts and components of <code>FEDEASLab</code>.</p>
+        <p class="lead">View guides that explain the concepts and components of <code>FEDEASLab</code>.</p>
         </div><!-- /.col-lg-4 -->
 
 
         <div class="col-lg-4">
-        <p><a class="btn btn-outline-secondary" href="Functions/" role="button">Function Index</a></p>
-        <!-- <h2 class="mt-3">Function Index</h2> -->
-        <p>Peruse a comprehensive list of functions provided by<code>FEDEASLab</code>, with detailed explanations of their interfaces.</p>
+        <p><a class="btn btn-outline-secondary" href="Functions/latest" role="button">Function Index</a></p>
+        <p class="lead">Peruse a comprehensive list of functions provided by<code>FEDEASLab</code>, with detailed explanations of their interfaces.</p>
         </div><!-- /.col-lg-4 -->
 
 
         <div class="col-lg-4">
             <p><a class="btn btn-outline-secondary" href="Examples/" role="button">Examples</a></p>
-        <!-- <h2 class="mt-3">Examples</h2> -->
-        <p>Walk through some examples of the various analysis procedures that <code>FEDEASLab</code> provides.</p>
+        <p class="lead">Walk through some examples of the various analysis procedures that <code>FEDEASLab</code> provides.</p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
     </div><!-- /.row-featurette -->
