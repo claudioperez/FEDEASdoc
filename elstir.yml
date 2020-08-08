@@ -1,6 +1,7 @@
 ---
 site_name: FEDEASLab
 site_dir: ../FEDEASdocs
+site_url: "https://claudioperez.github.io/FEDEASdocs/"
 
 copyright: '&copy 1998-2020 UC Regents, <a href="http://filippou.ce.berkeley.edu/">Filip C. Filippou</a>'
 nav:
@@ -11,6 +12,7 @@ nav:
     - Developing: Developers/
   - Functions:
     - Index: 'Functions/latest' 
+    - Introspection: 'Functions/latest/Introspection/'
     - Pre-processing: 'Functions/latest/PreProcessing/'
     - Modeling Libraries:
       - Frame Elements: 'Functions/latest/Modeling_Library/Frame_Elements/'
@@ -21,7 +23,6 @@ nav:
     - Solution Library: 'Functions/latest/Solution_Scripts/'
     - Utilities: 'Functions/latest/Utilities/'
   - Examples: Examples/
-
 
 sidebar:
   min_depth: 1

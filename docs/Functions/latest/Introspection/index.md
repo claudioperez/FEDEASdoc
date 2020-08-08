@@ -1,6 +1,6 @@
 ---
-title: Special Elements
+title: Introspection
 template: partials/card_index.html
 ...
 
-# Special Elements
+# Introspection
