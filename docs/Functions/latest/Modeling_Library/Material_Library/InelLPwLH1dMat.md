@@ -1,3 +1,6 @@
+---
+title: InelLPwLH1dMat
+...
 
 <!-- <a name="_top"></a>
 <div><a href="../../index.md">Home</a> &gt;  <a href="#">v5.1.0</a> &gt; <a href="index.md">Material_Library</a> &gt; InelLPwLH1dMat.m</div> -->

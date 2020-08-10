@@ -28,25 +28,21 @@ full_width: true
     <div class="row featurette">
     <div class="row card-group text-center">
         <div class="col-lg-4">
-        <img src="img/Frame-4.png" alt="3D Truss Image" class="img-fluid">
-        <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p>
+        <img src="img/Frame-4.png" alt="3D Truss Image" class="img-fluid p-4" height="200">
+        <!-- <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p> -->
         </div><!-- /.col-lg-4 -->
-
         <div class="col-lg-4">
-        <img src="img/output_4_1.png" alt="FEA Image" class="img-fluid">
-        <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p>
+        <img src="img/output_4_1.png" alt="FEA Image" class="img-fluid p-4" height="200">
+        <!-- <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p> -->
         </div><!-- /.col-lg-4 -->
-
-
         <div class="col-lg-4">
         <!-- <h2 class="mt-3">Examples</h2> -->
-        <img src="img/T-600.png" alt="Concrete cross-section." class="card-img-top" >
-        <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p></p>
+        <img src="img/T-600.png" alt="Concrete cross-section." class="img-fluid p-4"  height="200">
+        <!-- <p><a class="btn btn-outline-secondary" href="" role="button">See example.</a></p></p> -->
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
     </div><!-- /.row -->
-
-    <div class="row featurette">
+    <div class="row featurette p-4">
     <div class="row text-center">
         <div class="col-lg-4">
         <p><a class="btn btn-outline-secondary" href="Guides/get-started" role="button">Guides</a></p>

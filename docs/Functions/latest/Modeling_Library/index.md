@@ -1,8 +1,11 @@
 ---
 title: Modeling Libraries
+template: partials/feature_index.html
 ...
+
 # Modeling Libraries
 
+<!-- 
 <section>
 <h2>Elements</h2>
 <div class="card-deck mt-3">
@@ -35,8 +38,6 @@ title: Modeling Libraries
       </div>
     </div>
   </div>
-  <!-- <div class="col-sm-8">
-  </div> -->
 </div>
 </section>
 
@@ -63,4 +64,4 @@ title: Modeling Libraries
     </div>
   </div>
 </div>
-</section>
+</section> -->

@@ -12,15 +12,12 @@ nav:
     - Developing: Developers/
   - Functions:
     - Index: 'Functions/latest' 
-    - Introspection: 'Functions/latest/Introspection/'
     - Pre-processing: 'Functions/latest/PreProcessing/'
     - Modeling Libraries:
-      - Frame Elements: 'Functions/latest/Modeling_Library/Frame_Elements/'
-      - Plane Elements: 'Functions/latest/Modeling_Library/Plane_Elements/'
-      - Material Models: 'Functions/latest/Modeling_Library/Material_Library/'
-      - Section Library: 'Functions/latest/Modeling_Library/Section_Library/'
-      - Special Elements: 'Functions/latest/Modeling_Library/Special_Elements/'
-    - Solution Library: 'Functions/latest/Solution_Scripts/'
+      - Element: 'Functions/latest/Modeling_Library/Element_Library/'
+      - Material: 'Functions/latest/Modeling_Library/Material_Library/'
+      - Section: 'Functions/latest/Modeling_Library/Section_Library/'
+    - Solution Library: 'Functions/latest/Solution_Library/'
     - Utilities: 'Functions/latest/Utilities/'
   - Examples: Examples/
 

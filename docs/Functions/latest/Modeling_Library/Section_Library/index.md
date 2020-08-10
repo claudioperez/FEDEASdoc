@@ -1,7 +1,8 @@
 ---
 title: Section Library
+template: partials/table_index.html
 ...
-
+<!-- 
 Index for Section\_Library
 ==========================
 
@@ -33,4 +34,4 @@ Other Matlab-specific files in this directory:
 
 Generated on Wed 22-Jan-2020 08:42:47 by
 **[m2html](http://www.artefact.tk/software/matlab/m2html/ "Matlab Documentation in HTML")**
-© 2005
+© 2005 -->
