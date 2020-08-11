@@ -1,22 +1,8 @@
 
-FEDEASLab-v5.1.0:
-# Semantic Structural analysis.
-
-# Philosophy: FEDEASLab is a vessel for a user's answering questions;
-# The primary question FEDEASLab can answer is "What is the response 
-# of a body subjected to such and such action?"
-  Meta: >
-    FedeasLab allows a structural engineer to paint a picture of a physical 
-    phenomenon. Structural engineers, like painters, 
-    If an 
-# The purpose of documentation should be to present the analyst 
-# with a selection of options 
-
-
 Functions:
   Pre_Processing:
     # create *such-and-such* data structure given *such-and-such* information.
-    # Translates the analysts question
+    # Translates the analyst's question
     Structure:
       - Model = Create_SimpleModel (XYZ,CON,BOUN,ElemName)
       - Model = Create_Model (XYZ,CON,BOUN,ElemName)
