@@ -1,6 +1,6 @@
-# Read Me
+# FEDEASdoc Repository
 
-The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files (HTML, CSS, JS) which are generated from this repository are hosted in the separate [FCFilippou/fedeaslab](https://github.com/fcfilippou/fedeaslab) repository, which is currently serving the website.
+This repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files (HTML, CSS, JS) which are generated from this repository are hosted in the separate [FCFilippou/fedeaslab](https://github.com/fcfilippou/fedeaslab) repository, which is currently serving the website.
 
 ## Local Directory
 
@@ -10,13 +10,13 @@ The current repository [(claudioperez/FEDEASdoc)](https://github.com/claudiopere
       ├── FEDEASdoc/  
          ├── docs/   
             ├── api/
-            └── src/...
+            └── Functions/...
    
       └── FEDEASLab/ 
          ├── m2html/       
-         └── src/
-            ├── Solution_Scripts/   
-            └── Element_Library/...
+         └── latest/
+            ├── Solution_Library/...
+            └── Element_Library/
 
 ## Steps to Build
 

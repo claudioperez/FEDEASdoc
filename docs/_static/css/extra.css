@@ -1,6 +1,6 @@
-body::before {
+/* body::before {
     background: url(/img/grid.png) repeat-x;
-}
+} */
 
 .navbar-brand {
     display: inline-block;
@@ -14,6 +14,6 @@ body::before {
     font-family: "Californian FB" !important;
 }
 
-.bg-gray {
+/* .bg-gray {
     background-color: lightgray;
-}
+} */
