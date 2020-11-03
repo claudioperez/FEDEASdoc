@@ -6,10 +6,7 @@ site_url: "https://claudioperez.github.io/FEDEASdocs/"
 copyright: '&copy 1998-2020 UC Regents, <a href="http://filippou.ce.berkeley.edu/">Filip C. Filippou</a>'
 nav:
   - About: 'About/'
-  - Guides:
-    - Getting Started: Guides/get-started
-    - Data Structures: Guides/DataStructures
-    - Developing: Developers/
+  - Guides: 'Guides/'
   - Functions:
     - Index: 'Functions/latest' 
     - Pre-processing: 'Functions/latest/PreProcessing/'
@@ -22,13 +19,37 @@ nav:
   - Examples: Examples/
 
 sidebar:
-  min_depth: 1
+  min_depth: -1
   max_depth: 10
 
+# examples:
+#   dir: Examples/
+#   src:
+#     - fdlb-0001
+#     - fdlb-0002
+#     - fdlb-0003
+#     - fdlb-0004
+
+# resource_defs:
+#   # treat the objects defined in `fdlb-xxxx.yaml` as 
+#   # "example" resources, as defined in an `elstir.py` file
+#   - example: ../fdlb-xxxx.yaml 
+
+# resources:
+#   includes:
+#     - - ../../sdf
+#       - docs/Examples/sdf
+#   fdlb-0001: Examples/fdlb-0001
+#   fdlb-0002: Examples/fdlb-0002
+
+meta_includes:
+  - docs/Examples/
 
 theme:
   name: berkeley
   custom_dir: theme/
+  hljs_languages:
+    - matlab
 
 extra_css: 
   - _static/css/extra.css
@@ -41,6 +62,10 @@ markdown_extensions:
     - mdx_math:
         enable_dollar_delimiter: true 
     - meta
+    - markdown.extensions.attr_list
+    # - pymdownx.superfences
+    - pymdownx.highlight
+
   
 google_analytics: 
   - UA-170527070-1

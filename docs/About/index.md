@@ -1,5 +1,6 @@
 ---
 title: About
+hide_toc: true
 ...
 # About FEDEASLab
 

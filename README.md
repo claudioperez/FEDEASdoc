@@ -1,4 +1,4 @@
-# FEDEASdoc Repository
+# FEDEASLab Documentation Repository
 
 This repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files (HTML, CSS, JS) which are generated from this repository are hosted in the separate [FCFilippou/fedeaslab](https://github.com/fcfilippou/fedeaslab) repository, which is currently serving the website.
 

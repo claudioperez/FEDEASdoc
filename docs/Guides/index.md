@@ -17,7 +17,7 @@ as a zipped folder from [here]().
 <div class="col-md-4 listing">
 <div class="article-header"><h3>Teaching</h3></div>
 <ul class="list-icons">
-<li><span class="icon-zap"></span><a href="...">Get Started</a></li>
+<li><span class="icon-zap"></span><a href="Teaching/">Get Started</a></li>
 </ul>
 </div>
 
