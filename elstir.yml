@@ -16,7 +16,7 @@ nav:
       - Section: 'Functions/latest/Modeling_Library/Section_Library/'
     - Solution Library: 'Functions/latest/Solution_Library/'
     - Utilities: 'Functions/latest/Utilities/'
-  - Examples: Examples/
+  - Gallery: Gallery/
 
 sidebar:
   min_depth: -1
