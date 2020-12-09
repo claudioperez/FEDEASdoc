@@ -84,21 +84,21 @@ FEDEASLab:
   - name: IncrStrat
     fields:
     - name: Dlam0
-      description: initial load factor increment(s) 
+      description: initial load factor increment(s)
       datatype: row vector
     - name: Deltat
-      description: pseudo-time increment 
+      description: pseudo-time increment
       datatype: float
     - name: StifUpdt
-      description: stiffness update 
+      description: stiffness update
       datatype: string
     - name: LFCtrl
-      description: load control 
+      description: load control
       datatype: string
     - name: LCType
       description: load control type
       datatype: string
-    - name: gamma:
+    - name: gamma
       description: exponent of current stiffness parameter method of load control
       datatype:
   - name: IterStrat

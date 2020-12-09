@@ -2,15 +2,15 @@
 
 - title: Dinel2dFrm_EBwDF 
   description: 2d-frame element with distributed inelasticity (displacement formulation)
-  reference-formulations: 
-    - doi: null 
+  reference-formulations:
+    - doi: null
     - variational-fields: null
   configuration:
     - title: Geom   
       description: character variable for geometric transformation of node variables
       options: [linear, PDelta, corotational]
       default: linear
-    - title: nIP    
+    - title: nIP
       description: number of integration points
     - title: IntTyp 
       description: function name for element integration
@@ -23,24 +23,24 @@
     - title: LdIdy
       description: load history no for element loading in y-direction
   parameters:
-    - title: w      
+    - title: w
       description: uniform element load ( w(1) = longitudinal, w(2) = transverse )
     - title: jntoff 
       description: rigid joint offsets in global X and Y at element ends column 1 for node i, column 2 for node j
   state:
-    - title: u    
+    - title: u
       description: vector of total element displacements in global reference
-    - title: Du   
+    - title: Du
       description: vector of element displacement increments from last convergence
-    - title: DDu  
+    - title: DDu
       description: vector of element displacement increments from last iteration
-    - title: ke   
+    - title: ke
       description: element stiffness matrix in global reference; updated under ACTION = 'stif'
-    - title: p    
+    - title: p
       description: element resisting force vector in global reference; updated under ACTION = 'stif' or 'forc'
-    - title: Past 
+    - title: Past
       description: element history variables at last converged state
-    - title: Pres 
+    - title: Pres
       description: current element history variables
     - title: lamda
       description: row vector of current load factor(s)
@@ -52,7 +52,7 @@
       variational-fields: [stress, strain, displacement]
       configuration: 
         Geom: linear
-        MR: null 
+        MR: null
 
   geometry: GeomTran_2dFrm
   configuration:
@@ -61,7 +61,7 @@
       options: [linear, PDelta, corotational]
       default: linear
     - title: MR      
-      description: moment release code (0=cont,1=hinge) 
+      description: moment release code (0=cont, 1=hinge) 
       default: [[0], [0]]
       options:
         - [[0], [0]]
@@ -146,19 +146,19 @@
       datatype: none
     - title: Hir    
       description: isotropic hardening ratio for flexural end i and j 
-      default : [0;0]
+      default: [[0],[0]]
       datatype: array
     - title: Hkr    
       description: kinematic hardening ratio for axial, flexural end i and end j 
-      default: [0;0;0]
+      default: [[0],[0],[0]]
       datatype: none
-    - title: w      
+    - title: w
       description: uniform element load ( w(1) = longitudinal, w(2) = transverse )
       datatype: array
     - title: jntoff 
       description: rigid joint offsets in global X and Y at element ends;
       datatype: none
-      details : column 1 for node i, column 2 for node j
+      details: column 1 for node i, column 2 for node j
     - title: LdIdx  
       description: load history no for element loading in x-direction
     - title: LdIdy  
