@@ -16,7 +16,7 @@ nav:
   - Guides: 'Guides/'
   - Functions:
     - Latest Release: 'Functions/latest' 
-    - Pre-processing: 'Functions/latest/PreProcessing/'
+    - Pre-processing: 'Functions/latest/Pre-Processing/'
     - Modeling Libraries:
       - Element: 'Functions/latest/Modeling_Library/Element_Library/'
       - Material: 'Functions/latest/Modeling_Library/Material_Library/'
