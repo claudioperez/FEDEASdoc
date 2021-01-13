@@ -1,6 +1,6 @@
 # FEDEASLab Documentation Repository
 
-This repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdocs) contains the working source files from which FEDEASLab documentation is built. The static website files (HTML, CSS, JS) which are generated from this repository are hosted in the separate [FCFilippou/fedeaslab](https://github.com/fcfilippou/fedeaslab) repository, which is currently serving the website.
+This repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEASdoc) contains the source files from which FEDEASLab documentation is built. The static website files (HTML, CSS, JS) which are generated from this repository are hosted in the separate [FCFilippou/FEDEASweb](https://github.com/fcfilippou/FEDEASweb) repository, which is currently serving the website.
 
 ## Local Directory
 
@@ -20,19 +20,29 @@ This repository [(claudioperez/FEDEASdoc)](https://github.com/claudioperez/FEDEA
 
 ## Steps to Build
 
-1. Build function pages from FEDEASLab source
-   1. Set current folder in Matlab to `dir/FEDEASLab/`
-   2. Add `dir/FEDEASLab/m2html/` to path
-   3. run the following:
-      `>> m2html('mfiles','latest', 'htmldir','../FEDEASdoc/docs/Functions/', 'recursive','on', 'global','on','extension','.md','source','off');`
-2. Build website
-   1. Open terminal and cd to `dir/FEDEASdoc$`
-   2. run the following: `$ mkdocs build`
-3. Upload site pages to server
-   1. Open Github desktop
-   2. Set current repository to **FEDEASdocs**
-   3. **commit** changes
-   4. **Push origin**
+1. Create distribution subset
+
+2. Build function pages from FEDEASLab source
+
+    1. Set current folder in Matlab to `dir/FEDEASLab/`
+    2. Add `dir/FEDEASLab/m2html/` to path
+    3. run the following:
+
+        ```
+        m2html('mfiles','latest', 'htmldir','../FEDEASdoc/docs/Functions/', 'recursive','on', 'global','on','extension','.md','source','off');
+        ```
+
+3. Build website
+
+    1. Open terminal and cd to `dir/FEDEASdoc$`
+    2. run the following: `$ elstir build`
+
+4. Upload site pages to server
+
+    1. Open Github desktop app
+    2. Set current repository to **FEDEASweb**
+    3. **commit** changes
+    4. **Push origin**
 
 -------------------------
 
@@ -61,10 +71,17 @@ Build site html files.
 > `elstir build`
 
 Create a local server for real-time editing.
-> `elstir serve`
+
+```shell
+$ elstir serve
+```
 
 Convert all html files in the active directory to markdown.
-> gci -r -i *.html |foreach{$md=$_.directoryname+"\"+$_.basename+".md";pandoc $_.name -o $md}
+
+```shell
+$ gci -r -i *.html |foreach{$md=$_.directoryname+"\"+$_.basename+".md";pandoc $_.name -o $md}
+```
+
 
 #### Bash (Linux subsystem)
 
@@ -109,3 +126,4 @@ Layout references
 - [colorlib](https://colorlib.com/)
 - [numba](http://numba.pydata.org/) - Sphinx
 - [julia](https://julialang.org/)
+

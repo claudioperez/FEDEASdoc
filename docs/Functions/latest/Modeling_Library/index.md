@@ -1,5 +1,6 @@
 ---
 title: Modeling Libraries
+description: 'Functions of the form: <code>Resp = Element(action,No,Data,State)</code>'
 template: partials/feature_index.html
 ...
 

@@ -1,45 +1,13 @@
 ---
-oc:
-    - url: #Index
-      title: Directories
-      level: 1
-      children:
-
-        - url: v5.1.0/Element_Library
-          title: \Element Library
-          level: 2
-          children: {}
-        - url: v5.1.0/Material_Library
-          title: \Material Library
-          level: 2
-          children: {}
-        - url: v5.1.0/Other
-          title: \Other
-          level: 2
-          children: {}
-        - url: v5.1.0/Solution_Scripts
-          title: \Solution Scripts
-          level: 2
-          children: {}
-        - url: v5.1.0/Utilities
-          title: \Utilities
-          level: 2
-          children: {}
-        - url: v5.1.0/Utilities/PreProcessing
-          title: \Utilities\PreProcessing
-          level: 2
-          children: {}
-        - url: v5.1.0/Utilities/Quadrature
-          title: \Utilities\Quadrature
-          level: 2
-          children: {}
+title: Release Summary
+template: partials/feature_index.html
 ...
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en"> -->
-<!-- <body> -->
-<a name="_top"></a>
-<h1>Index</h1>
 
+<a name="_top"></a>
+
+<h1>FEDEASLab Modules</h1>
+
+<!-- 
 <table width="100%">
 		<tr>
 				<td><a href="v5.1.0/Utilities/CleanStart" title="v5.1.0\Utilities">CleanStart</a></td>		<td><a href="v5.1.0/Material_Library/InelLPwLH1dMat" title="v5.1.0\Material_Library">InelLPwLH1dMat</a></td>		<td><a href="v5.1.0/Solution_Scripts/S_InitialStep" title="v5.1.0\Solution_Scripts">S_InitialStep</a></td>		<td><a href="v5.1.0/Other/Simple_PanelZone_Test" title="v5.1.0\Other">Simple_PanelZone_Test</a></td>	</tr>	<tr>
@@ -49,7 +17,7 @@ oc:
 				<td><a href="v5.1.0/Utilities/Quadrature/Gauss2d" title="v5.1.0\Utilities\Quadrature">Gauss2d</a></td>		<td><a href="v5.1.0/Material_Library/LEIso2dMat" title="v5.1.0\Material_Library">LEIso2dMat</a></td>		<td><a href="v5.1.0/Solution_Scripts/S_Transient_MultiStep" title="v5.1.0\Solution_Scripts">S_Transient_MultiStep</a></td>		<td><a href="" title=""></a></td>	</tr>	<tr>
 				<td><a href="v5.1.0/Utilities/Quadrature/Gaussq" title="v5.1.0\Utilities\Quadrature">Gaussq</a></td>		<td><a href="v5.1.0/Other/Plot_SingularModes" title="v5.1.0\Other">Plot_SingularModes</a></td>		<td><a href="v5.1.0/Solution_Scripts/S_Transient_MultiStepwSD" title="v5.1.0\Solution_Scripts">S_Transient_MultiStepwSD</a></td>		<td><a href="" title=""></a></td>	</tr>	<tr>
 				<td><a href="v5.1.0/Material_Library/InelJ2PwLH3dMat" title="v5.1.0\Material_Library">InelJ2PwLH3dMat</a></td>		<td><a href="v5.1.0/Utilities/SIUnits" title="v5.1.0\Utilities">SIUnits</a></td>		<td><a href="v5.1.0/Other/Set_PlastCond" title="v5.1.0\Other">Set_PlastCond</a></td>		<td><a href="" title=""></a></td>	</tr></table>
-
+ -->
 
 <!-- <hr><address>Generated on Sat 25-Jul-2020 23:37:59 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
 <!-- </body> -->

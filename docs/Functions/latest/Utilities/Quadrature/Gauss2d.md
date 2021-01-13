@@ -1,10 +1,10 @@
 
 <!-- <a name="_top"></a>
-<div><a href="../../../index.md">Home</a> &gt;  <a href="#">v5.1.0</a> &gt; <a href="../index.md">Utilities</a> &gt; <a href="index.md">Quadrature</a> &gt; Gauss2d.m</div> -->
+<div><a href="../../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="#">Utilities</a> &gt; <a href="_index.md">Quadrature</a> &gt; Gauss2d.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../../index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="index.md">Index for v5.1.0\Utilities\Quadrature&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
-# Gauss2d
+<!--<table width="100%"><tr><td align="left"><a href="../../../_index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="_index.md">Index for latest\Utilities\Quadrature&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+# `Gauss2d`
 <!-- <h1>Gauss2d
 </h1> -->
 
@@ -40,10 +40,10 @@ This function calls:
 </ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="../../../v5.1.0/Other/InelPanelZone.md" class="code" title="function ElemResp = InelPanelZone (action,el_no,xyz,ElemData,ElemState)">InelPanelZone</a>	INELPANELZONE 4-node panel zone element with inelastic material</li></ul>
+</ul>
 <!-- crossreference -->
 
 
 
 
-<!-- <hr><address>Generated on Sat 25-Jul-2020 23:38:00 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Sun 20-Dec-2020 19:28:50 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
