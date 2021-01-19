@@ -5,6 +5,8 @@ site_url: "https://claudioperez.github.io/FEDEASdocs/"
 
 copyright: '&copy 1998-2020 UC Regents, <a href="http://filippou.ce.berkeley.edu/">Filip C. Filippou</a>'
 
+pandoc: pandoc.yaml
+
 theme:
   name: berkeley
   custom_dir: theme/
