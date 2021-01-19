@@ -1,0 +1,57 @@
+---
+site_name: FEDEASLab
+site_dir: ../FEDEASweb
+site_url: "https://claudioperez.github.io/FEDEASdocs/"
+
+copyright: '&copy 1998-2020 UC Regents, <a href="http://filippou.ce.berkeley.edu/">Filip C. Filippou</a>'
+
+theme:
+  name: berkeley
+  custom_dir: theme/
+  hljs_languages:
+    - matlab
+
+nav:
+  - About: 'About/'
+  - Guides: 'Guides/'
+  - Functions:
+    - Latest Release: 'Functions/latest' 
+    - Pre-processing: 'Functions/latest/Pre-Processing/'
+    - Modeling Libraries:
+      - Element: 'Functions/latest/Modeling_Library/Element_Library/'
+      - Material: 'Functions/latest/Modeling_Library/Material_Library/'
+      - Section: 'Functions/latest/Modeling_Library/Section_Library/'
+    - Solution Library: 'Functions/latest/Solution_Library/'
+    - Utilities: 'Functions/latest/Utilities/'
+  - Gallery: Gallery/
+
+sidebar:
+  min_depth: -1
+  max_depth: 10
+
+
+meta_includes:
+  - docs/Examples/
+
+
+extra_css: 
+  - _static/css/extra.css
+
+extra_javascript: 
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - tables
+    - mdx_math:
+        enable_dollar_delimiter: true 
+    - meta
+    - markdown.extensions.attr_list
+    # - pymdownx.superfences
+    - pymdownx.highlight
+
+  
+google_analytics: 
+  - UA-170527070-1
+  - auto
+
+

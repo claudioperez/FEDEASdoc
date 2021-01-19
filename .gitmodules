@@ -1,0 +1,36 @@
+[submodule "docs/Examples/fdlb-0001"]
+	path = docs/Examples/fdlb-0001
+	url = https://github.com/FEDEASLab/fdlb-0001.git
+[submodule "docs/Examples/fdlb-0002"]
+	path = docs/Examples/fdlb-0002
+	url = https://github.com/FEDEASLab/fdlb-0002.git
+[submodule "docs/Examples/fdlb-0003"]
+	path = docs/Examples/fdlb-0003
+	url = https://github.com/FEDEASLab/fdlb-0003.git
+[submodule "docs/Examples/fdlb-0004"]
+	path = docs/Examples/fdlb-0004
+	url = https://github.com/FEDEASLab/fdlb-0004
+[submodule "docs/Examples/fdlb-0005"]
+	path = docs/Examples/fdlb-0005
+	url = https://github.com/FEDEASLab/fdlb-0005
+[submodule "docs/Examples/fdlb-0006"]
+	path = docs/Examples/fdlb-0006
+	url = https://github.com/FEDEASLab/fdlb-0006
+[submodule "docs/Examples/fdlb-0007"]
+	path = docs/Examples/fdlb-0007
+	url = https://github.com/FEDEASLab/fdlb-0007
+[submodule "docs/Examples/fdlb-0008"]
+	path = docs/Examples/fdlb-0008
+	url = https://github.com/FEDEASLab/fdlb-0008
+[submodule "docs/Examples/fdlb-0010"]
+	path = docs/Examples/fdlb-0010
+	url = https://github.com/FEDEASLab/fdlb-0010
+[submodule "docs/Examples/fdlb-0009"]
+	path = docs/Examples/fdlb-0009
+	url = https://github.com/FEDEASLab/fdlb-0009
+[submodule "docs/Examples/fdlb-0011"]
+	path = docs/Examples/fdlb-0011
+	url = https://github.com/FEDEASLab/fdlb-0011
+[submodule "docs/Examples/fdlb-0012"]
+	path = docs/Examples/fdlb-0012
+	url = http://github.com/FEDEASLab/fdlb-0012
