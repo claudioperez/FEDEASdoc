@@ -1,13 +1,10 @@
----
-title: InelLPwLH1dMat
-...
 
 <!-- <a name="_top"></a>
-<div><a href="../../index.md">Home</a> &gt;  <a href="#">v5.1.0</a> &gt; <a href="index.md">Material_Library</a> &gt; InelLPwLH1dMat.m</div> -->
+<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Material_Library</a> &gt; InelLPwLH1dMat.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="index.md">Index for v5.1.0\Material_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
-# InelLPwLH1dMat
+<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="_index.md">Index for latest\Material_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+# `InelLPwLH1dMat`
 <!-- <h1>InelLPwLH1dMat
 </h1> -->
 
@@ -137,4 +134,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Sat 25-Jul-2020 23:38:00 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
