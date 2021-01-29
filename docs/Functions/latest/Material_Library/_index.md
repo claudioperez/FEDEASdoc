@@ -1,0 +1,18 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <body> -->
+<!-- <a name="_top"></a>
+<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="_index.md">Index for `latest\Material_Library`&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table> -->
+
+# `latest\Material_Library`
+
+<table>
+<tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="BilinElastic1dMat">BilinElastic1dMat</a></td><td>BILINELASTIC1dMAT uniaxial stress-strain relation for a bilinear elastic material </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="BilinHyst1dMat">BilinHyst1dMat</a></td><td>BILINHYST1dMAT bilinear hysteretic force-deformation relation with pinching </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="BilinInel1dMat">BilinInel1dMat</a></td><td>BILININEL1dMAT uniaxial stress-strain relation for bilinear inelastic material </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="BilinOrOr1dMat">BilinOrOr1dMat</a></td><td>BILINOROR1dMAT uniaxial stress-strain relation for bilinear origin-oriented material </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="BilinPkOr1dMat">BilinPkOr1dMat</a></td><td>BILINPKOR1dMAT uniaxial stress-strain relation for bilinear origin-oriented material </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="GMP1dMat">GMP1dMat</a></td><td>GMP1DMAT uniaxial stress-strain relation for Giuffre-Menegotto-Pinto hysteretic material </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="InelJ2PwLH3dMat">InelJ2PwLH3dMat</a></td><td>INELJ2PwLH3DMAT inelastic 3d material model with J2 plasticity and linear kinematic and isotropic hardening </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="InelLPwLH1dMat">InelLPwLH1dMat</a></td><td>INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotropic hardening </td></tr><tr><td><img src="../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="ManderConcr1dMat">ManderConcr1dMat</a></td><td>MANDERCONCR1DMAT hysteretic concrete stress-strain relation after Mander </td></tr></table>
+
+
+
+
+<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- </body> -->
+<!-- </html> -->

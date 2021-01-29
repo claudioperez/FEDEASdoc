@@ -1,0 +1,18 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <body> -->
+<!-- <a name="_top"></a>
+<table width="100%"><tr><td align="left"><a href="../../../_index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="_index.md">Index for `latest\Utility_Functions\Plotting`&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table> -->
+
+# `latest\Utility_Functions\Plotting`
+
+<table>
+<tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Create_Window">Create_Window</a></td><td>CREATE_WINDOW creates new window with given dimensions </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Draw_Arrow">Draw_Arrow</a></td><td>DRAW_ARROW draws 2d or 3d arrow </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Draw_Cube">Draw_Cube</a></td><td>DRAW_CUBE draws cube in current window </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Get_HngPos4DefoElem">Get_HngPos4DefoElem</a></td><td>GET_HNGPOS4DEFOELEM determine axial and flexural hinge position for deformed element </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Get_ModelScale">Get_ModelScale</a></td><td>GET_MODELSCALE determines maximum and minimum element length in Model </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Label_Model">Label_Model</a></td><td>LABEL_MODEL displays element and node numbers and global axes in the current window </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Plot_BounCond">Plot_BounCond</a></td><td>PLOT_BOUNCOND plots symbols for boundary conditions of structural model </td></tr></table>
+
+
+
+
+<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- </body> -->
+<!-- </html> -->

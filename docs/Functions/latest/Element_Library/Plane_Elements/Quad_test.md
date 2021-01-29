@@ -1,3 +1,0 @@
-# Quad_Placeholder
-
-Lorem
