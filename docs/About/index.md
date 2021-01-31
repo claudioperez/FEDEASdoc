@@ -18,4 +18,3 @@ The process of performing the nonlinear response analysis of a structure under s
 
 ## License
 
-
