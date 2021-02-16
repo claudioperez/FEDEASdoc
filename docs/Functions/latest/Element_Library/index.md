@@ -1,10 +1,9 @@
 ---
 title: Element Library
-template: partials/card_index.html
+template: partials/table_index.html
+description: Finite element modeling library.
 ...
 
 # Element Library
 
-:::{rendre}
 
-:::
