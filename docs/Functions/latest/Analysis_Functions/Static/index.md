@@ -1,16 +1,11 @@
 ---
 title: Static Analysis
-description: Functions for static structural analysis routines.
+description: Iterative Newton methods, load/displacement control, state determination and more.
+template: partials/table_index.html
 ...
 
 
 
-# Static
-
-<table>
-<tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Event2Event_NLAnalysis">Event2Event_NLAnalysis</a></td><td>EVENT2EVENT_NLANALYSIS event-to-event incremental analysis with linear or P-DELTA geometry </td></tr>
-<tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Increment">Increment</a></td><td>INCREMENT load incrementation and state advance under static conditions </td></tr>
-<tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Initialize">Initialize</a></td><td>INITIALIZE initialize analysis variables in STATE and load control parameters in SOLSTRAT </td></tr>
-<tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Initialize_SolStrat">Initialize_SolStrat</a></td><td>INITIALIZE_SOLSTRAT default values for most solution strategy parameters </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Initialize_State">Initialize_State</a></td><td>INITIALIZE_STATE initialize state variables of structural model and create STATE </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Iterate">Iterate</a></td><td>ITERATE equilibrium iterations until convergence under static conditions </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="LinearStep">LinearStep</a></td><td>LINEARSTEP sets up and solves the structure equilibrium equations for single load step </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="LoadFactorControl">LoadFactorControl</a></td><td>LOADFACTORCONTROL determine load factor increment under load control strategy </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="LoadFactorIncrement">LoadFactorIncrement</a></td><td>LOADFACTORINCREMENT load factor increment(s) for given load histories </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="OneIteration">OneIteration</a></td><td>ONEITERATION single equilibrium iteration under static conditions </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="PlasticAnalysis">PlasticAnalysis</a></td><td>PLASTICANALYSIS collapse load factor, basic forces, and collapse mechanism by plastic analysis </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="StateDetermination">StateDetermination</a></td><td>STATEDETERMINATION structure state determination under static conditions </td></tr><tr><td><img src="../../../matlab_logo.png" alt="icon name" class="icon">&nbsp;<a href="Update_State">Update_State</a></td><td>UPDATE_STATE final state determination under static conditions, reset increments and history </td></tr></table>
+# Static Analysis
 
 
