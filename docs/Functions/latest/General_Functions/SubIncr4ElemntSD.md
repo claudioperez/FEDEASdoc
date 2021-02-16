@@ -1,16 +1,22 @@
+---
+title: "SubIncr4ElemntSD"
+id: "SubIncr4ElemntSD"
+description: "SUBINCR4ELMNTSD element displacement increment subdivision for state determination"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">General_Functions</a> &gt; SubIncr4ElemntSD.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">General_Functions</a> &gt; 
+<!-- SubIncr4ElemntSD.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `SubIncr4ElemntSD`
-<!-- <h1>SubIncr4ElemntSD
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 SUBINCR4ELMNTSD element displacement increment subdivision for state determination
 
@@ -19,7 +25,9 @@ SUBINCR4ELMNTSD element displacement increment subdivision for state determinati
 ## <a name="_synopsis"></a>Synopsis
 
 `function ElemState = SubIncr4ElemntSD (el,ElemName,xyz,ElemData,ElemState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">SUBINCR4ELMNTSD element displacement increment subdivision for state determination
 ELEMSTATE = SUBINCR4ELMNTSD (EL,ELEMNAME,XYZ,ELEMDATA,ELEMSTATE)
@@ -42,6 +50,7 @@ ELEMSTATE = SUBINCR4ELMNTSD (EL,ELEMNAME,XYZ,ELEMDATA,ELEMSTATE)
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 <li><a href="Structure.md" class="code" title="function Resp = Structure (action,Model,ElemData,State,ElemList)">Structure</a>	STRUCTURE performs requested action on group of elements</li></ul>
@@ -50,4 +59,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

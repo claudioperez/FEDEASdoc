@@ -1,16 +1,22 @@
+---
+title: "MaterialWrapper"
+id: "MaterialWrapper"
+description: "MATERIALWRAPPER wrapper element that passes on arguments to the material state determination"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Element_Library</a> &gt; MaterialWrapper.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Element_Library</a> &gt; 
+<!-- MaterialWrapper.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `MaterialWrapper`
-<!-- <h1>MaterialWrapper
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 MATERIALWRAPPER wrapper element that passes on arguments to the material state determination
 
@@ -19,7 +25,9 @@ MATERIALWRAPPER wrapper element that passes on arguments to the material state d
 ## <a name="_synopsis"></a>Synopsis
 
 `function ElemResp = MaterialWrapper (action,el_no,xyz,ElemData,ElemState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">MATERIALWRAPPER wrapper element that passes on arguments to the material state determination
   ELEMRESP = MATERIALWRAPPER (ACTION,EL_NO,XYZ,ELEMDATA,ELEMSTATE)
@@ -111,7 +119,8 @@ MATERIALWRAPPER wrapper element that passes on arguments to the material state d
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="Extract_El2MatState" class="code" title="function MatState = Extract_El2MatState (mat,aeps,ElState,rd)">Extract_El2MatState</a>	EXTRACT_EL2MATSTATE extract material state from element state</li></ul>
+<li><a href="/Functions/Extract_El2MatState" class="code" title="function MatState = Extract_El2MatState (mat,aeps,ElState,rd)">Extract_El2MatState</a>	EXTRACT_EL2MATSTATE extract material state from element state</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -120,4 +129,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

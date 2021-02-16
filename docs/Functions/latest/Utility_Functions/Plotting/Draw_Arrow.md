@@ -1,16 +1,22 @@
+---
+title: "Draw_Arrow"
+id: "Draw_Arrow"
+description: "DRAW_ARROW draws 2d or 3d arrow"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="#">Utility_Functions</a> &gt; <a href="_index.md">Plotting</a> &gt; Draw_Arrow.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href="#">Utility_Functions</a> &gt; <a href=".autoindex.md">Plotting</a> &gt; 
+<!-- Draw_Arrow.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../../_index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Utility_Functions\Plotting&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../../.autoindex.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Utility_Functions\Plotting&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 # `Draw_Arrow`
-<!-- <h1>Draw_Arrow
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 DRAW_ARROW draws 2d or 3d arrow
 
@@ -19,7 +25,9 @@ DRAW_ARROW draws 2d or 3d arrow
 ## <a name="_synopsis"></a>Synopsis
 
 `function varargout = Draw_Arrow (Astr,Aend,Aln,PlotOpt)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">DRAW_ARROW draws 2d or 3d arrow
   AEND = DRAW_ARROW (ASTR,AEND,ALN,PLOTOPT)
@@ -50,6 +58,7 @@ DRAW_ARROW draws 2d or 3d arrow
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 <li><a href="Label_Model.md" class="code" title="function Label_Model (Model,LblOpt)">Label_Model</a>	LABEL_MODEL displays element and node numbers and global axes in the current window</li></ul>
@@ -58,4 +67,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

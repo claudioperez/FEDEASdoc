@@ -1,16 +1,22 @@
+---
+title: "Inel2dFrm"
+id: "Inel2dFrm"
+description: "INEL2dFRM inelastic 2d frame element with different basic element types"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Element_Library</a> &gt; Inel2dFrm.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Element_Library</a> &gt; 
+<!-- Inel2dFrm.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `Inel2dFrm`
-<!-- <h1>Inel2dFrm
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 INEL2dFRM inelastic 2d frame element with different basic element types
 
@@ -19,7 +25,9 @@ INEL2dFRM inelastic 2d frame element with different basic element types
 ## <a name="_synopsis"></a>Synopsis
 
 `function ElemResp = Inel2dFrm (action,el_no,xyz,ElemData,ElemState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">INEL2dFRM inelastic 2d frame element with different basic element types
   ELEMRESP = INEL2dFRM (ACTION,EL_NO,XYZ,ELEMDATA,ELEMSTATE)
@@ -141,7 +149,8 @@ INEL2dFRM inelastic 2d frame element with different basic element types
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="ElementLoading" class="code" title="function wC = ElementLoading (w0,lamda,LdId)">ElementLoading</a>	ELEMENTLOADING determines current distributed element load value</li><li><a href="ExtrReshu" class="code" title="function [u,Du,DDu] = ExtrReshu (State,ndf,nen)">ExtrReshu</a>	EXTRRESHU extracts displacements and increments from State and reshapes into array</li><li><a href="GeomTran_2dFrm" class="code" title="function [ag,bg,ab,v,Dv,DDv] = GeomTran_2dFrm (option,xyz,GeomData,u,Du,DDu)">GeomTran_2dFrm</a>	GEOMTRAN_2dFRM kinematic matrices and deformations for a 2-node 2d frame element</li><li><a href="kg_2dFrm" class="code" title="function kg = kg_2dFrm (option,xyz,u,q)">kg_2dFrm</a>	KG_2dFRM geometric stiffness matrix for 2-node 2d frame element for different options</li></ul>
+<li><a href="/Functions/ElementLoading" class="code" title="function wC = ElementLoading (w0,lamda,LdId)">ElementLoading</a>	ELEMENTLOADING determines current distributed element load value</li><li><a href="/Functions/ExtrReshu" class="code" title="function [u,Du,DDu] = ExtrReshu (State,ndf,nen)">ExtrReshu</a>	EXTRRESHU extracts displacements and increments from State and reshapes into array</li><li><a href="/Functions/GeomTran_2dFrm" class="code" title="function [ag,bg,ab,v,Dv,DDv] = GeomTran_2dFrm (option,xyz,GeomData,u,Du,DDu)">GeomTran_2dFrm</a>	GEOMTRAN_2dFRM kinematic matrices and deformations for a 2-node 2d frame element</li><li><a href="/Functions/kg_2dFrm" class="code" title="function kg = kg_2dFrm (option,xyz,u,q)">kg_2dFrm</a>	KG_2dFRM geometric stiffness matrix for 2-node 2d frame element for different options</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -150,4 +159,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
