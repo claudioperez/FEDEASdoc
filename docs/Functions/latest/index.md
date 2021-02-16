@@ -1,6 +1,6 @@
 ---
 title: Release Summary
-template: partials/feature_index.html
+template: partials/card_index.html
 ...
 
 <a name="_top"></a>

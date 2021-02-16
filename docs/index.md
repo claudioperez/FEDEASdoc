@@ -45,7 +45,7 @@ full_width: true
     <div class="row featurette p-4">
     <div class="row text-center">
         <div class="col-lg-4">
-        <p><a class="btn btn-outline-secondary" href="Guides/get-started" role="button">Guides</a></p>
+        <p><a class="btn btn-outline-secondary" href="Guides/" role="button">Guides</a></p>
         <p class="lead">View guides that explain the concepts and components of <code>FEDEASLab</code>.</p>
         </div><!-- /.col-lg-4 -->
 
@@ -57,7 +57,7 @@ full_width: true
 
 
         <div class="col-lg-4">
-            <p><a class="btn btn-outline-secondary" href="Examples/" role="button">Examples</a></p>
+            <p><a class="btn btn-outline-secondary" href="Gallery/" role="button">Examples</a></p>
         <p class="lead">Walk through some examples of the various analysis procedures that <code>FEDEASLab</code> provides.</p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -68,13 +68,13 @@ full_width: true
     <div class="col-md-12">
     <h2 class="featurette-heading">Rapid Development</h2>
     <p class="lead"><code>FEDEASLab</code> functions interact through a consistent API that allows users to rapidly implement and explore new finite element and material models.</p>
-    <a class="btn btn-outline-secondary" href="developers/" role="button">Developer's Manual</a>
+    <a class="btn btn-outline-secondary" href="Guides/Developing" role="button">Developer's Manual</a>
     </div>
     <!-- <div class="col-md-7">
     <h2 class="featurette-heading">Post-Processing</h2>
     <p class="lead">Post-processing is accommodated in the program by generating a data object that carries all important material, element and structural information for plotting or printing. Several functions that address basic post-processing tasks are provided. The user can easily enhance and extend the current capabilities.</p>
-    <a class="btn btn-outline-secondary" href="http://FEDEASLab/linktoPostlib.html" role="button">Library </a>
-    <a class="btn btn-secondary" href="https://possibly-link-to-binder-example" role="button">Examples </a>
+    <a class="btn btn-outline-secondary" href="Functions" role="button">Library </a>
+    <a class="btn btn-secondary" href="Gallery" role="button">Examples</a>
     </div> -->
 </div>
 <hr class="featurette-divider">
