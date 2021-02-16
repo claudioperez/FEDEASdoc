@@ -6,6 +6,7 @@ site_url: "https://claudioperez.github.io/FEDEASdocs/"
 copyright: '&copy 1998-2020 UC Regents, <a href="http://filippou.ce.berkeley.edu/">Filip C. Filippou</a>'
 
 pandoc: pandoc.yaml
+aurore: ../.aurore/
 
 theme:
   name: berkeley
@@ -17,14 +18,13 @@ nav:
   - About: 'About/'
   - Guides: 'Guides/'
   - Functions:
-    - Latest Release: 'Functions/latest' 
-    - Pre-processing: 'Functions/latest/Pre-Processing/'
+    - Module Breakdown: 'Functions/latest' 
     - Modeling Libraries:
-      - Element: 'Functions/latest/Modeling_Library/Element_Library/'
-      - Material: 'Functions/latest/Modeling_Library/Material_Library/'
-      - Section: 'Functions/latest/Modeling_Library/Section_Library/'
-    - Solution Library: 'Functions/latest/Solution_Library/'
-    - Utilities: 'Functions/latest/Utilities/'
+      - Elements: 'Functions/latest/Element_Library/'
+      - Materials: 'Functions/latest/Material_Library/'
+      - Sections: 'Functions/latest/Section_Library/'
+    - Analysis Functions: 'Functions/latest/Analysis_Functions/'
+    - Utilities: 'Functions/latest/Utility_Functions/'
   - Gallery: Gallery/
 
 sidebar:
@@ -42,14 +42,14 @@ extra_css:
 extra_javascript: 
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-markdown_extensions:
-    - tables
-    - mdx_math:
-        enable_dollar_delimiter: true 
-    - meta
-    - markdown.extensions.attr_list
-    # - pymdownx.superfences
-    - pymdownx.highlight
+# markdown_extensions:
+#     - tables
+#     - mdx_math:
+#         enable_dollar_delimiter: true 
+#     - meta
+#     - markdown.extensions.attr_list
+#     # - pymdownx.superfences
+#     - pymdownx.highlight
 
   
 google_analytics: 
