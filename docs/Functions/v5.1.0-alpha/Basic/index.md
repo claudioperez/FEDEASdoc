@@ -1,10 +1,12 @@
-[]{#_top}
+---
+title: Basic Functions
+...
 
   ------------------------------------------------------ -------------------------------------------------------
   [![\<](../left.png) Master index](../FEDEASLab.html)     [Index for Basic ![\>](../right.png)](FEDEASLab.html)
   ------------------------------------------------------ -------------------------------------------------------
 
-# Index for Basic
+# Basic Functions
 
 ## Matlab files in this directory:
 
