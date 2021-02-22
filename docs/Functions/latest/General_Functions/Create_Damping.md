@@ -1,16 +1,22 @@
+---
+title: "Create_Damping"
+id: "Create_Damping"
+description: "CREATE_DAMPING setup damping matrix of structural model"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">General_Functions</a> &gt; Create_Damping.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">General_Functions</a> &gt; 
+<!-- Create_Damping.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `Create_Damping`
-<!-- <h1>Create_Damping
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 CREATE_DAMPING setup damping matrix of structural model
 
@@ -19,7 +25,9 @@ CREATE_DAMPING setup damping matrix of structural model
 ## <a name="_synopsis"></a>Synopsis
 
 `function C = Create_Damping (type,Kf,Ml,zeta,mode)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">CREATE_DAMPING setup damping matrix of structural model
   C = CREATE_DAMPING (TYPE,KF,ML,ZETA,MODE)
@@ -51,7 +59,8 @@ CREATE_DAMPING setup damping matrix of structural model
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="../../latest/Analysis_Functions/Dynamic/EigenMode" class="code" title="function [omega,Ueig] = EigenMode (Kf,M,nmod)">EigenMode</a>	EIGENMODE determines eigenfrequencies and eigenmodes of structural model</li></ul>
+<li><a href="/Functions/../../latest/Analysis_Functions/Dynamic/EigenMode" class="code" title="function [omega,Ueig] = EigenMode (Kf,M,nmod)">EigenMode</a>	EIGENMODE determines eigenfrequencies and eigenmodes of structural model</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 <li><a href="Add_Damping2State.md" class="code" title="function State = Add_Damping2State (type,Model,State,zeta,mode)">Add_Damping2State</a>	ADD_DAMPING2STATE setup damping matrix of structural model as field of data structure STATE</li></ul>
@@ -60,4 +69,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

@@ -1,16 +1,22 @@
+---
+title: "Structure"
+id: "Structure"
+description: "STRUCTURE performs requested action on group of elements"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">General_Functions</a> &gt; Structure.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">General_Functions</a> &gt; 
+<!-- Structure.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `Structure`
-<!-- <h1>Structure
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 STRUCTURE performs requested action on group of elements
 
@@ -19,7 +25,9 @@ STRUCTURE performs requested action on group of elements
 ## <a name="_synopsis"></a>Synopsis
 
 `function Resp = Structure (action,Model,ElemData,State,ElemList)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">STRUCTURE performs requested action on group of elements
   RESP = STRUCTURE (ACTION,MODEL,ELEMDATA,STATE,ELEMLIST)
@@ -155,7 +163,8 @@ STRUCTURE performs requested action on group of elements
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="Extract_Str2ElState" class="code" title="function ElemState = Extract_Str2ElState (el,id,State)">Extract_Str2ElState</a>	EXTRACT_STR2ELSTATE extract element state from structure state</li><li><a href="Localize" class="code" title="function [xyz,id] = Localize (Model,el)">Localize</a>	LOCALIZE returns the node coordinates and id array of element</li><li><a href="SubIncr4ElemntSD" class="code" title="function ElemState = SubIncr4ElemntSD (el,ElemName,xyz,ElemData,ElemState)">SubIncr4ElemntSD</a>	SUBINCR4ELMNTSD element displacement increment subdivision for state determination</li></ul>
+<li><a href="/Functions/Extract_Str2ElState" class="code" title="function ElemState = Extract_Str2ElState (el,id,State)">Extract_Str2ElState</a>	EXTRACT_STR2ELSTATE extract element state from structure state</li><li><a href="/Functions/Localize" class="code" title="function [xyz,id] = Localize (Model,el)">Localize</a>	LOCALIZE returns the node coordinates and id array of element</li><li><a href="/Functions/SubIncr4ElemntSD" class="code" title="function ElemState = SubIncr4ElemntSD (el,ElemName,xyz,ElemData,ElemState)">SubIncr4ElemntSD</a>	SUBINCR4ELMNTSD element displacement increment subdivision for state determination</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 <li><a href="../../latest/Analysis_Functions/Dynamic/TransientStateDetermination.md" class="code" title="function State = TransientStateDetermination (StifUpdt,Model,ElemData,State,Int_Constants)">TransientStateDetermination</a>	TRANSIENTSTATEDETERMINATION structure state determination under transient conditions</li><li><a href="../../latest/Analysis_Functions/Dynamic/Update_TransientState.md" class="code" title="function State = Update_TransientState (Model,ElemData,State,SolStrat)">Update_TransientState</a>	UPDATE_TRANSIENTSTATE final state determination under transient conditions, reset increments and history</li><li><a href="../../latest/Analysis_Functions/Static/Initialize.md" class="code" title="function [State,SolStrat] = Initialize (Model,ElemData,Loading,State,SolStrat)">Initialize</a>	INITIALIZE initialize analysis variables in STATE and load control parameters in SOLSTRAT</li><li><a href="../../latest/Analysis_Functions/Static/Initialize_State.md" class="code" title="function State = Initialize_State (Model,ElemData)">Initialize_State</a>	INITIALIZE_STATE initialize state variables of structural model and create STATE</li><li><a href="../../latest/Analysis_Functions/Static/LinearStep.md" class="code" title="function State = LinearStep (Model,ElemData,Loading)">LinearStep</a>	LINEARSTEP sets up and solves the structure equilibrium equations for single load step</li><li><a href="../../latest/Analysis_Functions/Static/StateDetermination.md" class="code" title="function State = StateDetermination (StifUpdt,Model,ElemData,State)">StateDetermination</a>	STATEDETERMINATION structure state determination under static conditions</li><li><a href="../../latest/Analysis_Functions/Static/Update_State.md" class="code" title="function State = Update_State (Model,ElemData,State)">Update_State</a>	UPDATE_STATE final state determination under static conditions, reset increments and history</li><li><a href="Add_Mass2Model.md" class="code" title="function Model = Add_Mass2Model (Model,Me,ElemData,option)">Add_Mass2Model</a>	ADD_MASS2MODEL sets up lumped or consistent mass in Model.M</li><li><a href="../../latest/Solution_Scripts/S_InitialStep.md" class="code" title="">S_InitialStep</a>	% S_INITIALSTEP script for initial step of incremental analysis</li><li><a href="../../latest/Solution_Scripts/S_MultiStep.md" class="code" title="">S_MultiStep</a>	% S_MULTISTEP script for multi-step incremental analysis after load factor initialization</li><li><a href="../../latest/Solution_Scripts/S_MultiStep_wLoadHist.md" class="code" title="">S_MultiStep_wLoadHist</a>	% S_MULTISTEP_wLOADHIST script for multi-step incremental analysis under given load history(ies)</li><li><a href="../../latest/Solution_Scripts/S_MultiStep_wLoadHistwSD.md" class="code" title="">S_MultiStep_wLoadHistwSD</a>	% S_MULTISTEP_wLOADHISTwSD script for multi-step incremental analysis under given load history(ies)</li><li><a href="../../latest/Solution_Scripts/S_Transient_MultiStep.md" class="code" title="">S_Transient_MultiStep</a>	% S_TRANSIENT_MULTISTEP script for multi-step transient analysis under given load history(ies)</li><li><a href="../../latest/Solution_Scripts/S_Transient_MultiStepwSD.md" class="code" title="">S_Transient_MultiStepwSD</a>	% S_TRANSIENT_MULTISTEPwSD script for multi-step transient analysis under given load history(ies)</li></ul>
@@ -164,4 +173,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

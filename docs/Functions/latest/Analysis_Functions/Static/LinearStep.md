@@ -1,16 +1,22 @@
+---
+title: "LinearStep"
+id: "LinearStep"
+description: "LINEARSTEP sets up and solves the structure equilibrium equations for single load step"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="#">Analysis_Functions</a> &gt; <a href="_index.md">Static</a> &gt; LinearStep.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href="#">Analysis_Functions</a> &gt; <a href=".autoindex.md">Static</a> &gt; 
+<!-- LinearStep.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../../_index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Analysis_Functions\Static&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../../.autoindex.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Analysis_Functions\Static&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 # `LinearStep`
-<!-- <h1>LinearStep
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 LINEARSTEP sets up and solves the structure equilibrium equations for single load step
 
@@ -19,7 +25,9 @@ LINEARSTEP sets up and solves the structure equilibrium equations for single loa
 ## <a name="_synopsis"></a>Synopsis
 
 `function State = LinearStep (Model,ElemData,Loading)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">LINEARSTEP sets up and solves the structure equilibrium equations for single load step
   STATE = LINEARSTEP (MODEL,ELEMDATA,LOADING)
@@ -47,7 +55,8 @@ LINEARSTEP sets up and solves the structure equilibrium equations for single loa
 
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="Initialize_State" class="code" title="function State = Initialize_State (Model,ElemData)">Initialize_State</a>	INITIALIZE_STATE initialize state variables of structural model and create STATE</li><li><a href="../../../latest/General_Functions/Structure" class="code" title="function Resp = Structure (action,Model,ElemData,State,ElemList)">Structure</a>	STRUCTURE performs requested action on group of elements</li></ul>
+<li><a href="/Functions/Initialize_State" class="code" title="function State = Initialize_State (Model,ElemData)">Initialize_State</a>	INITIALIZE_STATE initialize state variables of structural model and create STATE</li><li><a href="/Functions/../../../latest/General_Functions/Structure" class="code" title="function Resp = Structure (action,Model,ElemData,State,ElemList)">Structure</a>	STRUCTURE performs requested action on group of elements</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -56,4 +65,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

@@ -1,16 +1,22 @@
+---
+title: "LSDOF_LinearWilson"
+id: "LSDOF_LinearWilson"
+description: "LSDOF_LINEARWILSON transient response of linear SDOF system by exact integration of piecewise linear excitation"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="#">Analysis_Functions</a> &gt; <a href="_index.md">Dynamic</a> &gt; LSDOF_LinearWilson.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href="#">Analysis_Functions</a> &gt; <a href=".autoindex.md">Dynamic</a> &gt; 
+<!-- LSDOF_LinearWilson.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../../_index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Analysis_Functions\Dynamic&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../../.autoindex.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Analysis_Functions\Dynamic&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 # `LSDOF_LinearWilson`
-<!-- <h1>LSDOF_LinearWilson
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 LSDOF_LINEARWILSON transient response of linear SDOF system by exact integration of piecewise linear excitation
 
@@ -19,7 +25,9 @@ LSDOF_LINEARWILSON transient response of linear SDOF system by exact integration
 ## <a name="_synopsis"></a>Synopsis
 
 `function [u,udot,uddot] = LSDOF_LinearWilson (Deltat,omega,p,zeta,u0,udot0)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">LSDOF_LINEARWILSON transient response of linear SDOF system by exact integration of piecewise linear excitation
   [U,UDOT,UDDOT] = LSDOF_LINEARWILSON (DELTAT,OMEGA,P,ZETA,U0,UDOT0)
@@ -50,6 +58,7 @@ LSDOF_LINEARWILSON transient response of linear SDOF system by exact integration
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 <li><a href="ElasticResponseSpectrum.md" class="code" title="function [D,Psv,Psa] = ElasticResponseSpectrum (Acceleration,T,zeta)">ElasticResponseSpectrum</a>	ELASTICRESPONSESPECTRUM determines the elastic response spectrum for given acceleration history</li><li><a href="ModalAnalysis.md" class="code" title="function [omega,Ueig,Y_t,Ydot_t,Yddot_t] = ModalAnalysis (option,Kf,M,Loading,Deltat,zeta,nmod)">ModalAnalysis</a>	MODALANALYSIS determines modal response history for given transient loading</li></ul>
@@ -58,4 +67,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

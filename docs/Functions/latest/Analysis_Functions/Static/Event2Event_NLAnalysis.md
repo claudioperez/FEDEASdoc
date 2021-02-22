@@ -1,16 +1,22 @@
+---
+title: "Event2Event_NLAnalysis"
+id: "Event2Event_NLAnalysis"
+description: "EVENT2EVENT_NLANALYSIS event-to-event incremental analysis with linear or P-DELTA geometry"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="#">Analysis_Functions</a> &gt; <a href="_index.md">Static</a> &gt; Event2Event_NLAnalysis.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href="#">Analysis_Functions</a> &gt; <a href=".autoindex.md">Static</a> &gt; 
+<!-- Event2Event_NLAnalysis.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../../_index.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Analysis_Functions\Static&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../../.autoindex.md"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Analysis_Functions\Static&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 # `Event2Event_NLAnalysis`
-<!-- <h1>Event2Event_NLAnalysis
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 EVENT2EVENT_NLANALYSIS event-to-event incremental analysis with linear or P-DELTA geometry
 
@@ -19,7 +25,9 @@ EVENT2EVENT_NLANALYSIS event-to-event incremental analysis with linear or P-DELT
 ## <a name="_synopsis"></a>Synopsis
 
 `function [lamdah,Qh,Ufh,Vph,Iph] = Event2Event_NLAnalysis (opt,Model,ElemData,Loading,ConvPar)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">EVENT2EVENT_NLANALYSIS event-to-event incremental analysis with linear or P-DELTA geometry
   [LAMDAH,QH,UFH,VPH,IPH] = EVENT2EVENT_NLANALYSIS (OPT,MODEL,ELEMDATA,LOADING)
@@ -67,7 +75,8 @@ EVENT2EVENT_NLANALYSIS event-to-event incremental analysis with linear or P-DELT
 
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="../../../latest/General_Functions/A_matrix" class="code" title="function A = A_matrix (Model)">A_matrix</a>	A_MATRIX kinematic matrix of structural model with 2d/3d truss and 2d frame elements</li><li><a href="../../../latest/General_Functions/Aj_matrix" class="code" title="function Aj = Aj_matrix (Model)">Aj_matrix</a>	AJ_MATRIX kinematic matrix of structural model with 2d/3d truss and 2d frame elements</li><li><a href="../../../latest/General_Functions/Localize" class="code" title="function [xyz,id] = Localize (Model,el)">Localize</a>	LOCALIZE returns the node coordinates and id array of element</li><li><a href="../../../latest/General_Functions/Q0_vector" class="code" title="function Q0 = Q0_vector (Model,ElemData)">Q0_vector</a>	Q0_VECTOR initial (fixed-end) force vector for structural model</li></ul>
+<li><a href="/Functions/../../../latest/General_Functions/A_matrix" class="code" title="function A = A_matrix (Model)">A_matrix</a>	A_MATRIX kinematic matrix of structural model with 2d/3d truss and 2d frame elements</li><li><a href="/Functions/../../../latest/General_Functions/Aj_matrix" class="code" title="function Aj = Aj_matrix (Model)">Aj_matrix</a>	AJ_MATRIX kinematic matrix of structural model with 2d/3d truss and 2d frame elements</li><li><a href="/Functions/../../../latest/General_Functions/Localize" class="code" title="function [xyz,id] = Localize (Model,el)">Localize</a>	LOCALIZE returns the node coordinates and id array of element</li><li><a href="/Functions/../../../latest/General_Functions/Q0_vector" class="code" title="function Q0 = Q0_vector (Model,ElemData)">Q0_vector</a>	Q0_VECTOR initial (fixed-end) force vector for structural model</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -76,4 +85,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

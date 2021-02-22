@@ -1,16 +1,22 @@
+---
+title: "Add_Mass2Model"
+id: "Add_Mass2Model"
+description: "ADD_MASS2MODEL sets up lumped or consistent mass in Model.M"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">General_Functions</a> &gt; Add_Mass2Model.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">General_Functions</a> &gt; 
+<!-- Add_Mass2Model.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\General_Functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `Add_Mass2Model`
-<!-- <h1>Add_Mass2Model
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 ADD_MASS2MODEL sets up lumped or consistent mass in Model.M
 
@@ -19,7 +25,9 @@ ADD_MASS2MODEL sets up lumped or consistent mass in Model.M
 ## <a name="_synopsis"></a>Synopsis
 
 `function Model = Add_Mass2Model (Model,Me,ElemData,option)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">ADD_MASS2MODEL sets up lumped or consistent mass in Model.M
   MODEL = ADD_MASS2MODEL (MODEL,ME,ELEMDATA,OPTION)
@@ -67,7 +75,8 @@ ADD_MASS2MODEL sets up lumped or consistent mass in Model.M
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="Create_NodalMass" class="code" title="function Ml = Create_NodalMass (Model,Me)">Create_NodalMass</a>	CREATE_NODALMASS free dof lumped mass vector for structural model</li><li><a href="Structure" class="code" title="function Resp = Structure (action,Model,ElemData,State,ElemList)">Structure</a>	STRUCTURE performs requested action on group of elements</li></ul>
+<li><a href="/Functions/Create_NodalMass" class="code" title="function Ml = Create_NodalMass (Model,Me)">Create_NodalMass</a>	CREATE_NODALMASS free dof lumped mass vector for structural model</li><li><a href="/Functions/Structure" class="code" title="function Resp = Structure (action,Model,ElemData,State,ElemList)">Structure</a>	STRUCTURE performs requested action on group of elements</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -76,4 +85,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
