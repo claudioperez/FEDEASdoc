@@ -1,16 +1,22 @@
+---
+title: "SectionWrapper"
+id: "SectionWrapper"
+description: "SECTIONWRAPPER wrapper element that passes on arguments to the section state determination"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Element_Library</a> &gt; SectionWrapper.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Element_Library</a> &gt; 
+<!-- SectionWrapper.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `SectionWrapper`
-<!-- <h1>SectionWrapper
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 SECTIONWRAPPER wrapper element that passes on arguments to the section state determination
 
@@ -19,7 +25,9 @@ SECTIONWRAPPER wrapper element that passes on arguments to the section state det
 ## <a name="_synopsis"></a>Synopsis
 
 `function ElemResp = SectionWrapper (action,el_no,xyz,ElemData,ElemState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">SECTIONWRAPPER wrapper element that passes on arguments to the section state determination
   ELEMRESP = SECTIONWRAPPER (ACTION,EL_NO,XYZ,ELEMDATA,ELEMSTATE)
@@ -111,7 +119,8 @@ SECTIONWRAPPER wrapper element that passes on arguments to the section state det
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="Extract_El2SecState" class="code" title="function SecState = Extract_El2SecState (sec,ae,ElemState)">Extract_El2SecState</a>	EXTRACT_EL2SECSTATE extract section state from element state</li></ul>
+<li><a href="/Functions/Extract_El2SecState" class="code" title="function SecState = Extract_El2SecState (sec,ae,ElemState)">Extract_El2SecState</a>	EXTRACT_EL2SECSTATE extract section state from element state</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -120,4 +129,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

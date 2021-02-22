@@ -1,16 +1,22 @@
+---
+title: "InelLPwLH1dMat"
+id: "InelLPwLH1dMat"
+description: "INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotropic hardening"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Material_Library</a> &gt; InelLPwLH1dMat.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Material_Library</a> &gt; 
+<!-- InelLPwLH1dMat.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Material_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Material_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `InelLPwLH1dMat`
-<!-- <h1>InelLPwLH1dMat
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotropic hardening
 
@@ -19,7 +25,9 @@ INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotr
 ## <a name="_synopsis"></a>Synopsis
 
 `function MatResp = InelLPwLH1dMat (action,MatNo,MatData,MatState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotropic hardening
   MATRESP = INELLPwLH1dMAT (ACTION,MAT_NO,MATDATA,MATSTATE)
@@ -126,6 +134,7 @@ INELLPwLH1dMAT inelastic linear-plastic 1d model with linear kinematic and isotr
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -134,4 +143,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

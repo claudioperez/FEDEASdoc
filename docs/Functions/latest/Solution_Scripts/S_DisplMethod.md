@@ -1,16 +1,22 @@
+---
+title: "S_DisplMethod"
+id: "S_DisplMethod"
+description: "% S_DISPLMETHOD script for displacement method of structural analysis"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Solution_Scripts</a> &gt; S_DisplMethod.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Solution_Scripts</a> &gt; 
+<!-- S_DisplMethod.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Solution_Scripts&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Solution_Scripts&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `S_DisplMethod`
-<!-- <h1>S_DisplMethod
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 % S_DISPLMETHOD script for displacement method of structural analysis
 
@@ -19,7 +25,9 @@
 ## <a name="_synopsis"></a>Synopsis
 
 `This is a script file.` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">% S_DISPLMETHOD script for displacement method of structural analysis
   the script contains the steps for the classical displacement method of structural analysis:
@@ -49,7 +57,8 @@
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="../../latest/General_Functions/A_matrix" class="code" title="function A = A_matrix (Model)">A_matrix</a>	A_MATRIX kinematic matrix of structural model with 2d/3d truss and 2d frame elements</li><li><a href="../../latest/General_Functions/Create_PwForces" class="code" title="function Pw = Create_PwForces (Model,ElemData)">Create_PwForces</a>	CREATE_PWFORCES set up equivalent nodal forces due to uniform element loading w</li><li><a href="../../latest/General_Functions/Ks_matrix" class="code" title="function Ks = Ks_matrix (Model,ElemData)">Ks_matrix</a>	KS_MATRIX block diagonal matrix of basic element stiffness matrices for structural model</li><li><a href="../../latest/General_Functions/Q0_vector" class="code" title="function Q0 = Q0_vector (Model,ElemData)">Q0_vector</a>	Q0_VECTOR initial (fixed-end) force vector for structural model</li><li><a href="../../latest/Utility_Functions/General/H_index" class="code" title="function iced = H_index (Model,ElemData)">H_index</a>	H_INDEX cell array of indices into structure arrays for continuous element deformations</li></ul>
+<li><a href="/Functions/../../latest/General_Functions/A_matrix" class="code" title="function A = A_matrix (Model)">A_matrix</a>	A_MATRIX kinematic matrix of structural model with 2d/3d truss and 2d frame elements</li><li><a href="/Functions/../../latest/General_Functions/Create_PwForces" class="code" title="function Pw = Create_PwForces (Model,ElemData)">Create_PwForces</a>	CREATE_PWFORCES set up equivalent nodal forces due to uniform element loading w</li><li><a href="/Functions/../../latest/General_Functions/Ks_matrix" class="code" title="function Ks = Ks_matrix (Model,ElemData)">Ks_matrix</a>	KS_MATRIX block diagonal matrix of basic element stiffness matrices for structural model</li><li><a href="/Functions/../../latest/General_Functions/Q0_vector" class="code" title="function Q0 = Q0_vector (Model,ElemData)">Q0_vector</a>	Q0_VECTOR initial (fixed-end) force vector for structural model</li><li><a href="/Functions/../../latest/Utility_Functions/General/H_index" class="code" title="function iced = H_index (Model,ElemData)">H_index</a>	H_INDEX cell array of indices into structure arrays for continuous element deformations</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -58,4 +67,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

@@ -1,16 +1,22 @@
+---
+title: "BInel2dFrm_wEPLHM"
+id: "BInel2dFrm_wEPLHM"
+description: "BINELP2dFRM_WEPLHM 2d elasto-plastic, linear hardening basic frame element with hinge offsets"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Element_Library</a> &gt; BInel2dFrm_wEPLHM.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Element_Library</a> &gt; 
+<!-- BInel2dFrm_wEPLHM.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `BInel2dFrm_wEPLHM`
-<!-- <h1>BInel2dFrm_wEPLHM
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 BINELP2dFRM_WEPLHM 2d elasto-plastic, linear hardening basic frame element with hinge offsets
 
@@ -19,7 +25,9 @@ BINELP2dFRM_WEPLHM 2d elasto-plastic, linear hardening basic frame element with 
 ## <a name="_synopsis"></a>Synopsis
 
 `function BElemResp = BInel2dFrm_wEPLHM (action,L,BElemData,BElemState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">BINELP2dFRM_WEPLHM 2d elasto-plastic, linear hardening basic frame element with hinge offsets
   BELEMRESP = BINELP2dFRM_WEPLHM (ACTION,L,BELEMDATA,BELEMSTATE)
@@ -113,7 +121,8 @@ BINELP2dFRM_WEPLHM 2d elasto-plastic, linear hardening basic frame element with 
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="ElementLoading" class="code" title="function wC = ElementLoading (w0,lamda,LdId)">ElementLoading</a>	ELEMENTLOADING determines current distributed element load value</li></ul>
+<li><a href="/Functions/ElementLoading" class="code" title="function wC = ElementLoading (w0,lamda,LdId)">ElementLoading</a>	ELEMENTLOADING determines current distributed element load value</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -122,4 +131,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

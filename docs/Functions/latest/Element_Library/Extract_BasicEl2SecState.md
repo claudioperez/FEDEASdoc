@@ -1,16 +1,22 @@
+---
+title: "Extract_BasicEl2SecState"
+id: "Extract_BasicEl2SecState"
+description: "EXTRACT_BASICEL2SECSTATE extract section state from basic element state"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Element_Library</a> &gt; Extract_BasicEl2SecState.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Element_Library</a> &gt; 
+<!-- Extract_BasicEl2SecState.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Element_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `Extract_BasicEl2SecState`
-<!-- <h1>Extract_BasicEl2SecState
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 EXTRACT_BASICEL2SECSTATE extract section state from basic element state
 
@@ -19,7 +25,9 @@ EXTRACT_BASICEL2SECSTATE extract section state from basic element state
 ## <a name="_synopsis"></a>Synopsis
 
 `function SecState = Extract_BasicEl2SecState (sec,ae,ElState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">EXTRACT_BASICEL2SECSTATE extract section state from basic element state
   SECSTATE = EXTRACT_BASICEL2SECSTATE (SEC,AE,ELSTATE)
@@ -38,6 +46,7 @@ EXTRACT_BASICEL2SECSTATE extract section state from basic element state
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 <li><a href="Dinel2dFrm_EBwDF.md" class="code" title="function ElemResp = Dinel2dFrm_EBwDF (action,el_no,xyz,ElemData,ElemState)">Dinel2dFrm_EBwDF</a>	DINEL2dFRM_EBwDF 2d-frame element with distributed inelasticity (displacement formulation)</li></ul>
@@ -46,4 +55,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->

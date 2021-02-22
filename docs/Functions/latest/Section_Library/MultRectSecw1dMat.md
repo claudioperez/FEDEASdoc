@@ -1,16 +1,22 @@
+---
+title: "MultRectSecw1dMat"
+id: "MultRectSecw1dMat"
+description: "MULTRECTSECw1dMAT response for section of rectangular patches and bars with uniaxial material"
+...
 
-<!-- <a name="_top"></a>
-<div><a href="../../_index.md">Home</a> &gt;  <a href="#">latest</a> &gt; <a href="_index.md">Section_Library</a> &gt; MultRectSecw1dMat.m</div> -->
+<!-- <a name="_top"></a> -->
+<!-- <div><a href="../../.autoindex.md">Home</a> &gt;  -->
+ <a href="#">latest</a> &gt; <a href=".autoindex.md">Section_Library</a> &gt; 
+<!-- MultRectSecw1dMat.m</div> -->
 
-<!--<table width="100%"><tr><td align="left"><a href="../../_index.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="_index.md">Index for latest\Section_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+<!--<table width="100%"><tr><td align="left"><a href="../../.autoindex.md"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href=".autoindex.md">Index for latest\Section_Library&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
 # `MultRectSecw1dMat`
-<!-- <h1>MultRectSecw1dMat
-</h1> -->
+
+
 
 ## <a name="_name"></a>Purpose
 
-<!-- <h2 id="purpose"><a name="_name"></a>Purpose</h2> -->
 
 MULTRECTSECw1dMAT response for section of rectangular patches and bars with uniaxial material
 
@@ -19,7 +25,9 @@ MULTRECTSECw1dMAT response for section of rectangular patches and bars with unia
 ## <a name="_synopsis"></a>Synopsis
 
 `function SecResp = MultRectSecw1dMat (action,SecNo,ndm,SecData,SecState)` 
-## <a name="_description"></a>Description
+
+## Description
+
 
 <pre class="comment">MULTRECTSECw1dMAT response for section of rectangular patches and bars with uniaxial material
   SECRESP = MULTRECTSECw1dMAT (ACTION,SECNO,NDM,SECDATA,SECSTATE)
@@ -165,7 +173,8 @@ MULTRECTSECw1dMAT response for section of rectangular patches and bars with unia
 
 This function calls:
 <ul style="list-style-image:url(../../matlabicon.gif)">
-<li><a href="Extract_Sec2MatState" class="code" title="function MatState = Extract_Sec2MatState (m,as,SecState)">Extract_Sec2MatState</a>	EXTRACT_SEC2MATSTATE extract material state from section state</li></ul>
+<li><a href="/Functions/Extract_Sec2MatState" class="code" title="function MatState = Extract_Sec2MatState (m,as,SecState)">Extract_Sec2MatState</a>	EXTRACT_SEC2MATSTATE extract material state from section state</li></ul>
+
 This function is called by:
 <ul style="list-style-image:url(../../matlabicon.gif)">
 </ul>
@@ -174,4 +183,4 @@ This function is called by:
 
 
 
-<!-- <hr><address>Generated on Thu 28-Jan-2021 18:22:44 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
+<!-- <hr><address>Generated on Mon 15-Feb-2021 18:38:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address> -->
