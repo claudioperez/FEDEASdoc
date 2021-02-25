@@ -31,7 +31,7 @@ as a zipped folder from [here]().
 <div class="col-md-4 listing">
 <div class="article-header"><h3>Developing</h3></div>
 <ul class="list-icons">
-<li><span class="icon-file-document"></span><a href="...">Coming soon</a></li>
+<li><span class="icon-file-document"></span><a href="Developing" class="disabled" >Coming soon</a></li>
 </ul>
 </div>
 
