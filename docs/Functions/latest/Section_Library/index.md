@@ -1,5 +1,6 @@
 ---
 title: Section Library
+description: Functions for section force-deformation relations.
 ...
 
 <!-- <!DOCTYPE html> -->
